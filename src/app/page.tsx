@@ -1,7 +1,9 @@
-import Image from "next/image";
+import { Images } from "@/ui/images";
+
+
 
 export default function Home() {
   return (
-    <div></div>
+    <Images/>
   );
 }
