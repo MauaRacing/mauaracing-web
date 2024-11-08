@@ -8,6 +8,7 @@ import { Kanit } from "next/font/google";
 import "@/app/globals.css";
 import { NavBar } from "@/app/ui/navBar";
 import { NavMenu } from "@/app/ui/navMenu";
+import { Footer } from "@/app/ui/footer";
 
 const geistSans = localFont({
   src: "./../fonts/GeistVF.woff",
@@ -53,12 +54,13 @@ export default function RootLayout({
               />
             </Link>
             <div className="place-content-center">
-              <NavBar className="hidden lg:block text-white"/>
+              <NavBar className="hidden lg:block text-white" />
             </div>
           </div>
           <div className="h-2 bg-red-500 border-t" />
         </header>
         {children}
+        <Footer />
       </body>
     </html>
   );
