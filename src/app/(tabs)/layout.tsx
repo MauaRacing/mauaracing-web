@@ -39,27 +39,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kanit.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${kanit.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950`}
       >
-        <header className="bg-gray-950 flex flex-col">
-          <div className="h-24 flex flex-row lg:justify-between gap-4 my-2 justify-center">
-            <NavMenu className="lg:hidden flex" color="white" />
-            <Link href={"/"}>
-              <Image
-                src={"/logoMR_blackbg.png"}
-                width={210}
-                height={210}
-                alt="Logo Maua Racing"
-                className="ml-3"
-              />
-            </Link>
-            <div className="place-content-center">
-              <NavBar className="hidden lg:block text-white" />
+        <header className="bg-transparent flex flex-col sticky top-0">
+          <div className="bg-gray-950 bg-opacity-50">
+            <div className="h-24 flex flex-row lg:justify-between gap-4 my-2 justify-center">
+              <NavMenu className="lg:hidden flex" color="white" />
+              <Link href={"/"}>
+                <Image
+                  src={"/logoMR_blackbg.png"}
+                  width={210}
+                  height={210}
+                  alt="Logo Maua Racing"
+                  className="ml-3"
+                />
+              </Link>
+              <div className="place-content-center">
+                <NavBar className="hidden lg:block text-white" />
+              </div>
             </div>
           </div>
-          <div className="h-2 bg-red-500 border-t" />
         </header>
-        {children}
+        <div className="h-2 bg-red-500 border-t" />
+        <div className="bg-white">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
