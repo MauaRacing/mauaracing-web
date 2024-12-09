@@ -6,9 +6,9 @@ import { Kanit } from "next/font/google";
 
 
 import "@/app/globals.css";
-import { NavBar } from "@/app/ui/navBar";
-import { NavMenu } from "@/app/ui/navMenu";
-import { Footer } from "@/app/ui/footer";
+import { NavBar } from "@/app/components/navBar";
+import { NavMenu } from "@/app/components/navMenu";
+import { Footer } from "@/app/components/footer";
 
 const geistSans = localFont({
   src: "./../fonts/GeistVF.woff",
@@ -41,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${kanit.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950`}
       >
-        <header className="bg-transparent flex flex-col sticky top-0">
+        <header className="bg-transparent flex flex-col sticky">
           <div className="bg-gray-950 bg-opacity-50">
             <div className="h-24 flex flex-row lg:justify-between gap-4 my-2 justify-center">
               <NavMenu className="lg:hidden flex" color="white" />
@@ -55,7 +55,7 @@ export default function RootLayout({
                 />
               </Link>
               <div className="place-content-center">
-                <NavBar className="hidden lg:block text-white" />
+                <NavBar className="hidden lg:inline-block text-white mx-5" />
               </div>
             </div>
           </div>

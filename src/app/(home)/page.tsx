@@ -1,8 +1,8 @@
 import Image from "next/image";
 import bg from "public/images/79.jpg"
-import { NavMenu } from "@/app/ui/navMenu";
-import { NavBar } from "@/app/ui/navBar";
-import { Footer } from "@/app/ui/footer";
+import { NavMenu } from "@/app/components/navMenu";
+import { NavBar } from "@/app/components/navBar";
+import { Footer } from "@/app/components/footer";
 
 
 export default function Home() {
