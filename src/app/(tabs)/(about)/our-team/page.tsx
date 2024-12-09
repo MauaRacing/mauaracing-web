@@ -13,9 +13,9 @@ export default function Page() {
       </div>
       <div className="my-8">
         <MemberSubsystem subsystemName="ADM DevOps">
-          <MemberCard name="Pedro Correia" imageSrc="" linkedinLink="" />
-          <MemberCard name="Pedro Correia" imageSrc="" linkedinLink="" />
-          <MemberCard name="Pedro Correia" imageSrc="" linkedinLink="" />
+          <MemberCard name="" imageSrc="" linkedinLink="" />
+          <MemberCard name="" imageSrc="" linkedinLink="" />
+          <MemberCard name="" imageSrc="" linkedinLink="" />
         </MemberSubsystem>
       </div>
     </main>
