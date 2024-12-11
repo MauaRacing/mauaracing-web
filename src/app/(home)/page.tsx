@@ -23,7 +23,7 @@ export default function Home() {
                 priority={true}
               />
             </div>
-            <NavBar className="hidden md:block" />
+            <NavBar className="hidden md:block" dialogColor="bg-transparent" fontColor="text-black"/>
           </div>
         </div>
       </main>

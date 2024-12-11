@@ -55,7 +55,7 @@ export default function RootLayout({
                 />
               </Link>
               <div className="place-content-center">
-                <NavBar className="hidden lg:inline-block text-white mx-5" />
+                <NavBar className="hidden lg:inline-block text-white mx-5" dialogColor="bg-gray-950" fontColor="text-white"/>
               </div>
             </div>
           </div>

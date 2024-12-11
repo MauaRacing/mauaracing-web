@@ -38,8 +38,8 @@ export default function Page() {
           className="ml-3 float-left"
         />
         <div className="flex flex-col ml-10">
-          <Link href="/about" className="no-underline hover:underline text-2xl text-sky-600">Conheça a organização da nossa equipe!</Link>
-          <Link href="/about" className="no-underline hover:underline text-2xl text-sky-600">Conheça a Mauá e nossa oficina! </Link>
+          <Link href="/our-team" className="no-underline hover:underline text-2xl text-sky-600">Conheça a organização da nossa equipe!</Link>
+          <Link href="https://www.maua.br/a-maua/visitas" className="no-underline hover:underline text-2xl text-sky-600">Conheça a Mauá e nossa oficina! </Link>
           <Link href="/about-fsae" className="no-underline hover:underline text-2xl text-sky-600">Conheça a competição!</Link>
         </div>
       </div>

@@ -12,9 +12,12 @@ export default function Page() {
         </article>
       </div>
       <div className="my-8">
-        <MemberSubsystem subsystemName="ADM DevOps">
-          <MemberCard name="" imageSrc="" linkedinLink="" />
-          <MemberCard name="" imageSrc="" linkedinLink="" />
+        
+        <MemberSubsystem subsystemName="" >
+          <MemberCard name="" imageSrc="" linkedinLink=""/>
+        </MemberSubsystem>
+        
+        <MemberSubsystem subsystemName="ADM DevOps" unique>
           <MemberCard name="" imageSrc="" linkedinLink="" />
         </MemberSubsystem>
       </div>

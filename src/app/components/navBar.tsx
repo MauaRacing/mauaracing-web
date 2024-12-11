@@ -3,7 +3,10 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-export function NavBar({ className, navMenu = false }: { className?: string, navMenu?: boolean }) {
+export function NavBar(
+  { className, navMenu = false, fontColor, dialogColor }:
+    { className?: string, navMenu?: boolean, fontColor: string, dialogColor: string }
+) {
   const [openAbout, setOpenAbout] = useState(false);
   const [openMedia, setOpenMedia] = useState(false);
   const [openGetInvolved, setOpenGetInvolved] = useState(false);
@@ -20,8 +23,8 @@ export function NavBar({ className, navMenu = false }: { className?: string, nav
             QUEM SOMOS
             <ChevronDown className="ml-1 w-4" />
           </button>
-          <dialog open={openAbout} className=" bg-white border rounded-md min-w-44 md:absolute relative">
-            <div className="flex flex-col justify-center grow pt-1 px-2 text-black">
+          <dialog open={openAbout} className={`${dialogColor} rounded-md min-w-44 md:absolute relative`}>
+            <div className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor}`}>
               <Link href={"/about"} className="border-b md:hidden">Quem Somos</Link>
               <Link href={"/about-fsae"} className="border-b ">O que é FSAE?</Link>
               <Link href={"/our-team"} className="border-b ">Nossa equipe</Link>
@@ -34,14 +37,14 @@ export function NavBar({ className, navMenu = false }: { className?: string, nav
         <div className="group relative" onMouseOver={() => setOpenMedia(true)} onMouseLeave={() => setOpenMedia(false)}>
           <Link href={"/"} className="hidden px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-red-500">
             MÍDIA
-            <ChevronDown className="ml-1 w-4"/>
+            <ChevronDown className="ml-1 w-4" />
           </Link>
           <button className="md:hidden px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500 transition-[border] duration-75 ease-out">
             MÍDIA
             <ChevronDown className="ml-1 w-4" />
           </button>
-          <dialog open={openMedia} className="bg-white border rounded-md min-w-32 md:absolute relative">
-            <div className="flex flex-col justify-center grow pt-1 px-2 text-black text-nowrap">
+          <dialog open={openMedia} className={`${dialogColor} rounded-md min-w-32 md:absolute relative`}>
+            <div className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor} text-nowrap`}>
               <Link href={"/"} className="border-b md:hidden">Mídia</Link>
               <Link href={"/"} className="border-b ">Notícias</Link>
               <Link href={"/"} className="border-b ">Vídeos</Link>
@@ -51,14 +54,14 @@ export function NavBar({ className, navMenu = false }: { className?: string, nav
         <div className="group relative" onMouseOver={() => setOpenGetInvolved(true)} onMouseLeave={() => setOpenGetInvolved(false)}>
           <Link href={"/"} className="hidden px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-red-500">
             PARTICIPE
-            <ChevronDown className="ml-1 w-4"/>
+            <ChevronDown className="ml-1 w-4" />
           </Link>
-          <button  className="md:hidden px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500 transition-[border] duration-75 ease-out">
+          <button className="md:hidden px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500 transition-[border] duration-75 ease-out">
             PARTICIPE
             <ChevronDown className="ml-1 w-4" />
           </button>
-          <dialog open={openGetInvolved} className=" bg-white border rounded-md min-w-44 md:absolute relative">
-            <div className="flex flex-col justify-center grow pt-1 px-2 text-black text-nowrap">
+          <dialog open={openGetInvolved} className={`${dialogColor} rounded-md min-w-44 md:absolute relative`}>
+            <div className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor} text-nowrap`}>
               <Link href={"/"} className="border-b md:hidden">Participe</Link>
               <Link href={"/"} className="border-b ">Seja um patrocinador</Link>
               <Link href={"/"} className="border-b ">Seja um membro</Link>
