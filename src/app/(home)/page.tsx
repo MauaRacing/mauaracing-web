@@ -13,7 +13,7 @@ export default function Home() {
         <div className="bg-transparent flex flex-col mt-12 lg:mt-0">
           <div className="h-24 flex flex-col md:justify-between gap-4 my-2 justify-center">
             <div className="flex items-center justify-center">
-              <NavMenu className="md:hidden flex" />
+              <NavMenu className="md:hidden flex" dialogColor="bg-transparent" fontColor="text-black"/>
               <Image
                 src={"/logoMR_whitebg.png"}
                 width={210}

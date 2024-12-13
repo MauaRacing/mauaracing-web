@@ -23,7 +23,7 @@ export default function Page() {
             src={image2}
             width={600}
             height={600}
-            alt="Logo Maua Racing"
+            alt=""
             className="ml-2 mt-5 mr-5 lg:object-none"
           />
         </article>
@@ -34,7 +34,7 @@ export default function Page() {
           src={image1}
           width={500}
           height={400}
-          alt="Logo Maua Racing"
+          alt=""
           className="ml-3 float-left"
         />
         <div className="flex flex-col ml-10">

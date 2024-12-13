@@ -4,8 +4,8 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export function NavBar(
-  { className, navMenu = false, fontColor, dialogColor }:
-    { className?: string, navMenu?: boolean, fontColor: string, dialogColor: string }
+  { className, navMenu = false, fontColor, dialogColor}:
+    { className?: string, navMenu?: boolean, fontColor: string, dialogColor: string}
 ) {
   const [openAbout, setOpenAbout] = useState(false);
   const [openMedia, setOpenMedia] = useState(false);
@@ -19,16 +19,16 @@ export function NavBar(
             QUEM SOMOS
             <ChevronDown className="ml-1 w-4" />
           </Link>
-          <button className="md:hidden px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500">
+          <button className="md:hidden text-nowrap px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500">
             QUEM SOMOS
             <ChevronDown className="ml-1 w-4" />
           </button>
-          <dialog open={openAbout} className={`${dialogColor} rounded-md min-w-44 md:absolute relative`}>
+          <dialog open={openAbout} className={`${dialogColor} rounded-md min-w-44 w-10/12 lg:absolute relative`}>
             <div className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor}`}>
               <Link href={"/about"} className="border-b md:hidden">Quem Somos</Link>
               <Link href={"/about-fsae"} className="border-b ">O que é FSAE?</Link>
               <Link href={"/our-team"} className="border-b ">Nossa equipe</Link>
-              <Link href={"/sponsors"} className="border-b ">Patrocinadores</Link>
+              <Link href={"/sponsors"} className="">Patrocinadores</Link>
             </div>
           </dialog>
         </div>
@@ -43,11 +43,11 @@ export function NavBar(
             MÍDIA
             <ChevronDown className="ml-1 w-4" />
           </button>
-          <dialog open={openMedia} className={`${dialogColor} rounded-md min-w-32 md:absolute relative`}>
+          <dialog open={openMedia} className={`${dialogColor} rounded-md min-w-32 w-10/12 lg:absolute relative`}>
             <div className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor} text-nowrap`}>
               <Link href={"/"} className="border-b md:hidden">Mídia</Link>
               <Link href={"/"} className="border-b ">Notícias</Link>
-              <Link href={"/"} className="border-b ">Vídeos</Link>
+              <Link href={"/"} className="">Vídeos</Link>
             </div>
           </dialog>
         </div>
@@ -60,11 +60,11 @@ export function NavBar(
             PARTICIPE
             <ChevronDown className="ml-1 w-4" />
           </button>
-          <dialog open={openGetInvolved} className={`${dialogColor} rounded-md min-w-44 md:absolute relative`}>
+          <dialog open={openGetInvolved} className={`${dialogColor} rounded-md min-w-44 w-10/12 lg:absolute relative`}>
             <div className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor} text-nowrap`}>
               <Link href={"/"} className="border-b md:hidden">Participe</Link>
-              <Link href={"/"} className="border-b ">Seja um patrocinador</Link>
-              <Link href={"/"} className="border-b ">Seja um membro</Link>
+              <Link href={"/"} className="border-b">Seja um patrocinador</Link>
+              <Link href={"/"} className="">Seja um membro</Link>
             </div>
           </dialog>
         </div>
