@@ -41,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${kanit.className} ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950`}
       >
-        <header className="bg-transparent flex flex-col sticky">
+        <header className="bg-transparent flex flex-col sticky top-0">
           <div className="bg-gray-950 bg-opacity-50">
             <div className="h-24 flex flex-row lg:justify-between gap-4 my-2 justify-center">
               <NavMenu className="lg:hidden flex" color="white" />

@@ -13,13 +13,13 @@ export default function Page() {
       </div>
       <div className="my-8">
         
-        <MemberSubsystem subsystemName="" >
+        {/* <MemberSubsystem subsystemName="" >
           <MemberCard name="" imageSrc="" linkedinLink=""/>
         </MemberSubsystem>
         
         <MemberSubsystem subsystemName="ADM DevOps" unique>
           <MemberCard name="" imageSrc="" linkedinLink="" />
-        </MemberSubsystem>
+        </MemberSubsystem> */}
       </div>
     </main>
   )

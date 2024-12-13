@@ -68,7 +68,7 @@ export function NavBar(
             </div>
           </dialog>
         </div>
-        <Link href={"/"} className="px-4 font-semibold text-lg hover:border-t-2 border-red-500">CONTATO</Link>
+        <Link href={"/contact"} className="px-4 font-semibold text-lg hover:border-t-2 border-red-500">CONTATO</Link>
       </div>
     </nav>
   )
