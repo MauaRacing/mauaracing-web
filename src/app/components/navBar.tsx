@@ -32,7 +32,7 @@ export function NavBar(
             </div>
           </dialog>
         </div>
-        <Link href={"/"} className="px-4 font-semibold text-lg hover:border-t-2 border-red-500 ">CARROS</Link>
+        <Link href={"/cars"} className="px-4 font-semibold text-lg hover:border-t-2 border-red-500 ">CARROS</Link>
         <Link href={"/gallery"} className="px-4 font-semibold text-lg hover:border-t-2 border-red-500">GALERIA</Link>
         <div className="group relative" onMouseOver={() => setOpenMedia(true)} onMouseLeave={() => setOpenMedia(false)}>
           <Link href={"/"} className="hidden px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-red-500">

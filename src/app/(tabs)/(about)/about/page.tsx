@@ -12,24 +12,28 @@ export default function Page() {
   return (
     <main className="min-h-dvh flex flex-col items-center gap-3">
       <div className="w-[100%] mt-8">
-        <article className="p-4 flex lg:flex-row flex-col items-center justify-center mb-5">
-          <div className="flex flex-col justify-center items-center">
-            <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid ">Quem Somos</h1>
-            <p className="mt-5 text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed w-[90%]">
-              Somos uma equipe de FSAE de alunos do Instituto Mauá de Tecnologia, que tem como objetivo o desenvolvimento de um projeto de carro tipo formula para competição.  A proposta consiste em desenvolver um projeto do zero, construí-lo, testá-lo e, enfim, levá-lo para competir. Embora a competição seja nosso objetivo final, todo o processo nos conduz ao aprendizado em diversas áreas, não só da engenharia e viabilidade do projeto, mas também de trabalho em grupo, organização, convivência, entre outros. Com a estrutura da Mauá, somos capazes de explorar ideias inovadoras na área e aprimorar o projeto a cada ano!
-            </p>
+        <section className="p-4 grid grid-cols-3 mb-5 gap-y-4">
+          <div className="col-span-3 xl:col-span-2">
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid ">Quem Somos</h1>
+              <p className="mt-5 text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed w-[90%]">
+                Somos uma equipe de FSAE de alunos do Instituto Mauá de Tecnologia, que tem como objetivo o desenvolvimento de um projeto de carro tipo formula para competição.  A proposta consiste em desenvolver um projeto do zero, construí-lo, testá-lo e, enfim, levá-lo para competir. Embora a competição seja nosso objetivo final, todo o processo nos conduz ao aprendizado em diversas áreas, não só da engenharia e viabilidade do projeto, mas também de trabalho em grupo, organização, convivência, entre outros. Com a estrutura da Mauá, somos capazes de explorar ideias inovadoras na área e aprimorar o projeto a cada ano!
+              </p>
+            </div>
           </div>
-          <Image
-            src={image2}
-            width={600}
-            height={600}
-            alt=""
-            className="ml-2 mt-5 mr-5 lg:object-none"
-          />
-        </article>
+          <div className="col-span-3 xl:col-span-1 m-auto">
+            <Image
+              src={image2}
+              width={600}
+              height={600}
+              alt=""
+              className=""
+            />
+          </div>
+        </section>
       </div>
 
-      <div className="mt-4 mb-10 w-[100%] flex justify-center items-center gap-10 flex-col lg:flex-row">
+      <div className="mt-4 mb-10 w-[100%] flex justify-center items-center gap-10 flex-col xl:flex-row">
         <Image
           src={image1}
           width={500}

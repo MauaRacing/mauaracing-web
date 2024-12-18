@@ -4,7 +4,7 @@ import Script from 'next/script'
 export default function Page() {
   return (
     <main className="min-h-dvh flex flex-col items-center justify-center gap-3">
-      <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid w-[100%]">Álbuns</h1>
+      <h1 className="text-6xl mb-2 mt-8 text-center underline underline-offset-8 decoration-solid w-[100%]">Álbuns</h1>
       <div className="mt-5">
         <a data-flickr-embed="true" data-header="true" data-footer="true" href="https://www.flickr.com/photos/infomaua/albums/72177720319357434" title="[31.07 a 04.08.2024] Mauá Racing na 20.ª Competição Formula SAE BRASIL">
           {/* eslint-disable-next-line */}
