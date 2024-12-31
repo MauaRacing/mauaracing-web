@@ -23,7 +23,7 @@ export default async function Home({
             <div className="flex items-center justify-center">
               <NavMenu dict={dict} className="md:hidden flex" dialogColor="bg-transparent" fontColor="text-black"/>
               <Image
-                src={"/logoMR_whitebg.png"}
+                src={"/images/logoMR_whitebg.png"}
                 width={210}
                 height={210}
                 alt="Logo Mauá Racing"

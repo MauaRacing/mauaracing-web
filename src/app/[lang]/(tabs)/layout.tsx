@@ -31,7 +31,7 @@ export default async function RootLayout({
             <NavMenu dict={dict} className="lg:hidden flex" color="white" dialogColor="bg-transparent" fontColor="text-black" />
             <Link href={"/"}>
               <Image
-                src={"/logoMR_blackbg.png"}
+                src={"/images/logoMR_blackbg.png"}
                 width={210}
                 height={210}
                 alt="Logo Maua Racing"
