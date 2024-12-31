@@ -3,9 +3,17 @@ import bg from "public/images/79.jpg"
 import { NavMenu } from "@/app/components/navMenu";
 import { NavBar } from "@/app/components/navBar";
 import { Footer } from "@/app/components/footer";
+import { getDictionary } from "../dictionaries";
+import { LangDictionary } from "../langDictionary";
 
 
-export default function Home() {
+export default async function Home({
+  params,
+} : {
+  params : Promise<{lang : string}>
+}) {
+  const lang = (await params).lang;
+  const dict : LangDictionary = await getDictionary(lang);
   return (
     <div className="flex flex-col relative">
       <main className={`flex justify-center min-h-dvh lg:h-[130dvh]`}>
@@ -13,7 +21,7 @@ export default function Home() {
         <div className="bg-transparent flex flex-col mt-12 lg:mt-0">
           <div className="h-24 flex flex-col md:justify-between gap-4 my-2 justify-center">
             <div className="flex items-center justify-center">
-              <NavMenu className="md:hidden flex" dialogColor="bg-transparent" fontColor="text-black"/>
+              <NavMenu dict={dict} className="md:hidden flex" dialogColor="bg-transparent" fontColor="text-black"/>
               <Image
                 src={"/logoMR_whitebg.png"}
                 width={210}
@@ -23,7 +31,7 @@ export default function Home() {
                 priority={true}
               />
             </div>
-            <NavBar className="hidden md:block" dialogColor="bg-transparent" fontColor="text-black"/>
+            <NavBar dict={dict} className="hidden md:block" dialogColor="bg-transparent" fontColor="text-black"/>
           </div>
         </div>
       </main>

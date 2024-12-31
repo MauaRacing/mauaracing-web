@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "firstGroup": {
+      "title": "ABOUT US",
+      "firstOption": "About FSAE",
+      "secondOption": "Our Team",
+      "thirdOption": "Sponsors"
+    },
+    "secondGroup": {
+      "title": "CARS"
+    },
+    "thirdGroup": {
+      "title": "GALLERY"
+    },
+    "fourthGroup": {
+      "title": "MEDIA",
+      "firstOption": "News",
+      "secondOption": "Videos"
+    },
+    "fifthGroup": {
+      "title": "GET INVOLVED",
+      "firstOption": "Become a Sponsor",
+      "secondOption": "Become a Member"
+    },
+    "sixthGroup": {
+      "title": "CONTACT"
+    }
+  }
+}

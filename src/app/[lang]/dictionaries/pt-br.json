@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "firstGroup": {
+      "title": "QUEM SOMOS",
+      "firstOption": "O que é FSAE",
+      "secondOption": "Nossa equipe",
+      "thirdOption": "Patrocinadores"
+    },
+    "secondGroup": {
+      "title": "CARROS"
+    },
+    "thirdGroup": {
+      "title": "GALERIA"
+    },
+    "fourthGroup": {
+      "title": "Mídia",
+      "firstOption": "Notícias",
+      "secondOption": "Vídeos"
+    },
+    "fifthGroup": {
+      "title": "PARTICIPE",
+      "firstOption": "Seja um patrocinador",
+      "secondOption": "Seja um membro"
+    },
+    "sixthGroup": {
+      "title": "CONTATO"
+    }
+  }
+}

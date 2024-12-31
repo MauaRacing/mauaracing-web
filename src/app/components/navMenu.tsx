@@ -3,8 +3,9 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NavBar } from "./navBar";
+import { LangDictionary } from "../[lang]/langDictionary";
 
-export function NavMenu({ className, color, dialogColor, fontColor }: { className?: string, color? : string, dialogColor : string, fontColor : string}) {
+export function NavMenu({ dict, className, color, dialogColor, fontColor }: { dict: LangDictionary, className?: string, color? : string, dialogColor : string, fontColor : string}) {
   const [open, setOpen] = useState(false);
   return (
     <div className={className}>
@@ -17,7 +18,7 @@ export function NavMenu({ className, color, dialogColor, fontColor }: { classNam
             <X />
           </button>
           <div className="mt-5 mx-10">
-            <NavBar navMenu={true} dialogColor={dialogColor} fontColor={fontColor}/>
+            <NavBar dict={dict} navMenu={true} dialogColor={dialogColor} fontColor={fontColor}/>
           </div>
         </div>
       </dialog>
