@@ -5,6 +5,7 @@ import { NavBar } from "@/app/components/navBar";
 import { Footer } from "@/app/components/footer";
 import { getDictionary } from "../dictionaries";
 import { LangDictionary } from "../langDictionary";
+import { Globe } from "@/app/components/globe";
 
 
 export default async function Home({
@@ -30,6 +31,7 @@ export default async function Home({
                 className="ml-3"
                 priority={true}
               />
+              <Globe color="black"/>
             </div>
             <NavBar dict={dict} className="hidden md:block" dialogColor="bg-transparent" fontColor="text-black"/>
           </div>
