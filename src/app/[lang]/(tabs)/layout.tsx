@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import "@/app/globals.css";
+import { Footer } from "@/app/components/footer";
+import { Globe } from "@/app/components/globe";
 import { NavBar } from "@/app/components/navBar";
 import { NavMenu } from "@/app/components/navMenu";
-import { Footer } from "@/app/components/footer";
+import "@/app/globals.css";
 import { getDictionary } from "../dictionaries";
-import { Globe } from "@/app/components/globe";
-
-
 
 export const metadata: Metadata = {
   title: "Maua Racing",
@@ -17,10 +15,10 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: Readonly<{
-  children: React.ReactNode,
-  params: Promise<{ lang: "en-US" | "pt-BR" | "es-ES" }>
+  children: React.ReactNode;
+  params: Promise<{ lang: "en-US" | "pt-BR" | "es-ES" }>;
 }>) {
   const lang = (await params).lang;
   const dict = await getDictionary(lang);
@@ -30,8 +28,14 @@ export default async function RootLayout({
         <div className="bg-gray-950 bg-opacity-50">
           <div className="h-24 flex flex-row lg:justify-between gap-4 my-2 justify-center items-center">
             <div className="flex flex-row justify-center items-center">
-              <NavMenu dict={dict} className="lg:hidden flex" color="white" dialogColor="bg-transparent" fontColor="text-black" />
-              <Link href={"/"}>
+              <NavMenu
+                dict={dict}
+                className="lg:hidden flex"
+                color="white"
+                dialogColor="bg-transparent"
+                fontColor="text-black"
+              />
+              <Link href={`/${lang}`}>
                 <Image
                   src={"/images/logoMR_blackbg.png"}
                   width={210}
@@ -43,16 +47,19 @@ export default async function RootLayout({
               <Globe color="white" className="ml-2 lg:ml-10" />
             </div>
             <div className="place-content-center">
-              <NavBar dict={dict} className="hidden lg:inline-block text-white mx-5" dialogColor="bg-gray-950" fontColor="text-white" />
+              <NavBar
+                dict={dict}
+                className="hidden lg:inline-block text-white mx-5"
+                dialogColor="bg-gray-950"
+                fontColor="text-white"
+              />
             </div>
           </div>
         </div>
-      </header >
+      </header>
       <div className="h-2 bg-red-500 border-t" />
-      <div className="bg-white">
-        {children}
-      </div>
+      <div className="bg-white">{children}</div>
       <Footer />
-    </div >
+    </div>
   );
 }

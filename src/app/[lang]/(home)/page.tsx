@@ -1,20 +1,19 @@
-import Image from "next/image";
-import bg from "public/images/79.jpg"
-import { NavMenu } from "@/app/components/navMenu";
-import { NavBar } from "@/app/components/navBar";
 import { Footer } from "@/app/components/footer";
+import { Globe } from "@/app/components/globe";
+import { NavBar } from "@/app/components/navBar";
+import { NavMenu } from "@/app/components/navMenu";
+import Image from "next/image";
+import bg from "public/images/79.jpg";
 import { getDictionary } from "../dictionaries";
 import { LangDictionary } from "../langDictionary";
-import { Globe } from "@/app/components/globe";
-
 
 export default async function Home({
   params,
-} : {
-  params : Promise<{lang : string}>
+}: {
+  params: Promise<{ lang: string }>;
 }) {
   const lang = (await params).lang;
-  const dict : LangDictionary = await getDictionary(lang);
+  const dict: LangDictionary = await getDictionary(lang);
   return (
     <div className="flex flex-col relative">
       <main className={`flex justify-center min-h-dvh lg:h-[130dvh]`}>
@@ -22,7 +21,12 @@ export default async function Home({
         <div className="bg-transparent flex flex-col mt-12 lg:mt-0">
           <div className="h-24 flex flex-col md:justify-between gap-4 my-2 justify-center">
             <div className="flex items-center justify-center">
-              <NavMenu dict={dict} className="md:hidden flex" dialogColor="bg-transparent" fontColor="text-black"/>
+              <NavMenu
+                dict={dict}
+                className="md:hidden flex"
+                dialogColor="bg-transparent"
+                fontColor="text-black"
+              />
               <Image
                 src={"/images/logoMR_whitebg.png"}
                 width={210}
@@ -31,13 +35,18 @@ export default async function Home({
                 className="ml-3"
                 priority={true}
               />
-              <Globe color="black"/>
+              <Globe color="black" />
             </div>
-            <NavBar dict={dict} className="hidden md:block" dialogColor="bg-transparent" fontColor="text-black"/>
+            <NavBar
+              dict={dict}
+              className="hidden md:block"
+              dialogColor="bg-transparent"
+              fontColor="text-black"
+            />
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
