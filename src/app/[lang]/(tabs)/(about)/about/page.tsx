@@ -1,15 +1,16 @@
 import Link from "next/link";
-// import type { Metadata } from "next";
 import Image from "next/image";
 import image1 from "public/images/aboutImage.png";
 import image2 from "public/images/aboutImage2.png";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { LangDictionary } from "@/app/[lang]/langDictionary";
 import { ResolvingMetadata, Metadata } from "next";
-import { Props } from "next/script";
 
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  {
+    params,
+    searchParams,
+  }: { params: Promise<{ lang: string }>; searchParams: string },
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const lang = (await params).lang;

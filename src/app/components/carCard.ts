@@ -1,8 +1,15 @@
-import {CarCardRoot, CarCardImage, CarCardTitle, CarCardText} from "./carCardComponents";
+import {
+  CarCardRoot,
+  CarCardImage,
+  CarCardTitle,
+  CarCardText,
+  CarCardDescription,
+} from "./carCardComponents";
 
 export const CarCard = {
   Root: CarCardRoot,
-  Image : CarCardImage,
-  Text : CarCardText,
-  Title : CarCardTitle
-} 
+  Image: CarCardImage,
+  Text: CarCardText,
+  Title: CarCardTitle,
+  Description: CarCardDescription,
+};
