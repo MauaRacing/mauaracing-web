@@ -4,32 +4,32 @@ import image1 from "public/images/aboutImage.png";
 import image2 from "public/images/aboutImage2.png";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { LangDictionary } from "@/app/[lang]/langDictionary";
-import { ResolvingMetadata, Metadata } from "next";
+// import { ResolvingMetadata, Metadata } from "next";
 
-export async function generateMetadata(
-  {
-    params,
-    searchParams,
-  }: { params: Promise<{ lang: string }>; searchParams: string },
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
-  const lang = (await params).lang;
-  switch (lang) {
-    case "pt-BR":
-      return {
-        title: "Sobre",
-      };
-    case "es-ES":
-      return {
-        title: "Sobre",
-      };
-    default:
-    case "en-US":
-      return {
-        title: "About",
-      };
-  }
-}
+// export async function generateMetadata(
+//   {
+//     params,
+//     searchParams,
+//   }: { params: Promise<{ lang: string }>; searchParams: string },
+//   parent: ResolvingMetadata,
+// ): Promise<Metadata> {
+//   const lang = (await params).lang;
+//   switch (lang) {
+//     case "pt-BR":
+//       return {
+//         title: "Sobre",
+//       };
+//     case "es-ES":
+//       return {
+//         title: "Sobre",
+//       };
+//     default:
+//     case "en-US":
+//       return {
+//         title: "About",
+//       };
+//   }
+// }
 
 export default async function Page({
   params,
