@@ -24,7 +24,7 @@ function getLocale(request: NextRequest) {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  if (pathname.startsWith("/login")) {
+  if (pathname.startsWith("/login") || pathname.startsWith("/dashboard")) {
     return;
   }
   const pathnameHasLocale = locales.some(
