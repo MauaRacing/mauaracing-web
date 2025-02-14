@@ -27,6 +27,7 @@ export const providerMap = providers
     pages: {
       signIn: "/login",
     },
+    trustHost: true,
   })
 
 // export const { handlers, auth, signIn, signOut } = NextAuth({
