@@ -1,4 +1,5 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
+// import { NextResponse, NextRequest } from "next/server";
 import { auth } from "./auth";
 
 export default auth;
@@ -24,8 +25,9 @@ function getLocale(request: NextRequest) {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  if (pathname.startsWith("/login") || pathname.startsWith("/dashboard")) {
-    return;
+  // if (pathname.startsWith("/login")) {
+    if (pathname.startsWith("/login") || pathname.startsWith("/dashboard")) {
+      return;
   }
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
