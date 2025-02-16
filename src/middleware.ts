@@ -1,8 +1,9 @@
+export { auth as middleware } from "@/auth"
 // import { NextRequest, NextResponse } from 'next/server';
 // import { NextResponse, NextRequest } from "next/server";
-import { auth } from "./auth";
+// import { auth } from "./auth";
 
-export default auth;
+// export default auth;
 
 // const locales = ["en-US", "pt-BR", "es-ES"];
 
@@ -44,6 +45,8 @@ export default auth;
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
+    // '/((?!api|_next/static|_next/image|.*\\.png$).*)',
+
     "/((?!api|_next/static|_next/image|images|public|favicon.ico).*)",
   ],
 };
