@@ -69,7 +69,7 @@ export default async function SignInPage({
   searchParams,
 }: {
   searchParams: { callbackUrl: string | undefined };
-}) {
+}): Promise<any>  {
 
   const SIGNIN_ERROR_URL = "/";
 
