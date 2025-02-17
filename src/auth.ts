@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import MicrosoftEntraID from "next-auth/providers/microsoft-entra-id";
 import type { Provider } from "next-auth/providers";
-import GitHub from "next-auth/providers/github"
 
 const providers: Provider[] = [
   MicrosoftEntraID({
@@ -9,7 +8,6 @@ const providers: Provider[] = [
     clientSecret: process.env.AUTH_MICROSOFT_ENTRA_ID_SECRET,
     issuer: process.env.AUTH_MICROSOFT_ENTRA_ID_ISSUER,
   }),
-  GitHub,
 ];
 
 export const providerMap = providers
@@ -41,6 +39,5 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
   pages: {
     signIn: "/login",
-  },
-  trustHost: true,
+  }
 });
