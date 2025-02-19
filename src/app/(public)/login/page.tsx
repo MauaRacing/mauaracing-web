@@ -11,11 +11,12 @@ import { Button } from "@/ui/button";
 import FsaeLiveLogo from "@/ui/fsaelive-logo";
 // import { useActionState } from "react";
 
+type SearchParams = Promise<{ callbackUrl: string | undefined }>;
 
 export default async function SignInPage({
   searchParams,
 }: {
-  searchParams: { callbackUrl: string | undefined };
+  searchParams: SearchParams;
 }) {
 
   const SIGNIN_ERROR_URL = "/";
