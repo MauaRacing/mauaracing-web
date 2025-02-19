@@ -1,5 +1,5 @@
-// import { MemberCard } from "@/app/components/memberCard";
-// import { MemberSubsystem } from "@/app/components/memberSubsystem";
+// import { MemberCard } from "@/ui/memberCard";
+// import { MemberSubsystem } from "@/ui/memberSubsystem";
 
 export default function Page() {
   return (

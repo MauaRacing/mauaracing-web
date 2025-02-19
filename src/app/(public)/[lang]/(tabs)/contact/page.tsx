@@ -1,5 +1,5 @@
 "use client"
-import { contactAction } from "@/app/actions/contactAction";
+import { contactAction } from "@/actions/contactAction";
 import { FormEvent, useRef } from "react";
 
 

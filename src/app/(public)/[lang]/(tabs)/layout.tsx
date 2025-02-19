@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Footer } from "@/app/components/footer";
-import { Globe } from "@/app/components/globe";
-import { NavBar } from "@/app/components/navBar";
-import { NavMenu } from "@/app/components/navMenu";
-import "@/app/globals.css";
+import { Footer } from "@/ui/footer";
+import { Globe } from "@/ui/globe";
+import { NavBar } from "@/ui/navBar";
+import { NavMenu } from "@/ui/navMenu";
+import "@/globals.css";
 import { getDictionary } from "../dictionaries";
 
 export const metadata: Metadata = {

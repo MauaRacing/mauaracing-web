@@ -1,4 +1,4 @@
-import { CarCard } from "@/app/components/carCard";
+import { CarCard } from "@/ui/carCard";
 import mr24Image from "public/images/cars/MR24.png";
 import mr22Image from "public/images/cars/MR22.png";
 import mr19Image from "public/images/cars/MR19.png";

@@ -1,54 +1,3 @@
-// import { signIn } from "@/auth";
-// import { Metadata } from "next";
-// import Image from "next/image";
-// import Link from "next/link";
-
-// export const metadata: Metadata = {
-//   title: "Maua Racing",
-// };
-// export default function Page() {
-//   return (
-//     <main className="flex justify-center items-center h-dvh w-dvw">
-//       <div className="border rounded-lg h-[80%] w-[80%] shadow-md p-5">
-//         <div className="flex justify-center">
-//           <Link href={"/"}>
-//             <Image
-//               src={"/images/logoMR_whitebg.png"}
-//               width={210}
-//               height={210}
-//               alt="Logo Mauá Racing"
-//               className="ml-3"
-//               priority={true}
-//             />
-//           </Link>
-//         </div>
-//         <form
-//           className="h-[60%] flex justify-center items-center"
-//           action={async () => {
-//             "use server";
-//             await signIn("microsoft-entra-id", { redirectTo: "/dashboard" });
-//           }}
-//         >
-//           <div className="border rounded-md px-2 py-1">
-//             <button className="flex items-center space-x-2 px-2" type="submit">
-//               <Image
-//                 src={"/images/login/microsoftLogo.png"}
-//                 width={50}
-//                 height={50}
-//                 alt=""
-//               />
-//               <p>Signin with Microsoft</p>
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </main>
-//   );
-// }
-
-
-
-
 import { redirect } from "next/navigation";
 import { signIn, auth, providerMap } from "@/auth";
 import { AuthError } from "next-auth";
@@ -58,26 +7,16 @@ import {
   ExclamationCircleIcon,
   KeyIcon,
 } from "@heroicons/react/24/outline";
-// import LoginForm from "@/app/ui/login-form";
-// import { lusitana } from "../ui/fonts";
-import { Button } from "../components/button";
-import FsaeLiveLogo from "../components/fsaelive-logo";
+import { Button } from "@/ui/button";
+import FsaeLiveLogo from "@/ui/fsaelive-logo";
 // import { useActionState } from "react";
 
-
-type SearchParams = Promise<{ callbackUrl: string | undefined }>;
-
-// export default async function Page({ params }: { params: Params }) {
-// const { searchParams } = await params;
-// }
 
 export default async function SignInPage({
   searchParams,
 }: {
-  // searchParams: { callbackUrl: string | undefined };
-  searchParams: SearchParams;
+  searchParams: { callbackUrl: string | undefined };
 }) {
-
 
   const SIGNIN_ERROR_URL = "/";
 
@@ -137,4 +76,3 @@ export default async function SignInPage({
     </main>
   );
 }
-

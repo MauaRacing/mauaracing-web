@@ -1,5 +1,5 @@
 // import { GlobeAltIcon } from '@heroicons/react/24/outline';
-// import { lusitana, redHatDisplay } from "@/app/ui/fonts";
+// import { lusitana, redHatDisplay } from "@/ui/fonts";
 
 export default function FsaeLiveLogo() {
   return (

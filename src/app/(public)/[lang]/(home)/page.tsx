@@ -1,7 +1,7 @@
-import { Footer } from "@/app/components/footer";
-import { Globe } from "@/app/components/globe";
-import { NavBar } from "@/app/components/navBar";
-import { NavMenu } from "@/app/components/navMenu";
+import { Footer } from "@/ui/footer";
+import { Globe } from "@/ui/globe";
+import { NavBar } from "@/ui/navBar";
+import { NavMenu } from "@/ui/navMenu";
 import Image from "next/image";
 import bg from "public/images/79.jpg";
 import { getDictionary } from "../dictionaries";

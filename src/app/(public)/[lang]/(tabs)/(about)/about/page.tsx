@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import image1 from "public/images/aboutImage.png";
 import image2 from "public/images/aboutImage2.png";
-import { getDictionary } from "@/app/[lang]/dictionaries";
-import { LangDictionary } from "@/app/[lang]/langDictionary";
+import { getDictionary } from "@/(public)/[lang]/dictionaries";
+import { LangDictionary } from "@/(public)/[lang]/langDictionary";
 // import { ResolvingMetadata, Metadata } from "next";
 
 // export async function generateMetadata(
