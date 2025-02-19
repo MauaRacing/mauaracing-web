@@ -4,8 +4,8 @@ import { NavBar } from "@/ui/navBar";
 import { NavMenu } from "@/ui/navMenu";
 import Image from "next/image";
 import bg from "public/images/79.jpg";
-import { getDictionary } from "../dictionaries";
-import { LangDictionary } from "../langDictionary";
+import { getDictionary } from "@/[lang]/dictionaries";
+import { LangDictionary } from "@/[lang]/langDictionary";
 
 export default async function Home({
   params,

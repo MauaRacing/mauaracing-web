@@ -60,13 +60,10 @@ const publicRoutes = [
   { path: '/cars', whenAuthenticated: 'next' },
   { path: '/contact', whenAuthenticated: 'next' },
   { path: '/gallery', whenAuthenticated: 'next' },
-  { path: '/en-US', whenAuthenticated: 'next' },
-  { path: '/pt-BR', whenAuthenticated: 'next' },
-  { path: '/es-ES', whenAuthenticated: 'next' },
   { path: '/login', whenAuthenticated: 'redirect' },
 ] as const
 
-const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = '/login'
+const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = '/en-US/login'
 
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -74,37 +71,47 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     authorized({ auth, request: { nextUrl, headers } }) {
 
       const isLoggedIn = !!auth?.user;
-      const path = nextUrl.pathname
-      const publicRoute = publicRoutes.find(route => route.path === path)
-      // const pathHasLocale = locales.some(
-      //   (locale) => path.startsWith(`/${locale}/`) || path === `/${locale}`,
+      const pathname = nextUrl.pathname
+      const publicRoute = publicRoutes.find(route => route.path === pathname)
+      // const pathnameHasLocale = locales.some(
+      //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
       // );
-      // console.log(path);
-
-      // if (!pathHasLocale && publicRoute) {
+      // console.log(pathname);
+      // if (pathnameHasLocale) {
       //   const locale = getLocale(headers);
-      //   nextUrl.pathname = `/${locale}${path}`;
+      //   nextUrl.pathname = `/${locale}${pathname}`;
       // return NextResponse.redirect(nextUrl);
       // }
 
-      // if (pathHasLocale) return;
+      // if (!pathnameHasLocale && publicRoute) {
+      //   const locale = getLocale(headers);
+      //   nextUrl.pathname = `/${locale}${pathname}`;
+      // return NextResponse.redirect(nextUrl);
+      // }
+
+      // if (pathnameHasLocale) return;
+
       
+      // Allow publicRoute to non-Auth
       if (!isLoggedIn && publicRoute) {
         return NextResponse.next()
       }
 
+      // Redirect to access private at login page
       if (!isLoggedIn && !publicRoute) {
         const redirectUrl = nextUrl.clone()
         redirectUrl.pathname = REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE
         return NextResponse.redirect(redirectUrl)
       }
 
+      // 
       if (isLoggedIn && publicRoute && publicRoute.whenAuthenticated === 'redirect') {
         const redirectUrl = nextUrl.clone()
         redirectUrl.pathname = '/dashboard'
         return NextResponse.redirect(redirectUrl)
       }
 
+      // Allow publicRoute to Auth
       if (isLoggedIn && !publicRoute) {
         return NextResponse.next()
       }
