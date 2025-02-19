@@ -3,7 +3,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { NavBar } from "./navBar";
-import { LangDictionary } from "../[lang]/langDictionary";
+import { LangDictionary } from "@/(public)/[lang]/langDictionary";
 
 export function NavMenu({ dict, className, color, dialogColor, fontColor }: { dict: LangDictionary, className?: string, color? : string, dialogColor : string, fontColor : string}) {
   const [open, setOpen] = useState(false);
