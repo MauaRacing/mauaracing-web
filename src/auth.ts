@@ -1,7 +1,7 @@
-import NextAuth from 'next-auth';
-import MicrosoftEntraID from "next-auth/providers/microsoft-entra-id"
-import type { Provider } from "next-auth/providers"
-import { NextRequest, NextResponse } from 'next/server';
+import NextAuth from "next-auth";
+import MicrosoftEntraID from "next-auth/providers/microsoft-entra-id";
+import type { Provider } from "next-auth/providers";
+import { NextRequest, NextResponse } from "next/server";
 
 // async function getUser(email: string): Promise<User | undefined> {
 //   try {
@@ -19,18 +19,18 @@ const providers: Provider[] = [
     clientSecret: process.env.AUTH_MICROSOFT_ENTRA_ID_SECRET,
     issuer: process.env.AUTH_MICROSOFT_ENTRA_ID_ISSUER,
   }),
-]
+];
 
 export const providerMap = providers
   .map((provider) => {
     if (typeof provider === "function") {
-      const providerData = provider()
-      return { id: providerData.id, name: providerData.name }
+      const providerData = provider();
+      return { id: providerData.id, name: providerData.name };
     } else {
-      return { id: provider.id, name: provider.name }
+      return { id: provider.id, name: provider.name };
     }
   })
-  .filter((provider) => provider.id !== "credentials")
+  .filter((provider) => provider.id !== "credentials");
 
 const locales = ["en-US", "pt-BR", "es-ES"];
 
@@ -52,71 +52,66 @@ function getLocale(headers: Headers) {
 }
 
 const publicRoutes = [
-  { path: '/', whenAuthenticated: 'next' },
-  { path: '/about', whenAuthenticated: 'next' },
-  { path: '/about-fsae', whenAuthenticated: 'next' },
-  { path: '/our-team', whenAuthenticated: 'next' },
-  { path: '/sponsors', whenAuthenticated: 'next' },
-  { path: '/cars', whenAuthenticated: 'next' },
-  { path: '/contact', whenAuthenticated: 'next' },
-  { path: '/gallery', whenAuthenticated: 'next' },
-  { path: '/login', whenAuthenticated: 'redirect' },
-] as const
+  { path: "/", whenAuthenticated: "next" },
+  { path: "/about", whenAuthenticated: "next" },
+  { path: "/about-fsae", whenAuthenticated: "next" },
+  { path: "/our-team", whenAuthenticated: "next" },
+  { path: "/sponsors", whenAuthenticated: "next" },
+  { path: "/cars", whenAuthenticated: "next" },
+  { path: "/contact", whenAuthenticated: "next" },
+  { path: "/gallery", whenAuthenticated: "next" },
+  { path: "/login", whenAuthenticated: "redirect" },
+] as const;
 
-const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = '/en-US/login'
-
+const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/en-US/login";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl, headers } }) {
-
       const isLoggedIn = !!auth?.user;
-      const pathname = nextUrl.pathname
-      const publicRoute = publicRoutes.find(route => route.path === pathname)
-      // const pathnameHasLocale = locales.some(
-      //   (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-      // );
-      // console.log(pathname);
-      // if (pathnameHasLocale) {
-      //   const locale = getLocale(headers);
-      //   nextUrl.pathname = `/${locale}${pathname}`;
-      // return NextResponse.redirect(nextUrl);
-      // }
+      const pathname = nextUrl.pathname;
+      const publicRoute = publicRoutes.find((route) => route.path === pathname);
 
-      // if (!pathnameHasLocale && publicRoute) {
-      //   const locale = getLocale(headers);
-      //   nextUrl.pathname = `/${locale}${pathname}`;
-      // return NextResponse.redirect(nextUrl);
-      // }
+      const pathnameHasLocale = locales.some(
+        (locale) =>
+          pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+      );
 
-      // if (pathnameHasLocale) return;
+      if (!pathnameHasLocale && publicRoute) {
+        const locale = getLocale(headers);
+        nextUrl.pathname = `/${locale}${pathname}`;
+        return NextResponse.redirect(nextUrl);
+      }
 
-      
+      if (pathnameHasLocale && publicRoute) return;
+
       // Allow publicRoute to non-Auth
       if (!isLoggedIn && publicRoute) {
-        return NextResponse.next()
+        return NextResponse.next();
       }
 
       // Redirect to access private at login page
       if (!isLoggedIn && !publicRoute) {
-        const redirectUrl = nextUrl.clone()
-        redirectUrl.pathname = REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE
-        return NextResponse.redirect(redirectUrl)
+        const redirectUrl = nextUrl.clone();
+        redirectUrl.pathname = REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE;
+        return NextResponse.redirect(redirectUrl);
       }
 
-      // 
-      if (isLoggedIn && publicRoute && publicRoute.whenAuthenticated === 'redirect') {
-        const redirectUrl = nextUrl.clone()
-        redirectUrl.pathname = '/dashboard'
-        return NextResponse.redirect(redirectUrl)
+      //
+      if (
+        isLoggedIn &&
+        publicRoute &&
+        publicRoute.whenAuthenticated === "redirect"
+      ) {
+        const redirectUrl = nextUrl.clone();
+        redirectUrl.pathname = "/dashboard";
+        return NextResponse.redirect(redirectUrl);
       }
 
       // Allow publicRoute to Auth
       if (isLoggedIn && !publicRoute) {
-        return NextResponse.next()
+        return NextResponse.next();
       }
-
-      
     },
   },
 
@@ -124,4 +119,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
     signIn: "/login",
   },
-})
+});
