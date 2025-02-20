@@ -7,7 +7,7 @@ import { Globe } from "@/ui/globe";
 import { NavBar } from "@/ui/navBar";
 import { NavMenu } from "@/ui/navMenu";
 import "@/globals.css";
-import { getDictionary } from "../dictionaries";
+import { getDictionary } from "@/[lang]/dictionaries";
 
 export const metadata: Metadata = {
   title: "Maua Racing",

@@ -1,5 +1,5 @@
-import { getDictionary } from "@/(public)/[lang]/dictionaries";
-import { LangDictionary } from "@/(public)/[lang]/langDictionary";
+import { getDictionary } from "@/[lang]/dictionaries";
+import { LangDictionary } from "@/[lang]/langDictionary";
 
 export default async function Page({
   params,
