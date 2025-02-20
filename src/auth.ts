@@ -72,18 +72,18 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       const pathname = nextUrl.pathname;
       const publicRoute = publicRoutes.find((route) => route.path === pathname);
 
-      const pathnameHasLocale = locales.some(
-        (locale) =>
-          pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-      );
+      // const pathnameHasLocale = locales.some(
+      //   (locale) =>
+      //     pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+      // );
 
-      if (!pathnameHasLocale && publicRoute) {
-        const locale = getLocale(headers);
-        nextUrl.pathname = `/${locale}${pathname}`;
-        return NextResponse.redirect(nextUrl);
-      }
+      // if (!pathnameHasLocale && publicRoute) {
+      //   const locale = getLocale(headers);
+      //   nextUrl.pathname = `/${locale}${pathname}`;
+      //   return NextResponse.redirect(nextUrl);
+      // }
 
-      if (pathnameHasLocale && publicRoute) return;
+      // if (pathnameHasLocale && publicRoute) return;
 
       // Allow publicRoute to non-Auth
       if (!isLoggedIn && publicRoute) {
