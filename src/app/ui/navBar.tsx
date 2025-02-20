@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { LangDictionary } from "@/(public)/[lang]/langDictionary";
+import { LangDictionary } from "@/[lang]/langDictionary";
 import { useParams } from "next/navigation";
 
 export function NavBar({
