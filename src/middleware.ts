@@ -1,42 +1,37 @@
-export { auth } from "@/auth";
-import { MiddlewareConfig, NextRequest, NextResponse } from "next/server";
+import { auth } from "@/auth"
+import { MiddlewareConfig, NextResponse } from "next/server";
+import { locales, getPathnameLocale, getHeaderLocale } from "@/locale";
 
-const locales = ["en-US", "pt-BR", "es-ES"];
 
-// Get the preferred locale, similar to the above or using a library
-function getLocale(request: NextRequest) {
-  const headers = new Headers(request.headers);
-  const defaultLocale = "en-US";
-  const preferredLocale = headers.get("Accept-Language");
-  if (preferredLocale) {
-    const preferredLocales = preferredLocale.replace(";", ",").split(",");
-    for (const lang of preferredLocales) {
-      if (lang.startsWith("q=")) continue;
-      else if (locales.includes(lang)) {
-        return lang;
-      }
-    }
-  }
-  return defaultLocale;
-}
+export default auth(({ auth, nextUrl, headers }) => {
+  
+  var locale = ""
+  const { pathname } = nextUrl;
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  // if (pathname.startsWith("/login")) {
-  if (pathname.startsWith("/login") || pathname.startsWith("/dashboard")) {
-    return;
-  }
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
-  console.log(pathname);
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale) {
+    locale = getPathnameLocale(pathname)
+  } else {
+    // Redirect if there is no locale
+    locale = getHeaderLocale(headers);
+    nextUrl.pathname = `/${locale}${pathname}`;
+    return NextResponse.redirect(nextUrl);
+  }
 
-  // Redirect if there is no locale
-  const locale = getLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
-}
+  // IF NOT AUTH, AND TRY DASHBOARD, ACCESS LOGIN
+  if (!auth && nextUrl.pathname.startsWith(`/${locale}/dashboard`)) {
+    const newUrl = new URL(`/${locale}/login`, nextUrl.origin)
+    return Response.redirect(newUrl)
+  }
+
+  if (auth && nextUrl.pathname.startsWith(`/${locale}/login`)) {
+    const newUrl = new URL(`/${locale}/dashboard`, nextUrl.origin)
+    return Response.redirect(newUrl)
+  }
+})
+
 
 export const config: MiddlewareConfig = {
   matcher: [
@@ -47,6 +42,6 @@ export const config: MiddlewareConfig = {
      * - _next/image (image optimization files)
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      */
-    "/((?!api|_next/static|_next/image|images|public|favicon.ico).*)",
+    "/((?!api|_next/static|_next/image|images|public|favicon.ico|assets).*)",
   ],
 };

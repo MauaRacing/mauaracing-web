@@ -1,3 +1,50 @@
+
+# app
+# PUBLIC ROUTES
+(overview)  /[lang]/
+            /[lang]/login
+            /[lang]/assets
+
+# PRIVATE ROUTES
+(private)   /[lang]/dashboard/alerts
+            /[lang]/dashboard/apps
+            /[lang]/dashboard/charts
+            /[lang]/dashboard/commands
+            /[lang]/dashboard/devices
+            /[lang]/dashboard/evse
+            /[lang]/dashboard/settings
+            /[lang]/dashboard/
+            /[lang]/dashboard/
+            
+# API
+/api/auth/[...nextauth]
+
+# LIB
+Database access
+
+# UI
+/ui/button
+/ui/fonts
+/ui/logo-maua
+/ui/dashboard/header
+/ui/dashboard/logo_maua
+/ui/dashboard/nav-links
+/ui/dashboard/sidenav
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

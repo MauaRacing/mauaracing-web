@@ -71,7 +71,7 @@ export function Globe({
               <div className="">
                 <button onClick={() => redirectLang(params, pathname, "pt-BR")}>
                   <Image
-                    src="/images/BrazilFlag.svg"
+                    src="/assets/images/BrazilFlag.svg"
                     alt=""
                     width={160}
                     height={90}
@@ -83,7 +83,7 @@ export function Globe({
               <div className="">
                 <button onClick={() => redirectLang(params, pathname, "en-US")}>
                   <Image
-                    src="/images/USFlag.svg"
+                    src="/assets/images/USFlag.svg"
                     alt=""
                     width={160}
                     height={90}
@@ -95,7 +95,7 @@ export function Globe({
               <div className="">
                 <button onClick={() => redirectLang(params, pathname, "es-ES")}>
                   <Image
-                    src="/images/SpainFlag.svg"
+                    src="/assets/images/SpainFlag.svg"
                     alt=""
                     width={160}
                     height={90}

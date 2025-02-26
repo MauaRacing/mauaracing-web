@@ -3,7 +3,7 @@ import { Globe } from "@/ui/globe";
 import { NavBar } from "@/ui/navBar";
 import { NavMenu } from "@/ui/navMenu";
 import Image from "next/image";
-import bg from "public/images/79.jpg";
+import bg from "public/assets/images/79.jpg";
 import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
 
@@ -28,7 +28,7 @@ export default async function Home({
                 fontColor="text-black"
               />
               <Image
-                src={"/images/logoMR_whitebg.png"}
+                src={"/assets/images/logoMR_whitebg.png"}
                 width={210}
                 height={210}
                 alt="Logo Mauá Racing"

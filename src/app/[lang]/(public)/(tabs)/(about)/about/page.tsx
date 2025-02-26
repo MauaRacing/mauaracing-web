@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import image1 from "public/images/aboutImage.png";
-import image2 from "public/images/aboutImage2.png";
+import image1 from "public/assets/images/aboutImage.png";
+import image2 from "public/assets/images/aboutImage2.png";
 import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
 // import { ResolvingMetadata, Metadata } from "next";

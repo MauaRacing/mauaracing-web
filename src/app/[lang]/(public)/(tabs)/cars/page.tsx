@@ -1,8 +1,8 @@
 import { CarCard } from "@/ui/carCard";
-import mr24Image from "public/images/cars/MR24.png";
-import mr22Image from "public/images/cars/MR22.png";
-import mr19Image from "public/images/cars/MR19.png";
-import mr18Image from "public/images/cars/MR18.png";
+import mr24Image from "public/assets/images/cars/MR24.png";
+import mr22Image from "public/assets/images/cars/MR22.png";
+import mr19Image from "public/assets/images/cars/MR19.png";
+import mr18Image from "public/assets/images/cars/MR18.png";
 
 export default function Page() {
   return (
