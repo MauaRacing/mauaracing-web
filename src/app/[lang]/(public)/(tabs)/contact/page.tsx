@@ -18,22 +18,22 @@ export default function Page() {
         <form ref={formRef} className="flex flex-col space-y-3 ml-8" action={contactAction}>
           <label className="block space-y-1">
             <span className="block">Nome</span>
-            <input type="text" name="firstName" className="border-b-black border-b-2 outline-none w-11/12 indent-1"/>
+            <input type="text" name="firstName" className="border-b-black border-b-2 outline-hidden w-11/12 indent-1"/>
           </label>
           <label className="block space-y-1">
             <span className="block">Sobrenome</span>
-            <input type="text" name="lastName" className="border-b-black border-b-2 outline-none w-11/12 indent-1"/>
+            <input type="text" name="lastName" className="border-b-black border-b-2 outline-hidden w-11/12 indent-1"/>
           </label>
           <label className="block space-y-1">
             <span className="block">Email</span>
-            <input type="email" name="email" className="peer border-b-black border-b-2 outline-none w-11/12 indent-1"/>
+            <input type="email" name="email" className="peer border-b-black border-b-2 outline-hidden w-11/12 indent-1"/>
             <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
               Insira um email válido.
             </p>
           </label>
           <label className="block space-y-1">
             <span className="block">Mensagem</span>
-            <textarea name="message" className="border-b-black border-b-2 outline-none w-11/12 resize-none indent-1" rows={5}/>
+            <textarea name="message" className="border-b-black border-b-2 outline-hidden w-11/12 resize-none indent-1" rows={5}/>
           </label>
           <button type="submit" onSubmit={(e) => handleSubmit(e)} className="w-[90%] ml-3 block rounded-md bg-gray-950 text-white">Enviar</button>
         </form>
