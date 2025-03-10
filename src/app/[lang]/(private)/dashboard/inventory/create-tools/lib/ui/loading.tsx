@@ -1,4 +1,4 @@
-import { SelectorProps } from "../util/selectorProps";
+import { SelectorProps } from "../../../lib/util/selectorProps";
 
 export function Loading(props: SelectorProps) {
   return (
