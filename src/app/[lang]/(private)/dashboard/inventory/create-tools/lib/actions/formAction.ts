@@ -10,7 +10,7 @@ import {
   team,
   tool_bench,
   tool_type,
-} from "../util/selectorProps";
+} from "../../../lib/util/selectorProps";
 
 export async function formAction(formData: FormData) {
   const rawFormData = {

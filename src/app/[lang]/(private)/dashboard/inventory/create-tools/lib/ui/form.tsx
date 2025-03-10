@@ -12,11 +12,11 @@ import {
   bench_drawer,
   bench_locker,
   tool_type,
-} from "../util/selectorProps";
+} from "../../../lib/util/selectorProps";
 import { formAction } from "../actions/formAction";
 import Link from "next/link";
 
-export function Form() {
+export function Form({ lang }: { lang: string }) {
   const [selectors, setSelectors] = useState([team]);
   const [disabled, setDisabled] = useState(true);
   const itemsRef = useRef<Array<string>>(["", "", "", "", "", "", ""]);
@@ -215,7 +215,7 @@ export function Form() {
           <div className="flex flex-col md:flex-row justify-between gap-4">
             <Link
               className="bg-secondary text-onSecondary border rounded-xl text-center w-56 p-2"
-              href={"/inventory"}
+              href={`/${lang}/dashboard/inventory`}
             >
               Voltar
             </Link>
