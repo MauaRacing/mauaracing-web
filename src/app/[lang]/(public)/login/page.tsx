@@ -7,16 +7,15 @@ import {
   ExclamationCircleIcon,
   KeyIcon,
 } from "@heroicons/react/24/outline";
-import { Button } from "@/ui/button";
+import { Button } from "@/app/ui/button1";
 import FsaeLiveLogo from "@/ui/fsaelive-logo";
+import { SignIn } from "@/app/ui/auth/signin-button";
 // import { useActionState } from "react";
-
-type SearchParams = Promise<{ callbackUrl: string | undefined }>;
 
 export default async function SignInPage({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Promise<{ callbackUrl: string | undefined }>;
 }) {
 
   const SIGNIN_ERROR_URL = "/";
@@ -31,48 +30,7 @@ export default async function SignInPage({
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-4">
-            {/* <h1 className={`${lusitana.className} mb-3 text-2xl`}>
-              Please log in to continue.
-            </h1> */}
-            {Object.values(providerMap).map((provider) => (
-              <form
-                key={provider.id}
-                className="space-y-3"
-                
-                action={async () => {
-                  "use server";
-                  try {
-                    await signIn(provider.id, {
-                      // redirectTo: sP?.callbackUrl ?? "",
-                      redirectTo: '/dashboard',
-                    });
-                  } catch (error) {
-                    // Signin can fail for a number of reasons, such as the user
-                    // not existing, or the user not having the correct role.
-                    // In some cases, you may want to redirect to a custom error
-                    if (error instanceof AuthError) {
-                      return redirect(
-                        `${SIGNIN_ERROR_URL}?error=${error.type}`
-                      );
-                    }
-
-                    // Otherwise if a redirects happens Next.js can handle it
-                    // so you can just re-thrown the error and let Next.js handle it.
-                    // Docs:
-                    // https://nextjs.org/docs/app/api-reference/functions/redirect#server-component
-                    throw error;
-                  }
-                }}
-              >
-                <Button className="mt-4 w-full h-14"
-                >
-                   <p className="text-lg">Sign-in with {" "}{provider.name}</p>
-                  <ArrowRightIcon className="ml-auto h-7 w-7 text-gray-50" />
-                </Button>
-              </form>
-            ))}
-          </div>
+          <SignIn />
         </div>
       </div>
     </main>

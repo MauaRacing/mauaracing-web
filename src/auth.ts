@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import MicrosoftEntraID from "next-auth/providers/microsoft-entra-id";
 import type { Provider } from "next-auth/providers";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";``
 import { locales, getPathnameLocale, getHeaderLocale } from "@/locale";
 
 
@@ -45,7 +45,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
       );
       if (pathnameHasLocale) {
-        console.log(`auth.ts pathnameHasLocale: ${pathnameHasLocale}`);
         locale = getPathnameLocale(pathname)
       } else {
         locale = getHeaderLocale(headers);

@@ -1,15 +1,15 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Toaster } from "@/components/ui/toaster"
+import { Button } from "@/ui/button"
+import { Input } from "@/ui/input"
+import { Toaster } from "@/ui/toaster"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/ui/select"
 
 import {
   ColumnDef,
@@ -29,7 +29,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/ui/dropdown-menu"
 
 import {
   Table,
@@ -38,7 +38,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/ui/table"
 import { Search } from "lucide-react"
 
 import { useState } from "react"

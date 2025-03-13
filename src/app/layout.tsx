@@ -1,4 +1,11 @@
 import { geistMono, geistSans, kanit } from "./ui/fonts/fonts";
+import { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "MauaRacing",
+  description: "MauaRacing",
+};
 
 export async function generateStaticParams() {
   return [{ lang: "en-US" }, { lang: "pt-BR" }, { lang: "es-ES" }];

@@ -3,10 +3,10 @@
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { Tool, ToolWithPlacement } from "../../lib/util/tool"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox } from "@/ui/checkbox"
 import { MoreHorizontal, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+import { Button } from "@/ui/button"
+import { Separator } from "@/ui/separator"
 
 import {
   DropdownMenu,
@@ -15,10 +15,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/ui/dropdown-menu"
 
 import { useToast } from "@/hooks/use-toast"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/ui/dialog"
 
 export const columns: ColumnDef<ToolWithPlacement>[] = [
   // {
