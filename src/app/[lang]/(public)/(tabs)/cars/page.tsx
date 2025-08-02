@@ -69,7 +69,7 @@ export default function Page() {
                 </ul>
               </div>
               <div>
-                <p className="font-medium">Formula SAE Licoln 2019</p>
+                <p className="font-medium">Formula SAE Lincoln 2019</p>
                 <ul className="list-disc list-inside ml-4">
                   <li>8° Lugar Design</li>
                   <li>49° Lugar Mundial</li>
