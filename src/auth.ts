@@ -15,6 +15,28 @@ import { locales, getPathnameLocale, getHeaderLocale } from "@/locale";
 //   }
 // }
 
+export type Member = {
+  ra : String,
+  roles : String[]
+  is_active : boolean
+}
+
+export async function isMember(ra: string) : Promise<boolean>{
+  try{
+    const fetch_data = await fetch(`${process.env.API_URL}/member/${ra}`, {
+    method: "GET"
+    });
+    const data : Member | null | undefined = await fetch_data.json();
+    if(!data) return false;
+    console.log(data.is_active)
+    return data.is_active;
+  }
+  catch(e){
+    console.log(e);
+    return false;
+  }
+}
+
 const providers: Provider[] = [
   MicrosoftEntraID({
     clientId: process.env.AUTH_MICROSOFT_ENTRA_ID_ID,
@@ -36,7 +58,7 @@ export const providerMap = providers
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
-    authorized({ auth, request: { nextUrl, headers } }) {
+    async authorized({ auth, request: { nextUrl, headers } }) {
      
       var locale = ""
       const { pathname } = nextUrl;
@@ -71,5 +93,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
   pages: {
     signIn: `/login`,
+    signOut: `/login`
   },
 });

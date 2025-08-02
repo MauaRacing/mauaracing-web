@@ -1,9 +1,8 @@
-import { auth } from "@/auth"
+import { auth, isMember } from "@/auth";
+import { getHeaderLocale, getPathnameLocale, locales } from "@/locale";
 import { MiddlewareConfig, NextResponse } from "next/server";
-import { locales, getPathnameLocale, getHeaderLocale } from "@/locale";
 
-
-export default auth(({ auth, nextUrl, headers }) => {
+export default auth(async ({ auth, nextUrl, headers }) => {
   
   var locale = ""
   const { pathname } = nextUrl;
@@ -20,16 +19,17 @@ export default auth(({ auth, nextUrl, headers }) => {
     return NextResponse.redirect(nextUrl);
   }
 
+  
   // IF NOT AUTH, AND TRY DASHBOARD, ACCESS LOGIN
-  if (!auth && nextUrl.pathname.startsWith(`/${locale}/dashboard`)) {
-    const newUrl = new URL(`/${locale}/login`, nextUrl.origin)
-    return Response.redirect(newUrl)
+  if (nextUrl.pathname.startsWith(`/${locale}/dashboard`)) {
+    if(!auth)return Response.redirect(new URL(`/${locale}/login`, nextUrl.origin));
+    if(!auth.user?.email) return Response.redirect(new URL(`/${locale}/login`, nextUrl.origin));
+    let member = await isMember(auth.user.email.split("@")[0]);
+    if(!member){
+      return Response.redirect(new URL(`/${locale}/login`, nextUrl.origin));
+    }
   }
 
-  if (auth && nextUrl.pathname.startsWith(`/${locale}/login`)) {
-    const newUrl = new URL(`/${locale}/dashboard`, nextUrl.origin)
-    return Response.redirect(newUrl)
-  }
 })
 
 
