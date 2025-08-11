@@ -22,11 +22,11 @@ export default auth(async ({ auth, nextUrl, headers }) => {
   
   // IF NOT AUTH, AND TRY DASHBOARD, ACCESS LOGIN
   if (nextUrl.pathname.startsWith(`/${locale}/dashboard`)) {
-    if(!auth)return Response.redirect(new URL(`/${locale}/login`, nextUrl.origin));
-    if(!auth.user?.email) return Response.redirect(new URL(`/${locale}/login`, nextUrl.origin));
+    if(!auth)return NextResponse.redirect(new URL(`/${locale}/login`, nextUrl.origin));
+    if(!auth.user?.email) return NextResponse.redirect(new URL(`/${locale}/login`, nextUrl.origin));
     let member = await isMember(auth.user.email.split("@")[0]);
     if(!member){
-      return Response.redirect(new URL(`/${locale}/login`, nextUrl.origin));
+      return NextResponse.redirect(new URL(`/${locale}/login`, nextUrl.origin));
     }
   }
 
