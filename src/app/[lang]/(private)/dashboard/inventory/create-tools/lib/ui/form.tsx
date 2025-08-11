@@ -1,25 +1,42 @@
 "use client";
-import { ChangeEvent, useRef, useState } from "react";
-import { DivSelector } from "./divSelectors";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import {
-  SelectorProps,
-  team,
-  subsystem,
-  locker,
-  locker_drawer,
-  locker_shelf,
-  tool_bench,
-  bench_drawer,
-  bench_locker,
-  tool_type,
+    bench_drawer,
+    bench_locker,
+    locker,
+    locker_drawer,
+    locker_shelf,
+    SelectorProps,
+    subsystem,
+    team,
+    tool_bench,
+    tool_type,
 } from "../../../lib/util/selectorProps";
 import { formAction } from "../actions/formAction";
-import Link from "next/link";
+import { DivSelector } from "./divSelectors";
 
 export function Form({ lang }: { lang: string }) {
   const [selectors, setSelectors] = useState([team]);
   const [disabled, setDisabled] = useState(true);
   const itemsRef = useRef<Array<string>>(["", "", "", "", "", "", ""]);
+  
+  // useEffect(() =>{
+  //   if (typeof window !== "undefined") {
+  //     setSelectors([team]);
+  //     const storedData = localStorage.getItem("storedRef");
+  //     if(!storedData){
+  //       return;
+  //     }
+  //     itemsRef.current = JSON.parse(storedData);
+  //   }
+  // }, []);
+  // useEffect(() =>{
+  //   if (typeof window !== "undefined") {
+  //     localStorage.setItem("storedRef",JSON.stringify(itemsRef.current));
+  //   }
+  // }, [itemsRef.current.values()]);
 
   function handleOnChange(e: ChangeEvent<HTMLFormElement>) {
     // console.log(e);
@@ -203,24 +220,40 @@ export function Form({ lang }: { lang: string }) {
 
   return (
     <form
-      className="grid grid-rows-5 gap-5 min-h-max w-[600px] bg-primaryContainer rounded-lg mt-10"
+      className="flex flex-col gap-5 min-h-[600px] w-[600px] bg-gray-100 rounded-lg mt-10"
       action={(formData) => formAction(formData)}
       onChange={handleOnChange}
     >
-      <section className="mt-8">
+      <section>
+         <div className="flex justify-between gap-4">
+            <Link
+              className="text-center p-2"
+              href={`/${lang}/dashboard/inventory`}
+            >
+              <ArrowLeft/>
+            </Link>
+          </div>
+      </section>
+      <section className="mt-2">
         {selectors.map((e: SelectorProps, i: number) => {
-          return <DivSelector {...e} key={i} ref={itemsRef} />;
+          return <DivSelector selector={e} key={i} ref={itemsRef} />;
         })}
         <div className="flex place-content-center items-center content-center mt-10">
           <div className="flex flex-col md:flex-row justify-between gap-4">
-            <Link
-              className="bg-secondary text-onSecondary border rounded-xl text-center w-56 p-2"
-              href={`/${lang}/dashboard/inventory`}
-            >
-              Voltar
-            </Link>
             <button
-              className="disabled:bg-emerald-100 disabled:text-black bg-secondary text-onSecondary border rounded-xl text-center w-56 p-2"
+              className="bg-secondary text-onSecondary border rounded-xl text-center w-56 p-2"
+              onClick={(e) =>{
+                e.preventDefault();
+                setSelectors([team]);
+                for(let i = 0; i < itemsRef.current.length; i++){
+                  itemsRef.current[i] = "";
+                }
+              }}
+            >
+              Limpar
+            </button>
+            <button
+              className="disabled:bg-emerald-100 disabled:text-black bg-blue-500 border rounded-xl text-center w-56 p-2"
               disabled={disabled}
             >
               Enviar

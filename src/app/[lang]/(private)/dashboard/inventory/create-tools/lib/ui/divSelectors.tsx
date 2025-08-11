@@ -5,24 +5,24 @@ import { SelectorProps } from "../../../lib/util/selectorProps";
 import { Selector } from "./selector";
 
 export const DivSelector = forwardRef(function DivSelector(
-  props: SelectorProps,
-  ref: any,
+  {selector} : {selector : SelectorProps},
+  ref : any
 ) {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetchData(props).then((response) => setData(response));
-  }, [props]);
+    fetchData(selector).then((response) => setData(response));
+  }, [selector]);
   return (
     <div
       className="flex flex-col place-content-center items-center content-center mb-9"
-      id={`${props.name}Div`}
+      id={`${selector.name}Div`}
     >
       <label
-        htmlFor={`${props.name}Selector`}
+        htmlFor={`${selector.name}Selector`}
         className="text-onPrimaryContainer w-10/12 mx-2"
       >
-        {props.label}
-        <Selector props={props} data={data} ref={ref} />
+        {selector.label}
+        <Selector props={selector} data={data} ref={ref} />
       </label>
     </div>
   );
