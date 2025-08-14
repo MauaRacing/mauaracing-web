@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/globals.css";
 
 export const metadata: Metadata = {
-  title: "Maua Racing",
+  title: "Dashboard",
 };
 
 export default async function RootLayout({
