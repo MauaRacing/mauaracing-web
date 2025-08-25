@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: mauaracing/mauaracing-web:0.20
+          tags: mauaracing/mauaracing-web:0.21
