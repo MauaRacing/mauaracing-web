@@ -1,8 +1,13 @@
 import { CarCard } from "@/ui/carCard";
+import mr25Image from "public/assets/images/cars/MR25.jpg";
 import mr24Image from "public/assets/images/cars/MR24.png";
+import mr23Image from "public/assets/images/cars/MR23.jpg";
 import mr22Image from "public/assets/images/cars/MR22.png";
 import mr19Image from "public/assets/images/cars/MR19.png";
 import mr18Image from "public/assets/images/cars/MR18.png";
+import mr17Image from "public/assets/images/cars/MR17.jpg";
+import carsBG from "public/assets/images/cars/carsBG.png";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -11,6 +16,25 @@ export default function Page() {
         Carros
       </h1>
       <div className="mt-8 mb-4 w-[100%] lg:w-[90%] space-y-4">
+        <CarCard.Root>
+          <CarCard.Image alt="" src={mr25Image}/>
+          <CarCard.Text>
+            <CarCard.Title>MR25</CarCard.Title>
+            <CarCard.Description>
+              <div>
+                <p className="font-medium">Formula SAE Brasil 2025</p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>2° Lugar Geral</li>
+                  <li>2° Lugar Aceleração</li>
+                  <li>2° Lugar AutoX</li>
+                  <li>2° Lugar Enduro</li>
+                  <li>3° Lugar Eficiência</li>
+                  <li>3° Lugar Skidpad</li>
+                </ul>
+              </div>
+            </CarCard.Description>
+          </CarCard.Text>
+        </CarCard.Root>
         <CarCard.Root>
           <CarCard.Image alt="" src={mr24Image} />
           <CarCard.Text>
@@ -31,6 +55,25 @@ export default function Page() {
                   <li>2º Skidpad</li>
                   <li>2º Aceleração</li>
                   <li>2º AutoX</li>
+                </ul>
+              </div>
+            </CarCard.Description>
+          </CarCard.Text>
+        </CarCard.Root>
+        <CarCard.Root>
+          <CarCard.Image alt ="" src={mr23Image}/>
+          <CarCard.Text>
+            <CarCard.Title>MR23</CarCard.Title>
+            <CarCard.Description>
+              <div>
+                <p className="font-medium">Formula SAE Brasil 2023</p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>2º Lugar Geral</li>
+                  <li>1º Lugar Enduro</li>
+                  <li>1º Lugar Aceleração</li>
+                  <li>1º Lugar AutoX</li>
+                  <li>2º Lugar Skid Pad</li>
+                  <li>Vaga para a competição mundial na cidade de Lincoln, EUA</li>
                 </ul>
               </div>
             </CarCard.Description>
@@ -96,7 +139,28 @@ export default function Page() {
             </CarCard.Description>
           </CarCard.Text>
         </CarCard.Root>
+        <CarCard.Root>
+          <CarCard.Image alt="" src={mr17Image}/>
+          <CarCard.Text>
+            <CarCard.Title>MR17</CarCard.Title>
+            <CarCard.Description>
+              <div>
+                <p className="font-medium">Formula SAE Brasil 2017</p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>4° Lugar na Presentation</li>
+                  <li>5° Lugar no Skidpad</li>
+                  <li>7° Lugar no AutoX</li>
+                  <li>Ótimo desempenho na pista</li>
+                  <li>9° Lugar Overall</li>
+                </ul>
+              </div>
+            </CarCard.Description>
+          </CarCard.Text>
+        </CarCard.Root>
       </div>
     </main>
   );
 }
+
+
+
