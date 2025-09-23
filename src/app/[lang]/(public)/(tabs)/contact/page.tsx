@@ -12,7 +12,7 @@ export default function Page() {
     formRef.current?.requestSubmit();
   }
   return (
-    <main className="min-h-dvh grid grid-cols-3">
+    <main className="bg-white min-h-dvh grid grid-cols-3">
       <div className="col-span-3 md:col-span-2 flex-col justify-center my-5 border-r space-y-10">
         <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid ">Contato</h1>
         <form ref={formRef} className="flex flex-col space-y-3 ml-8" action={contactAction}>

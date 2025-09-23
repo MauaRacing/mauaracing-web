@@ -3,7 +3,7 @@ import { ImageSponsor } from "@/app/ui/imageSponsor";
 
 export default function Page() {
   return (
-    <main className="min-h-dvh flex flex-col items-center gap-3">
+    <main className="bg-white min-h-dvh flex flex-col items-center gap-3">
       <h1 className={`${longHaul.className} text-6xl mt-5 text-center decoration-solid`}>Patrocinadores</h1>
       <div className="m-20">
         <div className="m-4 flex flex-row justify-center items-center gap-5">

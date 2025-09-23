@@ -6,13 +6,18 @@ import mr22Image from "public/assets/images/cars/MR22.png";
 import mr19Image from "public/assets/images/cars/MR19.png";
 import mr18Image from "public/assets/images/cars/MR18.png";
 import mr17Image from "public/assets/images/cars/MR17.jpg";
-import carsBG from "public/assets/images/cars/carsBG.png";
+import bg from "public/assets/images/cars/carsBG.png";
+import { longHaul } from "@/app/ui/fonts/fonts";
 import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="min-h-dvh flex flex-col items-center gap-3">
-      <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid">
+    <main className={`min-h-dvh mb-2 relative`}>
+      <div className="absolute h-[100%]">
+        <Image src={bg} alt="" className={`sticky top-0 w-dvw z-[0]`}/>
+      </div>
+      <div className="z-[20] flex flex-col items-center relative ">
+      <h1 className={`text-6xl mt-5 text-center ${longHaul.className}`}>
         Carros
       </h1>
       <div className="mt-8 mb-4 w-[100%] lg:w-[90%] space-y-4">
@@ -158,9 +163,12 @@ export default function Page() {
           </CarCard.Text>
         </CarCard.Root>
       </div>
+      </div>
     </main>
   );
 }
+
+
 
 
 

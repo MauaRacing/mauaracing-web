@@ -6,7 +6,7 @@ import { ReactNode } from "react"
 
 export function CarCardRoot({ children }: { children: ReactNode }) {
   return (
-    <div className="border border-gray-950 rounded-xl w-[100%] h-[20%] p-3 flex flex-col md:flex-row gap-y-3 gap-x-5">
+    <div className="bg-white border border-gray-950 rounded-xl w-[100%] h-[20%] p-3 flex flex-col md:flex-row gap-y-3 gap-x-5">
       {children}
     </div>
   )
@@ -22,7 +22,7 @@ export function CarCardImage({ alt, src }: ImageProps) {
 
 export function CarCardText({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center grow">
       {children}
     </div>
   )
@@ -36,7 +36,9 @@ export function CarCardTitle({ children }: { children: ReactNode & string}) {
 
 export function CarCardDescription({children} : {children: ReactNode}){
   return(
-    <div>{children}</div>
+    <div className="text-left">
+      {children}
+    </div>
   )
 }
 

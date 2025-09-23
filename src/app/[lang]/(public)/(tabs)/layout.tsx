@@ -24,7 +24,7 @@ export default async function RootLayout({
   const dict = await getDictionary(lang);
   return (
     <div className="bg-gray-950">
-      <header className="bg-transparent flex flex-col sticky top-0">
+      <header className="bg-transparent flex flex-col sticky top-0 z-50">
         <div className="bg-gray-950 bg-opacity-50">
           <div className="h-24 flex flex-row lg:justify-between gap-4 my-2 justify-center items-center">
             <div className="flex flex-row justify-center items-center">
@@ -58,7 +58,7 @@ export default async function RootLayout({
         </div>
       </header>
       <div className="h-2 bg-red-500 border-t" />
-      <div className="bg-white">{children}</div>
+      <div>{children}</div>
       <Footer />
     </div>
   );

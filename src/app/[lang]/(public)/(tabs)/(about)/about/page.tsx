@@ -39,7 +39,7 @@ export default async function Page({
   const lang = (await params).lang;
   const dict: LangDictionary = await getDictionary(lang);
   return (
-    <main className="min-h-dvh flex flex-col items-center gap-3">
+    <main className="bg-white min-h-dvh flex flex-col items-center gap-3">
       <div className="w-[100%] mt-8">
         <section className="p-4 grid grid-cols-3 mb-5 gap-y-4">
           <div className="col-span-3 xl:col-span-2">

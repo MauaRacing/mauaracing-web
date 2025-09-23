@@ -3,7 +3,7 @@
 
 export default function Page() {
   return (
-    <main className="min-h-dvh flex flex-col items-center gap-3">
+    <main className="bg-white min-h-dvh flex flex-col items-center gap-3">
       <div className="mt-8">
         <article className="flex flex-col items-center">
           <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid"></h1>
