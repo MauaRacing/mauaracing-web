@@ -3,9 +3,12 @@ import { ImageSponsor } from "@/app/ui/imageSponsor";
 
 export default function Page() {
   return (
-    <main className="bg-white min-h-dvh flex flex-col items-center gap-3">
-      <h1 className={`${longHaul.className} text-6xl mt-5 text-center decoration-solid`}>Patrocinadores</h1>
-      <div className="m-20">
+    <main className="bg-white min-h-dvh flex flex-col items-center">
+      <h1 className={`${longHaul.className} text-6xl mt-5 text-center decoration-solid bg-red-800 w-[100%] py-4 -mt-2`}>Patrocinadores</h1>
+        <div className="flex w-[90%] gap-6 mt-4 mb-4">
+          <h2 className={`text-6xl text-red-700 ${longHaul.className}`}>Gold</h2>
+          <div className="grow border border-red-500 h-[50%] self-center"></div>
+        </div>
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="https://www.skf.com/"
@@ -28,22 +31,24 @@ export default function Page() {
             height={300}
           />
         </div>
-        <div className="m-4 flex flex-row justify-center items-center gap-5">
-          <ImageSponsor
-            href="https://curvasemtubos.com.br/"
-            src="/assets/images/sponsors/Tabano.svg"
-            className=""
-            alt=""
-            width={300}
-            height={300}/>
-          <ImageSponsor
-            href="https://www.metalurgicarocha.com.br/"
-            src="/assets/images/sponsors/Rocha.svg"
-            className=""
-            alt=""
-            width={300}
-            height={300}
-          />
+        <div className="flex w-[90%] gap-6 mt-8 mt-4">
+          <div className="grow border border-red-500 h-[50%] self-center"></div>
+          <h2 className={`text-6xl text-red-700 ${longHaul.className}`}>Silver</h2>
+        </div>
+      <div className="m-4 flex flex-row justify-center items-center gap-5">
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/Cortotal.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/Southco.svg"
+          alt=""
+          width={300}
+          height={300}
+        />
           <ImageSponsor
             href="/"
             src="/assets/images/sponsors/Neyfa.svg"
@@ -118,20 +123,14 @@ export default function Page() {
             height={300}
           />
         </div>
-        <div className="m-4 flex flex-row justify-center items-center gap-5">
+        <div className="m-4 flex flex-row justify-center items-center gap-12">
           <ImageSponsor
-            href="/"
-            src="/assets/images/sponsors/Cortotal.svg"
+            href="https://curvasemtubos.com.br/"
+            src="/assets/images/sponsors/Tabano.svg"
+            className=""
             alt=""
             width={300}
             height={300}/>
-          <ImageSponsor
-            href="/"
-            src="/assets/images/sponsors/Southco.svg"
-            alt=""
-            width={300}
-            height={300}
-          />
           <ImageSponsor
             href="/"
             src="/assets/images/sponsors/Camillo.svg"
@@ -139,7 +138,19 @@ export default function Page() {
             width={300}
             height={300}
           />
+          <ImageSponsor
+            href="https://www.metalurgicarocha.com.br/"
+            src="/assets/images/sponsors/Rocha.svg"
+            className=""
+            alt=""
+            width={250}
+            height={300}
+          />
         </div>
+      <div className="flex w-[90%] gap-6 mt-8 mb-4">
+        <h2 className={`text-6xl text-red-700 ${longHaul.className}`}>Bronze</h2>
+        <div className="grow border border-red-500 h-[50%] self-center"></div>
+      </div>
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
@@ -228,7 +239,7 @@ export default function Page() {
             height={300}
           />
         </div>
-        <div className="m-4 flex flex-row justify-center items-center gap-5">
+        <div className="m-4 flex flex-row justify-center items-center gap-5 mb-8">
           <ImageSponsor
             href="/"
             src="/assets/images/sponsors/MarcosSilva.svg"
@@ -236,7 +247,6 @@ export default function Page() {
             width={300}
             height={300}/>
         </div>
-      </div>     
     </main>
   );
   

@@ -4,6 +4,7 @@ import image1 from "public/assets/images/aboutImage.png";
 import image2 from "public/assets/images/aboutImage2.png";
 import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
+import { longHaul } from "@/app/ui/fonts/fonts";
 // import { ResolvingMetadata, Metadata } from "next";
 
 // export async function generateMetadata(
@@ -44,7 +45,7 @@ export default async function Page({
         <section className="p-4 grid grid-cols-3 mb-5 gap-y-4">
           <div className="col-span-3 xl:col-span-2">
             <div className="flex flex-col justify-center items-center">
-              <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid ">
+              <h1 className={`text-6xl my-2 text-center ${longHaul.className}`}>
                 {dict.aboutGroup.about.title}
               </h1>
               <p className="mt-5 text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed w-[90%]">

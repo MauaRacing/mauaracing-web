@@ -34,13 +34,13 @@ export function Globe({
   const params = useParams<{ lang: string }>();
   const pathname = usePathname();
   return (
-    <div className="ml-2 flex flex-col md:flex-row gap-2">
+    <div className={`flex flex-col md:flex-col  ${className}`}>
       <div className="">
         <button onClick={() => redirectLang(params, pathname, "pt-BR")}>
           <Image
             src={brazilFlag}
             alt=""
-            className="inline w-[40px]"
+            className="inline w-[20px]"
           />
         </button>
       </div>
@@ -49,7 +49,7 @@ export function Globe({
           <Image
             src={usFlag}
             alt=""
-            className="inline w-[47px]"
+            className="inline w-[20px]"
           />
         </button>
       </div>
@@ -58,7 +58,7 @@ export function Globe({
           <Image
             src={spainFlag}
             alt=""
-            className="inline w-[40px]"
+            className="inline w-[20px]"
           />
         </button>
       </div>

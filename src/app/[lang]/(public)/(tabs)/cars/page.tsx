@@ -6,9 +6,13 @@ import mr22Image from "public/assets/images/cars/MR22.png";
 import mr19Image from "public/assets/images/cars/MR19.png";
 import mr18Image from "public/assets/images/cars/MR18.png";
 import mr17Image from "public/assets/images/cars/MR17.jpg";
-import bg from "public/assets/images/cars/carsBG.png";
+import bg from "public/assets/images/cars/bg.svg";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import Image from "next/image";
+import { Figtree } from "next/font/google";
+
+const figtree = Figtree({subsets : ["latin"], weight: "300"});
+
 
 export default function Page() {
   return (
@@ -24,9 +28,8 @@ export default function Page() {
         <CarCard.Root>
           <CarCard.Image alt="" src={mr25Image}/>
           <CarCard.Text>
-            <CarCard.Title>MR25</CarCard.Title>
-            <CarCard.Description>
-              <div>
+            <CarCard.Description alignment={"left"}>
+              <div className={`${figtree.className}`}>
                 <p className="font-medium">Formula SAE Brasil 2025</p>
                 <ul className="list-disc list-inside ml-4">
                   <li>2° Lugar Geral</li>
@@ -38,25 +41,39 @@ export default function Page() {
                 </ul>
               </div>
             </CarCard.Description>
+            <CarCard.Title>
+              <div className="ml-14">
+                <p>MR</p>
+                <p className="text-red-600 -mt-6">25</p>
+              </div>
+            </CarCard.Title>
           </CarCard.Text>
         </CarCard.Root>
         <CarCard.Root>
-          <CarCard.Image alt="" src={mr24Image} />
           <CarCard.Text>
-            <CarCard.Title>MR24</CarCard.Title>
-            <CarCard.Description>
-              <div>
+            <CarCard.Title rotation={90}>
+              <div className="">
+                <div className="inline">
+                   MR
+                </div>
+                <div className="text-red-600 inline">
+                   24
+                </div>
+              </div>
+            </CarCard.Title>
+            <CarCard.Description alignment={"right"}>
+              <div className={`${figtree.className} text-balance`}>
                 <p className="font-medium">Formula SAE Michigan 2024</p>
-                <ul className="list-disc list-inside ml-4">
+                <ul className="list-disc text-justify">
                   <li>1º Lugar em Design</li>
                   <li>7º Lugar Mundial</li>
                   <li>Excelente desempenho nas provas estáticas</li>
                   <li>Record Nacional FSAE IC</li>
                 </ul>
               </div>
-              <div>
+              <div className={`${figtree.className}`}>
                 <p className="font-medium">Formula SAE Brasil 2024</p>
-                <ul className="list-disc list-inside ml-4">
+                <ul className="list-disc ">
                   <li>2º Skidpad</li>
                   <li>2º Aceleração</li>
                   <li>2º AutoX</li>
@@ -64,12 +81,13 @@ export default function Page() {
               </div>
             </CarCard.Description>
           </CarCard.Text>
+          <CarCard.Image alt="" src={mr24Image} />
         </CarCard.Root>
         <CarCard.Root>
           <CarCard.Image alt ="" src={mr23Image}/>
           <CarCard.Text>
             <CarCard.Title>MR23</CarCard.Title>
-            <CarCard.Description>
+            <CarCard.Description alignment={"left"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2023</p>
                 <ul className="list-disc list-inside ml-4">

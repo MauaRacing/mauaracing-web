@@ -44,7 +44,7 @@ export default async function RootLayout({
                   className="ml-3"
                 />
               </Link>
-              <Globe color="white" className="ml-2 lg:ml-10" />
+              <Globe color="white" className="ml-[10px]" />
             </div>
             <div className="place-content-center">
               <NavBar

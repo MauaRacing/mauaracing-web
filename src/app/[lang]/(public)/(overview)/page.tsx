@@ -35,7 +35,7 @@ export default async function Home({
                 className="ml-3"
                 priority={true}
               />
-              <Globe color="black" />
+              <Globe className="absolute left-[20px]" color="black" />
             </div>
             <NavBar
               dict={dict}
