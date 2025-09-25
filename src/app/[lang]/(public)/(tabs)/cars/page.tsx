@@ -106,7 +106,7 @@ export default function Page() {
           <CarCard.Image alt="" src={mr22Image} />
           <CarCard.Text>
             <CarCard.Title>MR22</CarCard.Title>
-            <CarCard.Description>
+            <CarCard.Description alignment={"right"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2022</p>
                 <ul className="list-disc list-inside ml-4">
@@ -122,7 +122,7 @@ export default function Page() {
           <CarCard.Image alt="" src={mr19Image} />
           <CarCard.Text>
             <CarCard.Title>MR19</CarCard.Title>
-            <CarCard.Description>
+            <CarCard.Description alignment={"left"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2019</p>
                 <ul className="list-disc list-inside ml-4">
@@ -148,7 +148,7 @@ export default function Page() {
           <CarCard.Image alt="" src={mr18Image} />
           <CarCard.Text>
             <CarCard.Title>MR18</CarCard.Title>
-            <CarCard.Description>
+            <CarCard.Description alignment={"right"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2018</p>
                 <ul className="list-disc list-inside ml-4">
@@ -166,7 +166,7 @@ export default function Page() {
           <CarCard.Image alt="" src={mr17Image}/>
           <CarCard.Text>
             <CarCard.Title>MR17</CarCard.Title>
-            <CarCard.Description>
+            <CarCard.Description alignment={"left"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2017</p>
                 <ul className="list-disc list-inside ml-4">
