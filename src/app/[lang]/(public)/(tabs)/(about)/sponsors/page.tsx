@@ -4,7 +4,7 @@ import { ImageSponsor } from "@/app/ui/imageSponsor";
 export default function Page() {
   return (
     <main className="bg-white min-h-dvh flex flex-col items-center">
-      <h1 className={`${longHaul.className} text-6xl mt-5 text-center decoration-solid bg-red-800 w-[100%] py-4 -mt-2`}>Patrocinadores</h1>
+      <h1 className={`${longHaul.className} text-6xl text-center decoration-solid bg-red-800 w-dvw py-4 -mt-2`}>Patrocinadores</h1>
         <div className="flex w-[90%] gap-6 mt-4 mb-4">
           <h2 className={`text-6xl text-red-700 ${longHaul.className}`}>Gold</h2>
           <div className="grow border border-red-500 h-[50%] self-center"></div>

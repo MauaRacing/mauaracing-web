@@ -138,10 +138,10 @@ export function NavBar({
               <Link href={`/${lang}/`} className="border-b md:hidden">
                 {dict.navbar.fifthGroup.title}
               </Link>
-              <Link href={`/${lang}/`} className="border-b">
+              <Link href={`/${lang}/become-sponsor`} className="border-b">
                 {dict.navbar.fifthGroup.firstOption}
               </Link>
-              <Link href={`/${lang}/`} className="">
+              <Link href={`/${lang}/become-member`} className="">
                 {dict.navbar.fifthGroup.secondOption}
               </Link>
             </div>
