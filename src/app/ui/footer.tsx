@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function Footer({ className }: { className?: string }) {
   return (
-    <footer className={`h-36 bg-gray-950 ${className}`}>
-      <section className="ml-2 mt-4 flex flex-row gap-2 justify-center">
+    <footer className={`h-fit py-2 bg-gray-950 ${className}`}>
+      <section className=" mt-4 flex flex-row gap-2 justify-center">
         <Link href="https://www.instagram.com/mauaracing/">
           {/* Instagram Logo */}
           <svg

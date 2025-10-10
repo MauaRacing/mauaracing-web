@@ -16,7 +16,7 @@ const figtree = Figtree({subsets : ["latin"], weight: "300"});
 
 export default function Page() {
   return (
-    <main className={`min-h-dvh mb-2 relative`}>
+    <main className={`min-h-dvh mb-2 relative ${figtree.className}`}>
       <div className="absolute h-[100%]">
         <Image src={bg} alt="" className={`sticky top-0 w-dvw z-[0]`}/>
       </div>
@@ -25,11 +25,11 @@ export default function Page() {
         Carros
       </h1>
       <div className="mt-8 mb-4 w-[100%] lg:w-[90%] space-y-4">
-        <CarCard.Root>
+        <CarCard.Root year="25" alignment="left">
           <CarCard.Image alt="" src={mr25Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
-              <div className={`${figtree.className}`}>
+              <div className={``}>
                 <p className="font-medium">Formula SAE Brasil 2025</p>
                 <ul className="list-disc list-inside ml-4">
                   <li>2° Lugar Geral</li>
@@ -41,28 +41,12 @@ export default function Page() {
                 </ul>
               </div>
             </CarCard.Description>
-            <CarCard.Title>
-              <div className="ml-14">
-                <p>MR</p>
-                <p className="text-red-600 -mt-6">25</p>
-              </div>
-            </CarCard.Title>
           </CarCard.Text>
         </CarCard.Root>
-        <CarCard.Root>
+        <CarCard.Root year="24" alignment="right">
           <CarCard.Text>
-            <CarCard.Title rotation={90}>
-              <div className="">
-                <div className="inline">
-                   MR
-                </div>
-                <div className="text-red-600 inline">
-                   24
-                </div>
-              </div>
-            </CarCard.Title>
             <CarCard.Description alignment={"right"}>
-              <div className={`${figtree.className} text-balance`}>
+              <div className={``}>
                 <p className="font-medium">Formula SAE Michigan 2024</p>
                 <ul className="list-disc text-justify">
                   <li>1º Lugar em Design</li>
@@ -71,7 +55,7 @@ export default function Page() {
                   <li>Record Nacional FSAE IC</li>
                 </ul>
               </div>
-              <div className={`${figtree.className}`}>
+              <div className={``}>
                 <p className="font-medium">Formula SAE Brasil 2024</p>
                 <ul className="list-disc ">
                   <li>2º Skidpad</li>
@@ -83,10 +67,9 @@ export default function Page() {
           </CarCard.Text>
           <CarCard.Image alt="" src={mr24Image} />
         </CarCard.Root>
-        <CarCard.Root>
+        <CarCard.Root year="23" alignment="left">
           <CarCard.Image alt ="" src={mr23Image}/>
           <CarCard.Text>
-            <CarCard.Title>MR23</CarCard.Title>
             <CarCard.Description alignment={"left"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2023</p>
@@ -102,10 +85,8 @@ export default function Page() {
             </CarCard.Description>
           </CarCard.Text>
         </CarCard.Root>
-        <CarCard.Root>
-          <CarCard.Image alt="" src={mr22Image} />
+        <CarCard.Root year="22" alignment="right">
           <CarCard.Text>
-            <CarCard.Title>MR22</CarCard.Title>
             <CarCard.Description alignment={"right"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2022</p>
@@ -117,11 +98,11 @@ export default function Page() {
               </div>
             </CarCard.Description>
           </CarCard.Text>
+          <CarCard.Image alt="" src={mr22Image} className=""/>
         </CarCard.Root>
-        <CarCard.Root>
+        <CarCard.Root year="19" alignment="left">
           <CarCard.Image alt="" src={mr19Image} />
           <CarCard.Text>
-            <CarCard.Title>MR19</CarCard.Title>
             <CarCard.Description alignment={"left"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2019</p>
@@ -134,6 +115,7 @@ export default function Page() {
                   <li>2° Lugar Geral</li>
                 </ul>
               </div>
+              <br/>
               <div>
                 <p className="font-medium">Formula SAE Lincoln 2019</p>
                 <ul className="list-disc list-inside ml-4">
@@ -144,10 +126,8 @@ export default function Page() {
             </CarCard.Description>
           </CarCard.Text>
         </CarCard.Root>
-        <CarCard.Root>
-          <CarCard.Image alt="" src={mr18Image} />
+        <CarCard.Root year="18" alignment="right">
           <CarCard.Text>
-            <CarCard.Title>MR18</CarCard.Title>
             <CarCard.Description alignment={"right"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2018</p>
@@ -161,11 +141,11 @@ export default function Page() {
               </div>
             </CarCard.Description>
           </CarCard.Text>
+          <CarCard.Image alt="" src={mr18Image} />
         </CarCard.Root>
-        <CarCard.Root>
+        <CarCard.Root year="17" alignment="left">
           <CarCard.Image alt="" src={mr17Image}/>
           <CarCard.Text>
-            <CarCard.Title>MR17</CarCard.Title>
             <CarCard.Description alignment={"left"}>
               <div>
                 <p className="font-medium">Formula SAE Brasil 2017</p>

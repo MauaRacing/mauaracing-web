@@ -1,24 +1,48 @@
-// import { MemberCard } from "@/ui/memberCard";
-// import { MemberSubsystem } from "@/ui/memberSubsystem";
+import { MemberCard } from "@/ui/memberCard";
+import { MemberSubsystem } from "@/ui/memberSubsystem";
+import { longHaul } from "@/app/ui/fonts/fonts";
+import Link from "next/link";
+import Image from "next/image";
+import { Figtree } from "next/font/google";
+
+const figtree = Figtree({subsets : ["latin"], weight: "400"});
 
 export default function Page() {
   return (
-    <main className="bg-white min-h-dvh flex flex-col items-center gap-3">
-      <div className="mt-8">
-        <article className="flex flex-col items-center">
-          <h1 className="text-6xl my-2 text-center underline underline-offset-8 decoration-solid"></h1>
-          <p className="text-justify text-pretty mx-10 text-2xl leading-relaxed mt-5"></p>
-          <p className="text-justify text-pretty mx-10 text-2xl leading-relaxed mt-5"></p>
-        </article>
-      </div>
+    <main className={`min-h-dvh flex flex-col items-center bg-[#e1e4e6] ${figtree.className}`}>
+      <h1 className={`text-6xl text-center ${longHaul.className} w-dvw p-2 mt-2`}>Nossa Equipe</h1>
       <div className="my-8">
-        {/* <MemberSubsystem subsystemName="" >
-          <MemberCard name="" assets/imagesrc="" linkedinLink=""/>
+        <MemberSubsystem subsystemName="" >
+          <MemberCard name="nome e sobrenome" imagesrc="/assets/images/contact/image1.jpg" linkedinLink=""/>
+          <MemberCard name="nome e sobrenome" imagesrc="/assets/images/contact/image1.jpg" linkedinLink="" />
+          <MemberCard name="nome e sobrenome" imagesrc="/assets/images/contact/image1.jpg" linkedinLink="" />
         </MemberSubsystem>
-
-        <MemberSubsystem subsystemName="ADM DevOps" unique>
-          <MemberCard name="" assets/imagesrc="" linkedinLink="" />
-        </MemberSubsystem> */}
+        <div className="flex flex-row gap-10 items-center justify-center">
+          <section>
+            <div className="relative p-2 h-96 w-72 border-2 rounded-xl shadow-lg flex flex-row text-white text-lg bg-transparent">
+              <Image className="z-10 absolute h-[90%] w-[90%] top-5 left-3 mx-auto rounded-xl" src={`/assets/images/contact/image1.jpg`} width={200} height={200} alt="" />
+              <div className="z-20 w-full flex flex-col justify-end mb-4 ml-4">
+                <Link href={``} className="text-2xl">Linkedin</Link>
+                <p>subsistema</p>
+                <p>curso</p>
+              </div>
+            </div>
+            <div className="relative flex justify-center">
+              <p className="bg-black -mt-4 text-white text-center w-fit px-2">NOME COMPLETO</p>
+            </div>
+          </section>
+          <section>
+            <div className="relative p-2 m-4 h-96 w-72 border-2  rounded-xl shadow-lg flex flex-row text-white text-lg bg-transparent">
+              <Image className="z-10 absolute h-[100%] w-[100%] top-0 left-0 rounded-xl" src={`/assets/images/contact/image1.jpg`} width={200} height={200} alt="" />
+              <div className="z-20 w-full flex flex-col justify-end ">
+                <Link href={``} className="text-2xl">Linkedin</Link>
+                <p>curso</p>
+                <p>subsistema</p>
+                <p>nome completo</p>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
   );

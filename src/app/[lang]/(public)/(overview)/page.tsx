@@ -6,6 +6,10 @@ import Image from "next/image";
 import bg from "public/assets/images/79.jpg";
 import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
+import { Figtree } from "next/font/google";
+
+
+const figtree = Figtree({subsets : ["latin"], weight: "600"});
 
 export default async function Home({
   params,
@@ -23,7 +27,7 @@ export default async function Home({
             <div className="flex items-center justify-center">
               <NavMenu
                 dict={dict}
-                className="md:hidden flex"
+                className={`md:hidden flex ${figtree.className}`}
                 dialogColor="bg-transparent"
                 fontColor="text-black"
               />
@@ -39,7 +43,7 @@ export default async function Home({
             </div>
             <NavBar
               dict={dict}
-              className="hidden md:block"
+              className={`hidden md:block ${figtree.className}`}
               dialogColor="bg-transparent"
               fontColor="text-black"
             />
