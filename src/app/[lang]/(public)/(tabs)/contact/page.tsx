@@ -1,9 +1,11 @@
 "use client"
-import { contactAction } from "@/actions/contactAction";
+import { contactAction } from "@/actions/emailActions";
 import { FormEvent, useRef } from "react";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import Image from "next/image";
+import { Figtree } from "next/font/google";
 
+const figtree = Figtree({subsets : ["latin"], weight: "400"});
 
 export default function Page() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -12,7 +14,7 @@ export default function Page() {
     formRef.current?.requestSubmit();
   }
   return (
-    <main className="min-h-dvh grid grid-cols-4 bg-[#e1e4e6] gap-2">
+    <main className={`min-h-dvh grid grid-cols-4 bg-[#e1e4e6] gap-2${figtree.className}`}>
       <div className="col-span-4 md:col-span-2 flex flex-col justify-center mb-5">
         <h1 className={`text-6xl my-2 text-center ${longHaul.className}`}>Contato</h1>
         <form ref={formRef} className="flex flex-col gap-5 md:ml-8 border-2 border-red-800 pl-4 pt-8 pb-10 rounded-2xl" action={contactAction}>

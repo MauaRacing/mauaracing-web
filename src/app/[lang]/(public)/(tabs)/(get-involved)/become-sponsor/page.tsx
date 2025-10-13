@@ -1,45 +1,60 @@
-import Link from "next/link";
-import { getDictionary } from "@/[lang]/dictionaries";
-import { LangDictionary } from "@/[lang]/langDictionary";
+"use client"
 import { longHaul } from "@/app/ui/fonts/fonts";
 import { Figtree } from "next/font/google";
 import Image from "next/image";
+import { FormEvent, useRef } from "react";
+import { becomeSponsorAction } from "@/app/actions/emailActions";
 
 const figtree = Figtree({subsets : ["latin"], weight: "400"});
 
-export default async function Page({
+export default function Page({
   params,
 }: {
   params: Promise<{ lang: string }>;
 }) {
-  const lang = (await params).lang;
-  const dict: LangDictionary = await getDictionary(lang);
+  const formRef = useRef<HTMLFormElement>(null);
+  function handleSubmit(e : FormEvent) {
+    e.preventDefault();
+    formRef.current?.requestSubmit();
+  }
   return (
-    <main className="min-h-dvh flex flex-col items-center bg-[#e1e4e6]">
+    <main className={`min-h-dvh flex flex-col items-center bg-[#e1e4e6] ${figtree.className}`}>
       <h1 className={`text-6xl text-center ${longHaul.className} w-full p-2 mt-2`}>
         Seja um patrocinador
       </h1>
       <div className="flex md:flex-row flex-col justify-center md:justify-around mb-10 mt-2">
         <div className="md:w-[45%]">
-          <form className="flex flex-col md:mr-6 mx-2 md:mx-0 py-7 border-2 border-red-800 rounded-2xl">
+          <form ref={formRef}
+            action={becomeSponsorAction}
+            className="flex flex-col md:mr-6 mx-2 md:mx-0 py-7 border-2 border-red-800 rounded-2xl">
             <label className="block mt-7 ml-5">
               <span className="block font-medium">Primeiro Nome</span>
-              <input type="text" className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
+              <input type="text"
+                name="firstName"
+                className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
             </label>
             <label className="block mt-7 ml-5">
               <span className="block font-medium">Último Nome</span>
-              <input type="text" className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
+              <input type="text"
+                name="lastName"
+                className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
             </label>
             <label className="block mt-7 ml-5">
               <span className="block font-medium">Email</span>
-              <input type="text" className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
+              <input type="text"
+                name="email"
+                className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
             </label>
             <label className="block mt-7 ml-5">
               <span className="block font-medium">Mensagem</span>
-              <input type="text" className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
+              <input type="text"
+                name="message"
+                className="mt-1 block px-3 py-2 text-sm shadow-sm bg-transparent outline-none border-b-2 border-black w-[87.5%]"/>
             </label>
             <label className="block mt-7 ml-5 flex justify-center">
-              <button className="bg-black text-white py-2 px-4">
+              <button type="submit"
+                onSubmit={(e) => handleSubmit(e)}
+                className="bg-black text-white py-2 px-4">
                  Enviar
               </button>
             </label>
