@@ -30,8 +30,7 @@ export default async function Page({
           <div className="md:w-[40%]">
             <div className="relative flex justify-center">
               <Image src="/assets/images/about-fsae/image1.jpg" alt="" width={2000} height={2000}
-                className="z-30 relative md:w-[100%] w-[95%]"/>
-              <div className="bg-red-800 w-[90%] sm:w-[95%] sm:translate-x-4 sm:translate-y-8 md:translate-x-10 md:translate-y-8 h-[95%] top-0 z-10 absolute"></div>                
+                className="z-30 relative md:w-[100%] w-[95%] border-red-800 border-r-black border-b-black border-4"/>
             </div>
           </div>
           <div className="md:w-[50%] mt-6 mx-3 md:mx-0">
@@ -41,10 +40,9 @@ export default async function Page({
             </p>
             <div className="mt-14 relative">
               <div className="relative">                
-                <Image src="/assets/images/about-fsae/image2.jpg" alt="" width={2000} height={2000} className="relative z-20"/>
-                <div className="bg-red-800 w-[90%] sm:w-[95%] sm:translate-x-10 sm:translate-y-8 md:translate-x-8 md:translate-y-8 h-[95%] top-0 z-10 absolute"></div>  
+                <Image src="/assets/images/about-fsae/image2.jpg" alt="" width={2000} height={2000} className="relative z-20 border-red-800 border-r-black border-b-black border-4"/>
               </div>
-              <p className="mt-6 md:mt-0 md:absolute bottom-10 -left-[300px] md:text-right font-bold">Fórmula SAE 2025 em Piracicaba<br/>21ª competição</p>
+              <p className="mt-6 md:mt-0 md:absolute bottom-10 -left-[300px] md:text-right font-bold ">Fórmula SAE 2025 em Piracicaba<br/>21ª competição</p>
             </div>
           </div>
         </div>

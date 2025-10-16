@@ -7,6 +7,7 @@ import mr19Image from "public/assets/images/cars/MR19.png";
 import mr18Image from "public/assets/images/cars/MR18.png";
 import mr17Image from "public/assets/images/cars/MR17.jpg";
 import bg from "public/assets/images/cars/bg.svg";
+import bgMobile from "public/assets/images/cars/bgMobile2.svg"
 import { longHaul } from "@/app/ui/fonts/fonts";
 import Image from "next/image";
 import { Figtree } from "next/font/google";
@@ -16,9 +17,12 @@ const figtree = Figtree({subsets : ["latin"], weight: "300"});
 
 export default function Page() {
   return (
-    <main className={`min-h-dvh mb-2 relative ${figtree.className}`}>
-      <div className="absolute h-[100%]">
+    <main className={`min-h-dvh relative ${figtree.className}`}>
+      <div className="absolute h-[100%] hidden lg:inline">
         <Image src={bg} alt="" className={`sticky top-0 w-dvw z-[0]`}/>
+      </div>
+      <div className="absolute h-[100%] lg:hidden">
+        <Image src={bgMobile} alt="" className={`sticky top-0 w-dvw z-[0]`}/>
       </div>
       <div className="z-[20] flex flex-col items-center relative ">
       <h1 className={`text-6xl mt-5 text-center ${longHaul.className}`}>
@@ -79,7 +83,7 @@ export default function Page() {
                   <li>1º Lugar Aceleração</li>
                   <li>1º Lugar AutoX</li>
                   <li>2º Lugar Skid Pad</li>
-                  <li>Vaga para a competição mundial na cidade de Lincoln, EUA</li>
+                  <li>Vaga para a competição <br></br>mundial na cidade de Lincoln, EUA</li>
                 </ul>
               </div>
             </CarCard.Description>
@@ -88,7 +92,7 @@ export default function Page() {
         <CarCard.Root year="22" alignment="right">
           <CarCard.Text>
             <CarCard.Description alignment={"right"}>
-              <div>
+              <div className="">
                 <p className="font-medium">Formula SAE Brasil 2022</p>
                 <ul className="list-disc list-inside ml-4">
                   <li>3° Lugar Aceleração</li>

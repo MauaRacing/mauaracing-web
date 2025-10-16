@@ -22,7 +22,7 @@ export default function Page({
       <h1 className={`text-6xl text-center ${longHaul.className} w-full p-2 mt-2`}>
         Seja um patrocinador
       </h1>
-      <div className="flex md:flex-row flex-col justify-center md:justify-around mb-10 mt-2">
+      <div className="flex md:flex-row flex-col justify-center md:justify-around mb-5 mt-2 ">
         <div className="md:w-[45%]">
           <form ref={formRef}
             action={becomeSponsorAction}
@@ -60,12 +60,12 @@ export default function Page({
             </label>
           </form>
           <div className="relative">
-            <Image src="/assets/images/become-sponsor/image2.jpg" alt="" width={1000} height={1000} className="mt-[60]"/>
+            <Image src="/assets/images/become-sponsor/image2.jpg" alt="" width={1000} height={1000} className="mt-[60] border border-4 border-black"/>
           </div>
         </div>
         <div className="md:w-[50%] flex flex-col items-center gap-5 mt-2 md:mt-0">
-          <Image src="/assets/images/become-sponsor/image1.jpg" alt="" width={1000} height={1000} className=""/>
-          <div className="border border-4 border-red-800 border-t-black border-l-black p-2 mt-7 mx-2 md:mx-0">
+          <Image src="/assets/images/become-sponsor/image1.jpg" alt="" width={1000} height={1000} className="border border-4 border-black"/>
+          <div className="border border-4 border-red-800 border-t-black border-l-black p-2 mt-3 mx-2 md:mx-0">
             <h2 className="text-6xl text-red-800 ml-5">Gold</h2>
             <p className="ml-5">Pretium, nibh ipsum consequat nisl, vel pretium lectus quam id leo in vitae turpis massa sed elementum! Nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum!</p>
           </div>

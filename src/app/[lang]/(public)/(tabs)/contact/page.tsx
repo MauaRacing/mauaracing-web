@@ -15,7 +15,7 @@ export default function Page() {
   }
   return (
     <main className={`min-h-dvh grid grid-cols-4 bg-[#e1e4e6] gap-2${figtree.className}`}>
-      <div className="col-span-4 md:col-span-2 flex flex-col justify-center mb-5">
+      <div className="col-span-4 md:col-span-2 flex flex-col justify-center mb-5 mx-2">
         <h1 className={`text-6xl my-2 text-center ${longHaul.className}`}>Contato</h1>
         <form ref={formRef} className="flex flex-col gap-5 md:ml-8 border-2 border-red-800 pl-4 pt-8 pb-10 rounded-2xl" action={contactAction}>
           <label className="block space-y-2">
@@ -41,7 +41,7 @@ export default function Page() {
         </form>
       </div>
       <div className="col-span-4 md:col-span-2 my-5 flex justify-center items-center">
-        <Image src="/assets/images/contact/image1.jpg" alt="" width={1000} height={1000}/>
+        <Image src="/assets/images/contact/image1.jpg" alt="" width={1000} height={1000} className="border-4 border-black"/>
       </div>
     </main>
   );

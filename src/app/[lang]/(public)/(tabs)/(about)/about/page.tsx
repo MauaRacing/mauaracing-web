@@ -57,9 +57,8 @@ export default async function Page({
             </div>
           </div>
           <div className="col-span-3 lg:col-span-1 m-auto lg:mr-2">
-            <div className="relative ">
-              <div className="bg-red-800 w-[95%] translate-x-8 translate-y-6 h-[95%] top-0 z-10 absolute"></div>
-              <Image src={image2} width={1000} height={1000} alt="" className="relative z-20 w-fit"/>
+            <div className="relative">
+              <Image src={image2} width={1000} height={1000} alt="" className="relative z-20 w-fit border-4 border-red-800 border-t-black border-r-black"/>
             </div>
           </div>
         </section>
@@ -67,13 +66,12 @@ export default async function Page({
 
       <div className="mt-4 mb-10 w-dvw flex justify-center items-center gap-10 flex-col lg:flex-row">
         <div className="relative flex justify-center">
-          <div className="bg-red-800 w-[90%] translate-x-4 translate-y-6 sm:translate-x-8 sm:translate-y-8 h-[95%] top-0 z-10 absolute"></div>
           <Image
             src={image1}
             width={500}
             height={400}
             alt=""
-            className="sm:ml-3 relative z-20 w-[90%]"
+            className="sm:ml-3 relative z-20 w-[90%] border-4 border-red-800 border-t-black border-r-black"
           />
         </div>
         <div className="flex flex-col ml-10">

@@ -7,7 +7,7 @@ import { longHaul } from "./fonts/fonts"
 
 export function CarCardRoot({ children, year, alignment }: { children: ReactNode, year : String, alignment : "left" | "right" }) {
   return (
-    <div className="flex gap-2">
+    <div className="flex">
       {alignment == "left" ?
         <h1 className={`text-6xl my-2 text-center ${longHaul.className} self-center mr-4`}>
           <div className="">
@@ -18,7 +18,7 @@ export function CarCardRoot({ children, year, alignment }: { children: ReactNode
         <></>
       }
       <div className="bg-transparent border border-gray-950 rounded-xl w-[80%] h-[20%] p-3 ">
-        <div className="flex flex-col md:flex-row gap-y-3 gap-x-5 bg-black p-2 rounded-md">
+        <div className={`flex flex-col md:flex-row gap-y-3 gap-x-5 bg-[#000000BB] p-2 rounded-md ${alignment == "right"? "justify-end" : "justify-start"}`}>
           {children}
         </div>
       </div>
@@ -39,17 +39,17 @@ export function CarCardRoot({ children, year, alignment }: { children: ReactNode
   )
 }
 
-export function CarCardImage({ alt, src }: ImageProps) {
+export function CarCardImage({ alt, src} : ImageProps) {
   return (
-    <div className="mx-auto md:mx-0">
-      <Image src={src} width={500} height={281.25} alt={alt} className="block md:inline-block "/>
+    <div className={`flex `}>
+      <Image src={src} width={500} height={281.25} alt={alt} className={`block md:inline-block `}/>
     </div>
   )
 }
 
 export function CarCardText({ children }: { children: ReactNode}) {
   return (
-    <div className={`flex flex-row items-center justify-center p-4`}>
+    <div className={`flex flex-row items-center justify-center p-4 grow`}>
       {children}
     </div>
   )
@@ -57,7 +57,7 @@ export function CarCardText({ children }: { children: ReactNode}) {
 
 export function CarCardDescription({children, alignment} : {children: ReactNode, alignment : String}){
   return(
-    <div className={`w-fit text-white bg-black text-balance`}>
+    <div className={`w-fit text-white bg-transparent text-balance`}>
       {children}
     </div>
   )
