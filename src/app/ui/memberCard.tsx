@@ -13,7 +13,7 @@ export function MemberCard({ name, imagesrc, linkedinLink }: Member) {
       <Image className="z-10 absolute h-[100%] w-[100%] top-0 left-0 rounded-xl" src={`${imagesrc}`} width={200} height={200} alt="" />
       <div className="z-20 h-[100%] flex items-center">
         <h1 className="[writing-mode:sideways-lr]">
-          DevOps
+          subsistema - curso
         </h1>
       </div>
       <div className="z-20 h-[10%] w-full flex flex-row items-center self-end gap-2 justify-center">
