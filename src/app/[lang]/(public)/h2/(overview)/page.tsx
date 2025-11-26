@@ -27,6 +27,7 @@ export default async function Home({
             <div className="flex items-center justify-center">
               <NavMenu
                 dict={dict}
+                team={"h2"}
                 className={`md:hidden flex ${figtree.className}`}
                 dialogColor="bg-transparent"
                 fontColor="text-black"
@@ -43,6 +44,7 @@ export default async function Home({
             </div>
             <NavBar
               dict={dict}
+              team={"h2"}
               className={`hidden md:block ${figtree.className}`}
               dialogColor="bg-transparent"
               fontColor="text-black"

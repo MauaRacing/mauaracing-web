@@ -34,13 +34,13 @@ export default async function RootLayout({
             <div className="flex flex-row justify-center items-center">
               <NavMenu
                 dict={dict}
-                team={"formula"}
+                team={"h2"}
                 className={`lg:hidden flex ${figtree600.className}`}
                 color="white"
                 dialogColor="bg-transparent"
                 fontColor="text-black"
               />
-              <Link href={`/${lang}/formula`}>
+              <Link href={`/${lang}/h2`}>
                 <Image
                   src={"/assets/images/logoMR_blackbg.png"}
                   width={210}
@@ -54,7 +54,7 @@ export default async function RootLayout({
             <div className="place-content-center">
               <NavBar
                 dict={dict}
-                team={"formula"}
+                team={"h2"}
                 className={`hidden lg:inline-block text-white mx-5 ${figtree.className}`}
                 dialogColor="bg-gray-950"
                 fontColor="text-white"

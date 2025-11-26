@@ -1,28 +1,23 @@
 export interface LangDictionary {
   navbar: {
-    firstGroup: {
+    aboutGroup: {
       title: string;
       firstOption: string;
       secondOption: string;
       thirdOption: string;
     };
-    secondGroup: {
+    carsGroup: {
       title: string;
     };
-    thirdGroup: {
+    galleryGroup: {
       title: string;
     };
-    fourthGroup: {
-      title: string;
-      firstOption: string;
-      secondOption: string;
-    };
-    fifthGroup: {
+    getInvolvedGroup: {
       title: string;
       firstOption: string;
       secondOption: string;
     };
-    sixthGroup: {
+    contactGroup: {
       title: string;
     };
   };

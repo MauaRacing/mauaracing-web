@@ -4,24 +4,27 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { LangDictionary } from "@/[lang]/langDictionary";
 import { useParams } from "next/navigation";
+import { teamProps } from "../lib/teamProps";
 
 export function NavBar({
   dict,
+  team,
   className,
   navMenu = false,
   fontColor,
   dialogColor,
 }: {
   dict: LangDictionary;
+  team : "formula" | "h2" | "baja";
   className?: string;
   navMenu?: boolean;
   fontColor: string;
   dialogColor: string;
 }) {
   const [openAbout, setOpenAbout] = useState(false);
-  const [openMedia, setOpenMedia] = useState(false);
   const [openGetInvolved, setOpenGetInvolved] = useState(false);
   const { lang } = useParams<{ lang: string }>();
+  const teamColor = teamProps[team]["mainColor"];
   return (
     <nav className={className}>
       <div
@@ -32,15 +35,14 @@ export function NavBar({
           onMouseOver={() => setOpenAbout(true)}
           onMouseLeave={() => setOpenAbout(false)}
         >
-          <Link
-            href={`/${lang}/about`}
-            className="hidden text-nowrap px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-red-500"
+          <div
+            className={`hidden text-nowrap px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-${teamColor}-500`}
           >
-            {dict.navbar.firstGroup.title.toUpperCase()}
+            {dict.navbar.aboutGroup.title.toUpperCase()}
             <ChevronDown className="ml-1 w-4" />
-          </Link>
-          <button className="md:hidden text-nowrap px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500">
-            {dict.navbar.firstGroup.title.toUpperCase()}
+          </div>
+          <button className={`md:hidden text-nowrap px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-${teamColor}-500`}>
+            {dict.navbar.aboutGroup.title.toUpperCase()}
             <ChevronDown className="ml-1 w-4" />
           </button>
           <dialog
@@ -50,47 +52,46 @@ export function NavBar({
             <div
               className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor}`}
             >
-              <Link href={`/${lang}/about`} className="border-b md:hidden">
-                {dict.navbar.firstGroup.title}
+              <Link href={`/${lang}/${team}/about`} className="border-b">
+                {dict.navbar.aboutGroup.title}
               </Link>
-              <Link href={`/${lang}/about-fsae`} className="border-b ">
-                {dict.navbar.firstGroup.firstOption}
+              <Link href={`/${lang}/${team}/about-${teamProps[team]["competition"]}`} className="border-b ">
+                {dict.navbar.aboutGroup.firstOption}
               </Link>
-              <Link href={`/${lang}/our-team`} className="border-b ">
-                {dict.navbar.firstGroup.secondOption}
+              <Link href={`/${lang}/${team}/our-team`} className="border-b ">
+                {dict.navbar.aboutGroup.secondOption}
               </Link>
-              <Link href={`/${lang}/sponsors`} className="">
-                {dict.navbar.firstGroup.thirdOption}
+              <Link href={`/${lang}/${team}/sponsors`} className="">
+                {dict.navbar.aboutGroup.thirdOption}
               </Link>
             </div>
           </dialog>
         </div>
         <Link
-          href={`/${lang}/cars`}
-          className="px-4 font-semibold text-lg hover:border-t-2 border-red-500 "
+          href={`/${lang}/${team}/cars`}
+          className={`px-4 font-semibold text-lg hover:border-t-2 border-${teamColor}-500`}
         >
-          {dict.navbar.secondGroup.title.toUpperCase()}
+          {dict.navbar.carsGroup.title.toUpperCase()}
         </Link>
         <Link
-          href={`/${lang}/gallery`}
-          className="px-4 font-semibold text-lg hover:border-t-2 border-red-500"
+          href={`/${lang}/${team}/gallery`}
+          className={`px-4 font-semibold text-lg hover:border-t-2 border-${teamColor}-500`}
         >
-          {dict.navbar.thirdGroup.title.toUpperCase()}
+          {dict.navbar.galleryGroup.title.toUpperCase()}
         </Link>
         <div
           className="group relative"
           onMouseOver={() => setOpenGetInvolved(true)}
           onMouseLeave={() => setOpenGetInvolved(false)}
         >
-          <Link
-            href={`/${lang}/`}
-            className="hidden px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-red-500"
+          <div
+            className={`hidden px-4 md:flex md:flex-row font-semibold text-lg group-hover:border-t-2 border-${teamColor}-500`}
           >
-            {dict.navbar.fifthGroup.title.toUpperCase()}
+            {dict.navbar.getInvolvedGroup.title.toUpperCase()}
             <ChevronDown className="ml-1 w-4" />
-          </Link>
-          <button className="md:hidden px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-red-500 transition-[border] duration-75 ease-out">
-            {dict.navbar.fifthGroup.title.toUpperCase()}
+          </div>
+          <button className={`md:hidden px-4 flex flex-row font-semibold text-lg group-hover:border-t-2 border-${teamColor}-500 transition-[border] duration-75 ease-out`}>
+            {dict.navbar.getInvolvedGroup.title.toUpperCase()}
             <ChevronDown className="ml-1 w-4" />
           </button>
           <dialog
@@ -100,25 +101,24 @@ export function NavBar({
             <div
               className={`flex flex-col justify-center grow pt-1 px-2 ${fontColor} text-nowrap`}
             >
-              <Link href={`/${lang}/`} className="border-b md:hidden">
-                {dict.navbar.fifthGroup.title}
+              <Link href={`/${lang}/${team}/become-sponsor`} className="border-b">
+                {dict.navbar.getInvolvedGroup.firstOption}
               </Link>
-              <Link href={`/${lang}/become-sponsor`} className="border-b">
-                {dict.navbar.fifthGroup.firstOption}
-              </Link>
-              <Link href={`/${lang}/become-member`} className="">
-                {dict.navbar.fifthGroup.secondOption}
+              <Link href={`/${lang}/${team}/become-member`} className="">
+                {dict.navbar.getInvolvedGroup.secondOption}
               </Link>
             </div>
           </dialog>
         </div>
         <Link
-          href={`/${lang}/contact`}
-          className="px-4 font-semibold text-lg hover:border-t-2 border-red-500"
+          href={`/${lang}/${team}/contact`}
+          className={`px-4 font-semibold text-lg hover:border-t-2 border-${teamColor}-500`}
         >
-          {dict.navbar.sixthGroup.title.toUpperCase()}
+          {dict.navbar.contactGroup.title.toUpperCase()}
         </Link>
       </div>
     </nav>
   );
 }
+
+

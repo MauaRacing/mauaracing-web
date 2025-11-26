@@ -7,12 +7,14 @@ import { LangDictionary } from "@/[lang]/langDictionary";
 
 export function NavMenu({
   dict,
+  team,
   className,
   color,
   dialogColor,
   fontColor,
 }: {
   dict: LangDictionary;
+  team: "formula" | "h2" | "baja";
   className?: string;
   color?: string;
   dialogColor: string;
@@ -34,6 +36,7 @@ export function NavMenu({
           </button>
           <div className="mt-5 mx-10">
             <NavBar
+              team={team}
               dict={dict}
               navMenu={true}
               dialogColor={dialogColor}
