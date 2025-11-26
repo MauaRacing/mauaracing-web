@@ -34,15 +34,15 @@ export default async function Home({
         <div className="grid grid-cols-1 md:grid-cols-3 group/images"> 
           <Link href="/formula" className="group/formula">
             <Image src={formulaImage} alt="" fill className="hidden group-hover/formula:inline -z-10 object-cover"/>
-            <Image src={formulaImage} alt="Equipe Formula" className="-z-20 col-span-1 group-hover/images:opacity-0"/>
+            <Image src={formulaImage} alt="Equipe Formula" className="-z-20 col-span-1 group-hover/images:opacity-0 h-dvh object-cover"/>
           </Link>
           <Link href="/h2" className="group/h2">
             <Image src={h2Image} alt="" fill className="hidden group-hover/h2:inline -z-10 object-cover"/>
-            <Image src={h2Image} alt="Equipe H2" className="-z-20 col-span-1 group-hover/images:opacity-0"/>
+            <Image src={h2Image} alt="Equipe H2" className="-z-20 col-span-1 group-hover/images:opacity-0 h-dvh object-cover"/>
           </Link>
           <Link href="/baja" className="group/baja">
             <Image src={bajaImage} alt="" fill className="hidden group-hover/baja:inline -z-10 object-cover"/>
-            <Image src={bajaImage} alt="Equipe Baja" className="-z-20 col-span-1 group-hover/images:opacity-0"/>
+            <Image src={bajaImage} alt="Equipe Baja" className="-z-20 col-span-1 group-hover/images:opacity-0 h-dvh object-cover"/>
           </Link>
         </div>
       </main>
