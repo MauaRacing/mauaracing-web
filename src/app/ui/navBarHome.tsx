@@ -55,14 +55,8 @@ export function NavBarHome({
               <Link href={`/${lang}/about`} className="border-b">
                 {dict.navbar.aboutGroup.title}
               </Link>
-              <Link href={`/${lang}/about-sae`} className="border-b ">
+              <Link href={`/${lang}/about-sae`} className="">
                 {dict.navbar.aboutGroup.firstOption}
-              </Link>
-              <Link href={`/${lang}/our-team`} className="border-b ">
-                {dict.navbar.aboutGroup.secondOption}
-              </Link>
-              <Link href={`/${lang}/sponsors`} className="">
-                {dict.navbar.aboutGroup.thirdOption}
               </Link>
             </div>
           </dialog>

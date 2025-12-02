@@ -9,6 +9,7 @@ import { NavMenu } from "@/ui/navMenu";
 import "@/globals.css";
 import { getDictionary } from "@/[lang]/dictionaries";
 import { Figtree } from "next/font/google";
+import { Home } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Maua Racing",
@@ -50,6 +51,9 @@ export default async function RootLayout({
                 />
               </Link>
               <Globe color="white" className="ml-[10px]" />
+              <Link href={`/${lang}`}>
+                <Home color="white" className="ml-[10px]"/>
+              </Link>
             </div>
             <div className="place-content-center">
               <NavBar

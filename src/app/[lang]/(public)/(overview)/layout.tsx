@@ -51,7 +51,6 @@ export default async function RootLayout({
             <div className="place-content-center">
               <NavBarHome
                 dict={dict}
-                team={"formula"}
                 className={`hidden lg:inline-block text-white mx-5 ${figtree.className}`}
                 dialogColor="bg-gray-950"
                 fontColor="text-white"

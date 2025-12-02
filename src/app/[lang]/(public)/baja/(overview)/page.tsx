@@ -7,6 +7,8 @@ import bg from "public/assets/images/baja/bajaBG.jpg";
 import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
 import { Figtree } from "next/font/google";
+import Link from "next/link";
+import { HomeIcon } from "lucide-react";
 
 
 const figtree = Figtree({subsets : ["latin"], weight: "600"});
@@ -41,6 +43,9 @@ export default async function Home({
                 priority={true}
               />
               <Globe className="absolute left-[20px]" color="black" />
+              <Link href={`/${lang}`}>
+                <HomeIcon color="black" className="ml-[10px]"/>
+              </Link>
             </div>
             <NavBar
               dict={dict}

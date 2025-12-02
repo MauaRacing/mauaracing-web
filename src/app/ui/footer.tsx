@@ -45,11 +45,6 @@ export function Footer({ className }: { className?: string }) {
         <p>Instituto Mauá de Tecnologia</p>
         <p>Praça Mauá 1 São Caetano do Sul - SP, Bloco B-01</p>
       </div>
-      <div className="flex items-center justify-center">
-        <Link href={"/api/auth/signin"} className="bg-blue-500 border rounded-sm px-5">
-          Login
-        </Link>
-      </div>
     </footer>
   );
 }

@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <main className={`min-h-dvh flex flex-col items-center bg-[#e1e4e6] ${figtree.className}`}>
       <h1 className={`text-6xl text-center ${longHaul.className} w-dvw p-2 mt-2`}>Nossa Equipe</h1>
-      <div className="my-8">
+      { /*<div className="my-8">
         <MemberSubsystem subsystemName="" >
           <MemberCard name="nome e sobrenome" imagesrc="/assets/images/contact/image1.jpg" linkedinLink=""/>
           <MemberCard name="nome e sobrenome" imagesrc="/assets/images/contact/image1.jpg" linkedinLink="" />
@@ -42,8 +42,8 @@ export default function Page() {
               </div>
             </div>
           </section>
-        </div>
-      </div>
+          </div>
+      </div>   */}
     </main>
   );
 }

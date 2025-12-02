@@ -1,7 +1,3 @@
-import { Footer } from "@/ui/footer";
-import { Globe } from "@/ui/globe";
-import { NavBar } from "@/ui/navBar";
-import { NavMenu } from "@/ui/navMenu";
 import Image from "next/image";
 import formulaImage from "public/assets/images/79.jpg";
 import h2Image from "public/assets/images/h2/h2BG.jpg";

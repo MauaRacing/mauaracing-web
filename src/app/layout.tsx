@@ -1,4 +1,5 @@
 import { geistMono, geistSans, kanit } from "./ui/fonts/fonts";
+import "@/globals.css";
 
 export async function generateStaticParams() {
   return [{ lang: "en-US" }, { lang: "pt-BR" }, { lang: "es-ES" }];
