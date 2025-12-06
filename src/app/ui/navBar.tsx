@@ -21,23 +21,25 @@ export function NavBar({
   return (
     <nav className={className}>
       <div
-        className={`flex ${navMenu ? "flex-col" : "flex-row"} place-content-center`}
+        className={`flex ${navMenu ? "flex-col" : "flex-row"} place-content-center border-red-500 border-orange-500 border-green-500`}
       >
+        {// Load all the border colors
+        }
         <Link
           href={`/${lang}/${team}/our-team`}
-          className={`px-4 font-semibold text-lg hover:border-t-2 border-red-500`}
+          className={`px-4 font-semibold text-lg hover:border-t-2 border-${teamProps["colors"][team]}-500`}
         >
           {dict.navbar.aboutGroup.secondOption.toUpperCase()}
         </Link>
         <Link
           href={`/${lang}/${team}/sponsors`}
-          className={`px-4 font-semibold text-lg hover:border-t-2 border-red-500`}
+          className={`px-4 font-semibold text-lg hover:border-t-2 border-${teamProps["colors"][team]}-500`}
         >
           {dict.navbar.aboutGroup.thirdOption.toUpperCase()}
         </Link>
         <Link
           href={`/${lang}/${team}/cars`}
-          className={`px-4 font-semibold text-lg hover:border-t-2 border-red-500`}
+          className={`px-4 font-semibold text-lg hover:border-t-2 border-${teamProps["colors"][team]}-500`}
         >
           {dict.navbar.carsGroup.title.toUpperCase()}
         </Link>
@@ -46,5 +48,11 @@ export function NavBar({
   );
 }
 
-
+const teamProps = {
+  "colors" :{
+    "formula" : "red",
+    "baja" : "orange",
+    "h2" : "green"
+  }
+}
 
