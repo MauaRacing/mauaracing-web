@@ -6,9 +6,7 @@ import mr22Image from "public/assets/images/cars/MR22.png";
 import mr19Image from "public/assets/images/cars/MR19.png";
 import mr18Image from "public/assets/images/cars/MR18.png";
 import mr17Image from "public/assets/images/cars/MR17.jpg";
-import bg from "public/assets/images/cars/bg.svg";
 import { longHaul } from "@/app/ui/fonts/fonts";
-import Image from "next/image";
 import { Figtree } from "next/font/google";
 
 const figtree = Figtree({subsets : ["latin"], weight: "300"});
@@ -16,16 +14,13 @@ const figtree = Figtree({subsets : ["latin"], weight: "300"});
 
 export default function Page() {
   return (
-    <main className={`min-h-dvh mb-2 relative ${figtree.className}`}>
-      <div className="absolute h-[100%]">
-        <Image src={bg} alt="" className={`sticky top-0 w-dvw z-[0]`}/>
-      </div>
+    <main className={`min-h-dvh mb-2 relative bg-[#e1e4e6] ${figtree.className}`}>
       <div className="z-[20] flex flex-col items-center relative ">
       <h1 className={`text-6xl mt-5 text-center ${longHaul.className}`}>
         Carros
       </h1>
       <div className="mt-8 mb-4 w-[100%] lg:w-[90%] space-y-4">
-        <CarCard.Root year="25" alignment="left">
+        <CarCard.Root year="25" alignment="left" team="MR">
           <CarCard.Image alt="" src={mr25Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
@@ -43,7 +38,7 @@ export default function Page() {
             </CarCard.Description>
           </CarCard.Text>
         </CarCard.Root>
-        <CarCard.Root year="24" alignment="right">
+        <CarCard.Root year="24" alignment="right" team="MR">
           <CarCard.Text>
             <CarCard.Description alignment={"right"}>
               <div className={``}>
@@ -67,7 +62,7 @@ export default function Page() {
           </CarCard.Text>
           <CarCard.Image alt="" src={mr24Image} />
         </CarCard.Root>
-        <CarCard.Root year="23" alignment="left">
+        <CarCard.Root year="23" alignment="left" team="MR">
           <CarCard.Image alt ="" src={mr23Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
@@ -85,7 +80,7 @@ export default function Page() {
             </CarCard.Description>
           </CarCard.Text>
         </CarCard.Root>
-        <CarCard.Root year="22" alignment="right">
+        <CarCard.Root year="22" alignment="right" team="MR">
           <CarCard.Text>
             <CarCard.Description alignment={"right"}>
               <div>
@@ -100,7 +95,7 @@ export default function Page() {
           </CarCard.Text>
           <CarCard.Image alt="" src={mr22Image} className=""/>
         </CarCard.Root>
-        <CarCard.Root year="19" alignment="left">
+        <CarCard.Root year="19" alignment="left" team="MR">
           <CarCard.Image alt="" src={mr19Image} />
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
@@ -126,7 +121,7 @@ export default function Page() {
             </CarCard.Description>
           </CarCard.Text>
         </CarCard.Root>
-        <CarCard.Root year="18" alignment="right">
+        <CarCard.Root year="18" alignment="right" team="MR">
           <CarCard.Text>
             <CarCard.Description alignment={"right"}>
               <div>
@@ -143,7 +138,7 @@ export default function Page() {
           </CarCard.Text>
           <CarCard.Image alt="" src={mr18Image} />
         </CarCard.Root>
-        <CarCard.Root year="17" alignment="left">
+        <CarCard.Root year="17" alignment="left" team="MR">
           <CarCard.Image alt="" src={mr17Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
