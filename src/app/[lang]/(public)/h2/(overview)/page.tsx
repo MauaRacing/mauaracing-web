@@ -50,7 +50,7 @@ export default async function Home({
             <NavBar
               dict={dict}
               team={"h2"}
-              className={`hidden md:block ${figtree.className}`}
+              className={`hidden md:block ${figtree.className} bg-white/30`}
               dialogColor="bg-transparent"
               fontColor="text-black"
             />

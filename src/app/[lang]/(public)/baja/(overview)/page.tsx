@@ -26,7 +26,7 @@ export default async function Home({
         <Image className="-z-10 object-cover " src={bg} fill alt="" />
         <div className="bg-transparent flex flex-col mt-12 lg:mt-0">
           <div className="h-24 flex flex-col md:justify-between gap-4 my-2 justify-center">
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center bg-white/30">
               <NavMenu
                 dict={dict}
                 team={"baja"}
@@ -50,7 +50,7 @@ export default async function Home({
             <NavBar
               dict={dict}
               team={"baja"}
-              className={`hidden md:block ${figtree.className}`}
+              className={`hidden md:block ${figtree.className} bg-white/50`}
               dialogColor="bg-transparent"
               fontColor="text-black"
             />
