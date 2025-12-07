@@ -1,8 +1,8 @@
 import { CarCard } from "@/ui/carCard";
-import mr25Image from "public/assets/images/cars/MR25.jpg";
-import mr24Image from "public/assets/images/cars/MR24.png";
-import mr23Image from "public/assets/images/cars/MR23.jpg";
-import mr22Image from "public/assets/images/cars/MR22.png";
+import baja25Image from "public/assets/images/baja/cars/baja25.jpg";
+import baja22Image from "public/assets/images/baja/cars/baja22.jpg";
+import baja19Image from "public/assets/images/baja/cars/baja19.jpg";
+import baja17Image from "public/assets/images/baja/cars/baja17.jpg";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import { Figtree } from "next/font/google";
 
@@ -18,7 +18,7 @@ export default function Page() {
       </h1>
       <div className="mt-8 mb-4 w-[100%] lg:w-[90%] space-y-4">
         <CarCard.Root year="25" alignment="left" team="Baja">
-          <CarCard.Image alt="" src={mr25Image}/>
+          <CarCard.Image alt="" src={baja25Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
               <div className={``}>
@@ -44,10 +44,10 @@ export default function Page() {
               </div>
             </CarCard.Description>
           </CarCard.Text>
-          <CarCard.Image alt="" src={mr24Image} />
+          <CarCard.Image alt="" src={baja22Image} />
         </CarCard.Root>
         <CarCard.Root year="19" alignment="left" team="Baja">
-          <CarCard.Image alt ="" src={mr23Image}/>
+          <CarCard.Image alt ="" src={baja19Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
               <div>
@@ -73,7 +73,7 @@ export default function Page() {
               </div>
             </CarCard.Description>
           </CarCard.Text>
-          <CarCard.Image alt="" src={mr22Image} className=""/>
+          <CarCard.Image alt="" src={baja17Image} className=""/>
         </CarCard.Root>
       </div>
       </div>

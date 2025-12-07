@@ -1,10 +1,10 @@
 import { CarCard } from "@/ui/carCard";
 import mr25Image from "public/assets/images/cars/MR25.jpg";
-import mr24Image from "public/assets/images/cars/MR24.png";
+import mr24Image from "public/assets/images/cars/MR24.jpg";
 import mr23Image from "public/assets/images/cars/MR23.jpg";
-import mr22Image from "public/assets/images/cars/MR22.png";
-import mr19Image from "public/assets/images/cars/MR19.png";
-import mr18Image from "public/assets/images/cars/MR18.png";
+import mr22Image from "public/assets/images/cars/MR22.jpg";
+import mr19Image from "public/assets/images/cars/MR19.jpg";
+import mr18Image from "public/assets/images/cars/MR18.jpg";
 import mr17Image from "public/assets/images/cars/MR17.jpg";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import { Figtree } from "next/font/google";

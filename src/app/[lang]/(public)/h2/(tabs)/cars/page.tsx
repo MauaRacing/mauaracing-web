@@ -1,6 +1,6 @@
 import { CarCard } from "@/ui/carCard";
-import mr25Image from "public/assets/images/cars/MR25.jpg";
-import mr24Image from "public/assets/images/cars/MR24.png";
+import h224Image from "public/assets/images/h2/cars/h224.jpg";
+import h225Image from "public/assets/images/h2/cars/h225.jpg";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import { Figtree } from "next/font/google";
 
@@ -16,7 +16,7 @@ export default function Page() {
       </h1>
       <div className="mt-8 mb-4 w-[100%] lg:w-[90%] space-y-4">
         <CarCard.Root year="25" alignment="left" team="H2">
-          <CarCard.Image alt="" src={mr25Image}/>
+          <CarCard.Image alt="" src={h225Image}/>
           <CarCard.Text>
             <CarCard.Description alignment={"left"}>
               <div className={``}>
@@ -39,7 +39,7 @@ export default function Page() {
               </div>
             </CarCard.Description>
           </CarCard.Text>
-          <CarCard.Image alt="" src={mr24Image} />
+          <CarCard.Image alt="" src={h224Image} />
         </CarCard.Root>
       </div>
       </div>
