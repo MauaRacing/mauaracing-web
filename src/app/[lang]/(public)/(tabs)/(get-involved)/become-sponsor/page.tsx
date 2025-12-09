@@ -20,9 +20,10 @@ export default function Page({
   return (
     <main className={`min-h-dvh flex flex-col items-center bg-[#e1e4e6] ${figtree.className}`}>
       <h1 className={`text-6xl text-center ${longHaul.className} w-full p-2 mt-2`}>
-        Seja um patrocinador
+        Seja um apoiador
       </h1>
-      <div className="flex md:flex-row flex-col justify-center md:justify-around mb-10 mt-2">
+      <p className="text-2xl text-pretty mt-5 text-center">Apoie nosso projeto e participe dessa história! Entre em contato para conhecer melhor as possibilidades de trabalharmos juntos!</p>
+      <div className="flex md:flex-row flex-col justify-center md:justify-around mb-10 mt-4">
         <div className="md:w-[45%]">
           <form ref={formRef}
             action={becomeSponsorAction}
@@ -63,20 +64,9 @@ export default function Page({
             <Image src="/assets/images/become-sponsor/image2.jpg" alt="" width={1000} height={1000} className="mt-[60]"/>
           </div>
         </div>
-        <div className="md:w-[50%] flex flex-col items-center gap-5 mt-2 md:mt-0">
+        <div className="md:w-[50%] flex flex-col items-center justify-between gap-5 mt-2 md:mt-0">
           <Image src="/assets/images/become-sponsor/image1.jpg" alt="" width={1000} height={1000} className=""/>
-          <div className="border border-4 border-red-800 border-t-black border-l-black p-2 mt-7 mx-2 md:mx-0">
-            <h2 className="text-6xl text-red-800 ml-5">Gold</h2>
-            <p className="ml-5">Pretium, nibh ipsum consequat nisl, vel pretium lectus quam id leo in vitae turpis massa sed elementum! Nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum!</p>
-          </div>
-          <div className="border border-4 border-red-800 border-b-black border-r-black p-2 mt-7 mx-2 md:mx-0">
-            <h2 className="text-6xl text-black text-right mr-5">Silver</h2>
-            <p className="mr-5 text-right">Pretium, nibh ipsum consequat nisl, vel pretium lectus quam id leo in vitae turpis massa sed elementum! Nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum!</p>
-          </div>
-          <div className="border border-4 border-red-800 border-t-black border-l-black p-2 mt-7 mx-2 md:mx-0">
-            <h2 className="text-6xl text-red-800 ml-5">Bronze</h2>
-            <p className="ml-5">Pretium, nibh ipsum consequat nisl, vel pretium lectus quam id leo in vitae turpis massa sed elementum! Nunc scelerisque viverra mauris, in aliquam sem fringilla ut morbi tincidunt augue interdum!</p>
-          </div>
+          <Image src="/assets/images/h2/cars/h225.jpg" alt="" width={1000} height={1000} className=""/>
         </div>
       </div>
     </main>
