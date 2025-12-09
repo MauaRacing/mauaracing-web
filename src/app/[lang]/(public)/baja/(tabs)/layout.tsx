@@ -43,7 +43,7 @@ export default async function RootLayout({
               />
               <Link href={`/${lang}/baja`}>
                 <Image
-                  src={"/assets/images/logoMR_blackbg.png"}
+                  src={"/assets/images/baja/baja.png"}
                   width={210}
                   height={210}
                   alt="Logo Maua Racing"

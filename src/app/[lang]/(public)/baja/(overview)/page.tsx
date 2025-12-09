@@ -35,10 +35,10 @@ export default async function Home({
                 fontColor="text-black"
               />
               <Image
-                src={"/assets/images/logoMR_whitebg.png"}
+                src={"/assets/images/baja/baja_fundo_branco.png"}
                 width={210}
                 height={210}
-                alt="Logo Mauá Racing"
+                alt="Logo Mauá Racing Baja"
                 className="ml-3"
                 priority={true}
               />

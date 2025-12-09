@@ -43,10 +43,10 @@ export default async function RootLayout({
               />
               <Link href={`/${lang}/h2`}>
                 <Image
-                  src={"/assets/images/logoMR_blackbg.png"}
+                  src={"/assets/images/h2/H2.png"}
                   width={210}
                   height={210}
-                  alt="Logo Maua Racing"
+                  alt="Logo Maua Racing H2"
                   className="ml-3"
                 />
               </Link>
