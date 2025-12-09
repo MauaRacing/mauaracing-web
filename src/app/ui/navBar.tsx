@@ -21,7 +21,7 @@ export function NavBar({
   return (
     <nav className={className}>
       <div
-        className={`flex ${navMenu ? "flex-col" : "flex-row"} place-content-center border-red-500 border-orange-500 border-green-500`}
+        className={`flex ${navMenu ? "flex-col" : "flex-row"} place-content-center border-red-500 border-orange-500 border-blue-500`}
       >
         {// Load all the border colors
         }
@@ -52,7 +52,7 @@ const teamProps = {
   "colors" :{
     "formula" : "red",
     "baja" : "orange",
-    "h2" : "green"
+    "h2" : "blue"
   }
 }
 
