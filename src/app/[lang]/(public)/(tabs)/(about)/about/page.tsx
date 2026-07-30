@@ -6,32 +6,32 @@ import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import { Figtree } from "next/font/google";
-// import { ResolvingMetadata, Metadata } from "next";
+import { ResolvingMetadata, Metadata } from "next";
 
-// export async function generateMetadata(
-//   {
-//     params,
-//     searchParams,
-//   }: { params: Promise<{ lang: string }>; searchParams: string },
-//   parent: ResolvingMetadata,
-// ): Promise<Metadata> {
-//   const lang = (await params).lang;
-//   switch (lang) {
-//     case "pt-BR":
-//       return {
-//         title: "Sobre",
-//       };
-//     case "es-ES":
-//       return {
-//         title: "Sobre",
-//       };
-//     default:
-//     case "en-US":
-//       return {
-//         title: "About",
-//       };
-//   }
-// }
+export async function generateMetadata(
+  {
+    params,
+    searchParams,
+  }: { params: Promise<{ lang: string }>; searchParams: string },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const lang = (await params).lang;
+  switch (lang) {
+    case "pt-BR":
+      return {
+        title: "Sobre",
+      };
+    case "es-ES":
+      return {
+        title: "Sobre",
+      };
+    default:
+    case "en-US":
+      return {
+        title: "About us",
+      };
+  }
+}
 
 const figtree = Figtree({subsets : ["latin"], weight: "400"});
 
@@ -49,17 +49,10 @@ export default async function Page({
           <div className="col-span-3 lg:col-span-2">
             <div className="flex flex-col justify-center items-center">
               <h1 className={`text-6xl my-2 text-center ${longHaul.className} mt-2`}>
-                Quem Somos
+                {dict.aboutGroup.about.title}
               </h1>
               <p className={`mt-5 text-left md:text-justify text-pretty md:indent-11 md:mx-10 text-2xl leading-relaxed w-[90%] ${figtree.className}`}>
-                A Mauá Racing é uma equipe formada por estudantes de engenharia do Instituto Mauá de Tecnologia, dedicada ao desenvolvimento e à construção de protótipos automotivos para competições acadêmicas. Atuamos em três projetos principais — Fórmula a Combustão, Fórmula a Hidrogênio (H₂) e Baja SAE — cada um com requisitos específicos de engenharia e processos de manufatura.
-              </p>
-              <p className={`text-left md:text-justify text-pretty md:indent-11 md:mx-10 text-2xl leading-relaxed w-[90%] ${figtree.className}`}>
-                Nosso trabalho abrange todo o ciclo de desenvolvimento de um veículo: da concepção, análise e simulação aos projetos estruturais, de powertrain, suspensão, freios e dinâmica veicular. Também realizamos as etapas de manufatura, montagem, testes e preparação final dos protótipos para competição.
-               </p>
-              <p className={`text-left md:text-justify text-pretty md:indent-11 md:mx-10 text-2xl leading-relaxed w-[90%] ${figtree.className}`}>
-                A equipe se dedica a aplicar conhecimentos teóricos em soluções práticas, integrando métodos de engenharia, gestão e conformidade com normas técnicas, mantendo compromisso e empenho na qualidade dos protótipos e no desenvolvimento de veículos competitivos.
-Participamos das competições promovidas pela SAE Brasil, que estabelecem critérios de desempenho, eficiência, segurança, inovação e viabilidade de projeto.
+                {dict.aboutGroup.about.mainText}
               </p>
             </div>
           </div>

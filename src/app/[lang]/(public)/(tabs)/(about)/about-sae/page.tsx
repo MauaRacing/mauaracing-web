@@ -21,12 +21,12 @@ export default async function Page({
             <h1 className={`text-6xl text-center ${longHaul.className} p-2 w-dvw mt-2`}>
               {dict.aboutGroup.aboutFsae.title}
             </h1>
-            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed mt-5 ${figtree.className}`}>
-              A SAE Brasil é uma associação técnica que reúne profissionais e estudantes das áreas de engenharia e mobilidade. Entre suas principais atividades, promove programas estudantis e competições acadêmicas que desafiam equipes universitárias a projetar, construir e testar veículos, incluindo protótipos estilo fórmula e veículos off-road Baja.
+            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed mt-5 ${figtree.className}`}>{dict.aboutGroup.aboutFsae.firstText}</p>
+            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed ${figtree.className}`}>
+              {dict.aboutGroup.aboutFsae.secondText}
             </p>
-            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed ${figtree.className}`}>Atuando como elo entre universidade e indústria, a SAE Brasil oferece uma plataforma de aprendizado, inovação e visibilidade técnica para a formação de futuros engenheiros.
-            </p>
-            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed ${figtree.className}`}>A Mauá Racing participa desses programas desenvolvendo protótipos que atendem aos requisitos de desempenho, segurança e viabilidade estabelecidos pela SAE Brasil.
+            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed ${figtree.className}`}>
+              {dict.aboutGroup.aboutFsae.thirdText}
             </p>
           </div>
         </article>
@@ -39,16 +39,14 @@ export default async function Page({
             </div>
           </div>
           <div className="md:w-[50%] mt-6 mx-3 md:mx-0">
-            <h2 className="text-2xl border-red-800 border-b-[3px] w-fit">Por que participar?</h2>
-            <p className="mt-5 text-xl text-pretty leading-relaxed">
-              A competição, além de divertida e desafiadora, é uma oportunidade de crescimento. O projeto é realizado em grupo com intuito de estimular e desenvolver o trabalho em equipe. Além disso, propiciam aos estudantes a oportunidade de aplicar na prática os conhecimentos adquiridos de forma teórica, desenvolvendo um projeto completo. Os estudantes também ganham visibilidade por parte das grandes empresas e oportunidade de reconhecimento. Os alunos que se destacarem, podem acabar contratados pelas grandes montadoras que apoiam a competição.
-            </p>
+            <h2 className="text-2xl border-red-800 border-b-[3px] w-fit">{dict.aboutGroup.aboutFsae.secondTitle}</h2>
+            <p className="mt-5 text-xl text-pretty leading-relaxed">{dict.aboutGroup.aboutFsae.fourthText}</p>
             <div className="mt-14 relative">
               <div className="relative">                
                 <Image src="/assets/images/about-fsae/image2.jpg" alt="" width={2000} height={2000} className="relative z-20"/>
                 <div className="bg-red-800 w-[90%] sm:w-[95%] sm:translate-x-10 sm:translate-y-8 md:translate-x-8 md:translate-y-8 h-[95%] top-0 z-10 absolute"></div>  
               </div>
-              <p className="mt-6 md:mt-0 md:absolute bottom-10 -left-[300px] md:text-right font-bold">Fórmula SAE 2025 em Piracicaba<br/>21ª competição</p>
+              <p className="mt-6 md:mt-0 md:absolute bottom-10 -left-[300px] md:text-right font-bold">{dict.aboutGroup.aboutFsae.imageLegend}<br/>{dict.aboutGroup.aboutFsae.competitionEdition}</p>
             </div>
           </div>
         </div>

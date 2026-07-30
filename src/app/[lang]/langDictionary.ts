@@ -1,4 +1,7 @@
 export interface LangDictionary {
+  homepage: {
+    findOut: string
+  },
   navbar: {
     aboutGroup: {
       title: string;
@@ -31,7 +34,13 @@ export interface LangDictionary {
     };
     aboutFsae: {
       title: string;
-      mainText: string;
+      firstText: string;
+      secondText: string;
+      thirdText: string;
+      secondTitle: string;
+      fourthText: string;
+      imageLegend: string;
+      competitionEdition: string;
     };
   };
 }

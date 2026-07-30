@@ -1,4 +1,7 @@
 {
+    "homepage" : {
+        "findOut": "Find out more"
+    },
   "navbar": {
     "aboutGroup": {
       "title": "About Us",
@@ -24,14 +27,20 @@
   "aboutGroup": {
     "about": {
       "title": "About Us",
-      "mainText": "Somos uma equipe de FSAE de alunos do Instituto Mauá de Tecnologia, que tem como objetivo o desenvolvimento de um projeto de carro tipo formula para competição.  A proposta consiste em desenvolver um projeto do zero, construí-lo, testá-lo e, enfim, levá-lo para competir. Embora a competição seja nosso objetivo final, todo o processo nos conduz ao aprendizado em diversas áreas, não só da engenharia e viabilidade do projeto, mas também de trabalho em grupo, organização, convivência, entre outros. Com a estrutura da Mauá, somos capazes de explorar ideias inovadoras na área e aprimorar o projeto a cada ano!",
+        "mainText": "Mauá Racing is a team composed of students from all degree programs at the Mauá Institute of Technology dedicated to developing and building automotive prototypes for academic competitions. We work on three main projects: Formula Combustion, Formula Hydrogen (H₂), and Baja SAE, each with specific engineering requirements and manufacturing processes. Our work covers the entire vehicle development cycle: from conception, analysis, and simulation to the design of structures, powertrains, suspension systems, brakes, and vehicle dynamics. We also handle manufacturing, assembly, testing, and the final preparation of the prototypes for competition. The team is dedicated to applying theoretical knowledge to practical solutions by integrating engineering methods, management practices, and compliance with technical standards, all while remaining committed to high quality prototypes and the development of competitive vehicles. We participate in competitions organized by SAE Brasil, which establish criteria for performance, efficiency, safety, innovation, and project viability.",
       "firstLink": "Conheça a organização da nossa equipe!",
       "secondLink": "Conheça a Mauá e nossa oficina!",
       "thirdLink": "Conheça a competição!"
     },
     "aboutFsae": {
       "title": "About SAE",
-      "mainText": "A Formula SAE (FSAE) é uma competição estudantil organizada pela Associação de Engenheiros Automotivos (SAE), que acontece anualmente em sua versão nacional e internacional. O objetivo é que os alunos projetem e construam um carro tipo fórmula, para depois levá-lo para competir. A competição é composta por provas estáticas e dinâmicas. As estáticas são apresentações e relatórios que não envolvem exclusivamente o funcionamento do carro, tais como custos, apresentação do plano de negócios e projeto de engenharia. Já a etapa dinâmica envolve as provas de aceleração, skidpad, autocross, enduro e eficiência energética."
+        "firstText": "SAE Brasil is a technical association that brings together professionals and students from the fields of engineering and mobility. Among its key activities, it promotes student programs and academic competitions that challenge university teams to design, build, and test vehicles, including Formula-style prototypes and Baja off-road vehicles.",
+        "secondText":"Acting as a link between university and industry, SAE Brasil provides a platform for learning, innovation, and technical visibility in the training of future engineers.",
+        "thirdText":"Mauá Racing participates in these programs by developing prototypes that meet the performance, safety, and feasibility requirements established by SAE Brasil.",
+        "secondTitle":"Why participate?",
+        "fourthText":"The competition is not only fun and challenging but also an opportunity for growth. The project is carried out in groups to foster and develop teamwork. Furthermore, it offers students the chance to apply theoretical knowledge in a practical setting by developing a complete project. Students also gain visibility among major companies and opportunities for recognition; standout students may even be hired by the major automakers that support the competition.",
+        "imageLegend":"",
+        "competitionEdition":""
     }
   }
 }

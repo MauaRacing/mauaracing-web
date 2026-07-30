@@ -1,4 +1,7 @@
 {
+    "homepage" : {
+        "findOut" : "Conozca mas"
+    },
   "navbar": {
     "aboutGroup": {
       "title": "Quem Somos",
@@ -23,15 +26,21 @@
   },
   "aboutGroup": {
     "about": {
-      "title": "Quem Somos",
-      "mainText": "Somos uma equipe de FSAE de alunos do Instituto Mauá de Tecnologia, que tem como objetivo o desenvolvimento de um projeto de carro tipo formula para competição.  A proposta consiste em desenvolver um projeto do zero, construí-lo, testá-lo e, enfim, levá-lo para competir. Embora a competição seja nosso objetivo final, todo o processo nos conduz ao aprendizado em diversas áreas, não só da engenharia e viabilidade do projeto, mas também de trabalho em grupo, organização, convivência, entre outros. Com a estrutura da Mauá, somos capazes de explorar ideias inovadoras na área e aprimorar o projeto a cada ano!",
+      "title": "Que es Maua Racing",
+      "mainText": "Mauá Racing es un equipo integrado por estudiantes de todas las carreras del Instituto de Tecnología Mauá, dedicado al desarrollo y la construcción de prototipos automotrices para competiciones académicas. Trabajamos en tres proyectos principales: Fórmula Combustión, Fórmula Hidrógeno (H₂) y Baja SAE—, cada uno con requisitos de ingeniería y procesos de fabricación específicos. Nuestro labor abarca todo el ciclo de desarrollo del vehículo: desde la concepción, el análisis y la simulación hasta el diseño de estructuras, sistemas de propulsión, suspensiones, frenos y dinámica vehicular. Asimismo, nos encargamos de la fabricación, el montaje, las pruebas y la preparación final de los prototipos para la competición. El equipo se dedica a aplicar conocimientos teóricos en soluciones prácticas, integrando métodos de ingeniería, prácticas de gestión y el cumplimiento de normas técnicas, manteniendo siempre el compromiso con la calidad de los prototipos y el desarrollo de vehículos competitivos. Participamos en competiciones organizadas por SAE Brasil, las cuales establecen criterios de rendimiento, eficiencia, seguridad, innovación y viabilidad del proyecto.",
       "firstLink": "Conheça a organização da nossa equipe!",
       "secondLink": "Conheça a Mauá e nossa oficina!",
       "thirdLink": "Conheça a competição!"
     },
     "aboutFsae": {
-      "title": "Sobre a SAE",
-      "mainText": "A Formula SAE (FSAE) é uma competição estudantil organizada pela Associação de Engenheiros Automotivos (SAE), que acontece anualmente em sua versão nacional e internacional. O objetivo é que os alunos projetem e construam um carro tipo fórmula, para depois levá-lo para competir. A competição é composta por provas estáticas e dinâmicas. As estáticas são apresentações e relatórios que não envolvem exclusivamente o funcionamento do carro, tais como custos, apresentação do plano de negócios e projeto de engenharia. Já a etapa dinâmica envolve as provas de aceleração, skidpad, autocross, enduro e eficiência energética."
+      "title": "Sobre SAE",
+        "firstText": "SAE Brasil es una asociación técnica que reúne a profesionales y estudiantes de los campos de la ingeniería y la movilidad. Entre sus actividades principales, promueve programas estudiantiles y competiciones académicas que desafían a equipos universitarios a diseñar, construir y probar vehículos, incluyendo prototipos tipo Fórmula y vehículos todoterreno (Baja).",
+        "secondText":"Al actuar como nexo entre el ámbito académico y la industria, SAE Brasil ofrece una plataforma para el aprendizaje, la innovación y la visibilidad técnica en la formación de los futuros ingenieros.",
+        "thirdText":"Mauá Racing participa en estos programas desarrollando prototipos que cumplen con los requisitos de rendimiento, seguridad y viabilidad establecidos por SAE Brasil.",
+        "secondTitle":"¿Por qué participar?",
+        "fourthText":"La competición no solo es divertida y desafiante, sino que también representa una oportunidad de crecimiento. El proyecto se lleva a cabo en grupos para fomentar y desarrollar el trabajo en equipo. Además, ofrece a los estudiantes la posibilidad de aplicar conocimientos teóricos en un entorno práctico mediante el desarrollo de un proyecto integral. Los estudiantes también ganan visibilidad ante grandes empresas y obtienen oportunidades de reconocimiento; aquellos que destacan pueden incluso ser contratados por los principales fabricantes de automóviles que apoyan la competición.",
+        "imageLegend":"",
+        "competitionEdition":""
     }
   }
 }
