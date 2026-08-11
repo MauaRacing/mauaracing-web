@@ -1,9 +1,10 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavBar } from "./navBar";
 import { LangDictionary } from "@/[lang]/langDictionary";
+import { usePathname } from "next/navigation";
 
 export function NavMenu({
   dict,
@@ -20,7 +21,13 @@ export function NavMenu({
   dialogColor: string;
   fontColor: string;
 }) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+  
   return (
     <div className={className}>
       <button className="" onClick={() => setOpen(true)}>
