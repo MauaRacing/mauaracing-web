@@ -42,5 +42,41 @@
         "imageLegend":"",
         "competitionEdition":""
     }
-  }
+  },
+    "gallery" : {
+        "title" : "Gallery"
+    },
+    "becomeSponsor" : {
+        "title" : "Become a Sponsor"
+    },
+    "becomeMember" : {
+        "title" : "Become a Member"
+    },
+    "contact" : {
+        "title" : "Contact"
+    },
+    "formulaTabs" : {
+        "ourTeam" : {
+            "title" : "Our Team"
+        },
+        "cars" : {
+            "title" : "Cars"
+        }
+    },
+    "h2Tabs" : {
+        "ourTeam" : {
+            "title" : "Our Team"
+        },
+        "cars" : {
+            "title" : "Cars"
+        }
+    },
+    "bajaTabs" : {
+        "ourTeam" : {
+            "title" : "Our Team"
+        },
+        "cars" : {
+            "title" : "Cars"
+        }
+    }
 }

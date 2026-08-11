@@ -42,5 +42,41 @@
             "imageLegend": "Fórmula SAE 2025 em Piracicaba",
             "competitionEdition": "21ª competição"
         }
+    },
+    "gallery" : {
+        "title" : "Galeria"
+    },
+    "becomeSponsor" : {
+        "title" : "Seja um Patrocinador"
+    },
+    "becomeMember" : {
+        "title" : "Seja um Membro"
+    },
+    "contact" : {
+        "title" : "Contato"
+    },
+    "formulaTabs" : {
+        "ourTeam" : {
+            "title" : "Nossa Equipe"
+        },
+        "cars" : {
+            "title" : "Carros"
+        }
+    },
+    "h2Tabs" : {
+        "ourTeam" : {
+            "title" : "Nossa Equipe"
+        },
+        "cars" : {
+            "title" : "Carros"
+        }
+    },
+    "bajaTabs" : {
+        "ourTeam" : {
+            "title" : "Nossa Equipe"
+        },
+        "cars" : {
+            "title" : "Carros"
+        }
     }
 }

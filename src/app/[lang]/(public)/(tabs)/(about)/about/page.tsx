@@ -11,8 +11,7 @@ import { ResolvingMetadata, Metadata } from "next";
 export async function generateMetadata(
   {
     params,
-    searchParams,
-  }: { params: Promise<{ lang: string }>; searchParams: string },
+  }: { params: Promise<{ lang: string }>},
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const lang = (await params).lang;

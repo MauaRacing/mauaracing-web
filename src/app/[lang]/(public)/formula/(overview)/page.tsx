@@ -9,9 +9,21 @@ import { LangDictionary } from "@/[lang]/langDictionary";
 import { Figtree } from "next/font/google";
 import { HomeIcon } from "lucide-react";
 import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next";
 
 
 const figtree = Figtree({subsets : ["latin"], weight: "600"});
+
+export async function generateMetadata(
+  {
+    params,
+  }: { params: Promise<{ lang: string }>},
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  return {
+    title: "Maua Racing Formula"
+  }
+}
 
 export default async function Home({
   params,

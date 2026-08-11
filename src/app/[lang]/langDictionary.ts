@@ -43,4 +43,40 @@ export interface LangDictionary {
       competitionEdition: string;
     };
   };
+  gallery : {
+    title : string;
+  };
+  becomeSponsor : {
+    title : string;
+  };
+  becomeMember : {
+    title : string;
+  };
+  contact : {
+    title : string;
+  };
+  formulaTabs : {
+    ourTeam : {
+      title : string;
+    };
+    cars : {
+      title : string;
+    }
+  },
+  h2Tabs : {
+    ourTeam : {
+      title : string;
+    };
+    cars : {
+      title : string;
+    }
+  };
+  bajaTabs : {
+    ourTeam : {
+      title : string;
+    };
+    cars : {
+      title : string;
+    };
+  }
 }

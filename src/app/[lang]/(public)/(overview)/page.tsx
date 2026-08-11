@@ -6,7 +6,6 @@ import { getDictionary } from "@/[lang]/dictionaries";
 import { LangDictionary } from "@/[lang]/langDictionary";
 import { Figtree } from "next/font/google";
 import Link from "next/link";
-import { MoveRight } from "lucide-react";
 import { longHaul } from "@/app/ui/fonts/fonts";
 
 const figtree = Figtree({ subsets: ["latin"], weight: "600" });

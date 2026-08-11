@@ -4,9 +4,9 @@
     },
   "navbar": {
     "aboutGroup": {
-      "title": "Quem Somos",
-      "firstOption": "Sobre a SAE",
-      "secondOption": "Nossa equipe",
+      "title": "Quines Somos",
+      "firstOption": "Sobre la SAE",
+      "secondOption": "Nuestro Equipo",
       "thirdOption": "Patrocinadores"
     },
     "carsGroup": {
@@ -17,11 +17,11 @@
     },
     "getInvolvedGroup": {
       "title": "Participe",
-      "firstOption": "Seja um patrocinador",
-      "secondOption": "Seja um membro"
+      "firstOption": "Hacerse Patrocinador",
+      "secondOption": "Hacerse miembro"
     },
     "contactGroup": {
-      "title": "Contato"
+      "title": "Contacto"
     }
   },
   "aboutGroup": {
@@ -33,7 +33,7 @@
       "thirdLink": "Conheça a competição!"
     },
     "aboutFsae": {
-      "title": "Sobre SAE",
+      "title": "Sobre la SAE",
         "firstText": "SAE Brasil es una asociación técnica que reúne a profesionales y estudiantes de los campos de la ingeniería y la movilidad. Entre sus actividades principales, promueve programas estudiantiles y competiciones académicas que desafían a equipos universitarios a diseñar, construir y probar vehículos, incluyendo prototipos tipo Fórmula y vehículos todoterreno (Baja).",
         "secondText":"Al actuar como nexo entre el ámbito académico y la industria, SAE Brasil ofrece una plataforma para el aprendizaje, la innovación y la visibilidad técnica en la formación de los futuros ingenieros.",
         "thirdText":"Mauá Racing participa en estos programas desarrollando prototipos que cumplen con los requisitos de rendimiento, seguridad y viabilidad establecidos por SAE Brasil.",
@@ -42,5 +42,41 @@
         "imageLegend":"",
         "competitionEdition":""
     }
-  }
+  },
+    "gallery" : {
+        "title" : "Galeria"
+    },
+    "becomeSponsor" : {
+        "title" : "Hacerse patrocinador"
+    },
+    "becomeMember" : {
+        "title" : "Hacerse miembro"
+    },
+    "contact" : {
+        "title" : "Contacto"
+    },
+    "formulaTabs" : {
+        "ourTeam" : {
+            "title" : "Nuestro Equipo"
+        },
+        "cars" : {
+            "title" : "Carros"
+        }
+    },
+    "h2Tabs" : {
+        "ourTeam" : {
+            "title" : "Nuestro Equipo"
+        },
+        "cars" : {
+            "title" : "Carros"
+        }
+    },
+    "bajaTabs" : {
+        "ourTeam" : {
+            "title" : "Nuestro Equipo"
+        },
+        "cars" : {
+            "title" : "Carros"
+        }
+    }
 }

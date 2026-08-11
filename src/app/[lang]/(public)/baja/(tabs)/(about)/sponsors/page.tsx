@@ -1,10 +1,32 @@
+import { getDictionary } from "@/app/[lang]/dictionaries";
+import { LangDictionary } from "@/app/[lang]/langDictionary";
 import { longHaul } from "@/app/ui/fonts/fonts";
 import { ImageSponsor } from "@/app/ui/imageSponsor";
+import { Metadata, ResolvingMetadata } from "next";
 
-export default function Page() {
+export async function generateMetadata(
+  {
+    params,
+  }: { params: Promise<{ lang: string }>},
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const lang = (await params).lang;
+  const dict : LangDictionary = await getDictionary(lang);
+  return {
+    title: dict.navbar.aboutGroup.thirdOption
+  }
+}
+
+export default async function Page({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}) {
+  const lang = (await params).lang;
+  const dict: LangDictionary = await getDictionary(lang);
   return (
     <main className="min-h-dvh flex flex-col items-center bg-[#e1e4e6]">
-      <h1 className={`${longHaul.className} text-6xl text-center decoration-solid w-dvw p-2 mt-2`}>Patrocinadores</h1>
+      <h1 className={`${longHaul.className} text-6xl text-center decoration-solid w-dvw p-2 mt-2`}>{dict.navbar.aboutGroup.thirdOption}</h1>
       <div className="flex w-[90%] gap-6 mt-8 mt-4">
         <div className="grow border border-red-500 h-[50%] self-center"></div>
         <h2 className={`text-6xl text-red-700 ${longHaul.className} text-center`}>Diamond</h2>
