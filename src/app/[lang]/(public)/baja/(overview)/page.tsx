@@ -35,8 +35,8 @@ export default async function Home({
   const dict: LangDictionary = await getDictionary(lang);
   return (
     <div className="flex flex-col relative">
-      <main className={`flex justify-center min-h-dvh lg:h-[130dvh]`}>
-        <Image className="-z-10 object-cover " src={bg} fill alt="" />
+      <main className={`flex justify-center h-svh lg:h-[130dvh]`}>
+        <Image className="-z-10 object-cover" src={bg} fill alt="" />
         <div className="bg-transparent flex flex-col mt-12 lg:mt-0">
           <div className="h-24 flex flex-col md:justify-between gap-4 my-2 justify-center">
             <div className="flex items-center justify-center bg-white/30">
