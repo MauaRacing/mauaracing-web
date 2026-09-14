@@ -14,14 +14,16 @@ export default function Page({
       <h1 className={`text-6xl text-center ${longHaul.className} w-full p-2 mt-2`}>
         Seja um apoiador
       </h1>
-      <p className="text-2xl text-pretty mt-5 text-center">Apoie nosso projeto e participe dessa história! Entre em contato para conhecer melhor as possibilidades de trabalharmos juntos!</p>
-      <div className="flex md:flex-row flex-col justify-center md:justify-around mb-10 mt-4">
-        <div className="md:w-[45%]">
-          <div className="relative">
-            <Image src="/assets/images/become-sponsor/image2.jpg" alt="" width={1000} height={1000} className="mt-[60]"/>
-          </div>
+      <p className="text-2xl text-pretty mt-5 text-center">Apoie nosso projeto e participe dessa história!</p>
+      <p className="text-2xl text-pretty text-center"> Entre em contato para conhecer melhor as possibilidades de trabalharmos juntos!</p>
+      <a href="mailto:formula@maua.br" className="inline-block px-5 py-3 text-lg font-semibold text-white text-blue-500 underline">
+                                                                                                                                            formula@maua.br</a>
+      <div className="flex md:flex-row flex-col justify-center md:justify-around mt-4">
+        <div className="md:w-[50%]">
+            <Image src="/assets/images/become-sponsor/image2.jpg" alt="" width={1000} height={1000} className=""/>
+            <Image src="/assets/images/become-sponsor/image3.jpg" alt="" width={1000} height={1000}/>
         </div>
-        <div className="md:w-[50%] flex flex-col items-center justify-between gap-5 mt-2 md:mt-0">
+        <div className="md:w-[50%] flex flex-col items-center">
           <Image src="/assets/images/become-sponsor/image1.jpg" alt="" width={1000} height={1000} className=""/>
           <Image src="/assets/images/h2/cars/h225.jpg" alt="" width={1000} height={1000} className=""/>
         </div>

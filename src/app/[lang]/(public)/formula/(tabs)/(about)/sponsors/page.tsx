@@ -48,20 +48,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="https://www.skf.com/"
-            src="/assets/images/sponsors/SKF.svg"
+            src="/assets/images/sponsors/formula/gold/SKF.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="https://www.te.com/"
-            src="/assets/images/sponsors/TE.svg"
+            src="/assets/images/sponsors/formula/gold/Portofix.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
-            href="https://www.triumphmotorcycles.com/"
-            src="/assets/images/sponsors/Triumph.svg"
+            href="https://www.te.com/"
+            src="/assets/images/sponsors/formula/gold/TE.svg"
             alt=""
             width={300}
             height={300}
@@ -74,20 +74,20 @@ export default async function Page({
       <div className="m-4 flex flex-row justify-center items-center gap-5">
         <ImageSponsor
           href="/"
-          src="/assets/images/sponsors/Cortotal.svg"
+          src="/assets/images/sponsors/formula/silver/Neyfa.svg"
           alt=""
           width={300}
           height={300}/>
         <ImageSponsor
           href="/"
-          src="/assets/images/sponsors/Southco.svg"
+          src="/assets/images/sponsors/formula/silver/Tabano.svg"
           alt=""
           width={300}
           height={300}
         />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Neyfa.svg"
+            src="/assets/images/sponsors/formula/silver/Camillo.svg"
             className=""
             alt=""
             width={300}
@@ -96,20 +96,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Casado.svg"
+            src="/assets/images/sponsors/formula/silver/AVL.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/SMC.svg"
+            src="/assets/images/sponsors/formula/silver/Spaal.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Sunmetais.svg"
+            src="/assets/images/sponsors/formula/silver/Spal.svg"
             alt=""
             width={300}
             height={300}
@@ -118,20 +118,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Portofix.svg"
+            src="/assets/images/sponsors/formula/silver/Southco.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Remotec.svg"
+            src="/assets/images/sponsors/formula/silver/SMC.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Overland.svg"
+            src="/assets/images/sponsors/formula/silver/MTE.svg"
             alt=""
             width={300}
             height={300}
@@ -140,20 +140,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/AVL.svg"
+            src="/assets/images/sponsors/formula/silver/SSAB.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/FL.svg"
+            src="/assets/images/sponsors/formula/silver/Magnetron.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Spaal.svg"
+            src="/assets/images/sponsors/formula/silver/HBK.svg"
             alt=""
             width={300}
             height={300}
@@ -162,26 +162,11 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-12">
           <ImageSponsor
             href="https://curvasemtubos.com.br/"
-            src="/assets/images/sponsors/Tabano.svg"
+            src="/assets/images/sponsors/formula/silver/PrumoTech.svg"
             className=""
             alt=""
             width={300}
             height={300}/>
-          <ImageSponsor
-            href="/"
-            src="/assets/images/sponsors/Camillo.svg"
-            alt=""
-            width={300}
-            height={300}
-          />
-          <ImageSponsor
-            href="https://www.metalurgicarocha.com.br/"
-            src="/assets/images/sponsors/Rocha.svg"
-            className=""
-            alt=""
-            width={250}
-            height={300}
-          />
         </div>
       <div className="flex w-[90%] gap-6 mt-8 mb-4">
         <h2 className={`text-6xl text-red-700 ${longHaul.className}`}>Bronze</h2>
@@ -190,20 +175,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Hoosier.svg"
+            src="/assets/images/sponsors/formula/bronze/RibeiroElectronErosao.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/VIGrade.svg"
+            src="/assets/images/sponsors/formula/bronze/Sunmetais.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Wilwood.svg"
+            src="/assets/images/sponsors/formula/bronze/Giba.svg"
             alt=""
             width={300}
             height={300}
@@ -212,20 +197,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Ansanelli.svg"
+            src="/assets/images/sponsors/formula/bronze/Rocha.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/GT.svg"
+            src="/assets/images/sponsors/formula/bronze/FL.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Tilton.svg"
+            src="/assets/images/sponsors/formula/bronze/Overland.svg"
             alt=""
             width={300}
             height={300}
@@ -234,20 +219,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Artik.svg"
+            src="/assets/images/sponsors/formula/bronze/Remotec.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/MetalHorse.svg"
+            src="/assets/images/sponsors/formula/bronze/Ansanelli.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/FabLab.svg"
+            src="/assets/images/sponsors/formula/bronze/MarcosSilva.svg"
             alt=""
             width={300}
             height={300}
@@ -256,20 +241,20 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Mirai.svg"
+            src="/assets/images/sponsors/formula/bronze/Mirai.svg"
             alt=""
             width={300}
             height={300}/>
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Solidworks.svg"
+            src="/assets/images/sponsors/formula/bronze/3DEdge.svg"
             alt=""
             width={300}
             height={300}
           />
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/Ansys.svg"
+            src="/assets/images/sponsors/formula/bronze/Marelli.svg"
             alt=""
             width={300}
             height={300}
@@ -278,11 +263,95 @@ export default async function Page({
         <div className="m-4 flex flex-row justify-center items-center gap-5 mb-8">
           <ImageSponsor
             href="/"
-            src="/assets/images/sponsors/MarcosSilva.svg"
+            src="/assets/images/sponsors/formula/bronze/Aeron.svg"
+            alt=""
+            width={300}
+            height={300}/>
+          <ImageSponsor
+            href="/"
+            src="/assets/images/sponsors/formula/bronze/Tecpads.svg"
             alt=""
             width={300}
             height={300}/>
         </div>
+      <div className="flex w-[90%] gap-6 mt-8 mt-4">
+        <div className="grow border border-red-500 h-[50%] self-center"></div>
+        <h2 className={`text-6xl text-red-700 ${longHaul.className}`}>Sponsor</h2>
+      </div>
+      <div className="m-4 flex flex-row justify-center items-center gap-5">
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Cortotal.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/VIGrade.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Ansys.svg"
+          alt=""
+          width={300}
+          height={300}/>
+      </div>
+            <div className="m-4 flex flex-row justify-center items-center gap-5">
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Tilton.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Wilwood.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Artik.svg"
+          alt=""
+          width={300}
+          height={300}/>
+            </div>
+            <div className="m-4 flex flex-row justify-center items-center gap-5">
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/GT.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Solidworks.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/MetalHorse.svg"
+          alt=""
+          width={300}
+          height={300}/>
+            </div>
+            <div className="m-4 flex flex-row justify-center items-center gap-5 mb-8">
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Hoosier.svg"
+          alt=""
+          width={300}
+          height={300}/>
+        <ImageSponsor
+          href="/"
+          src="/assets/images/sponsors/formula/sponsor/Motec.svg"
+          alt=""
+          width={300}
+          height={300}/>
+      </div>
     </main>
   );
   

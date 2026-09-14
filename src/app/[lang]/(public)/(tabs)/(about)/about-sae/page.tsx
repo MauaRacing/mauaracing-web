@@ -21,11 +21,11 @@ export default async function Page({
             <h1 className={`text-6xl text-center ${longHaul.className} p-2 w-dvw mt-2`}>
               {dict.aboutGroup.aboutFsae.title}
             </h1>
-            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed mt-5 ${figtree.className}`}>{dict.aboutGroup.aboutFsae.firstText}</p>
-            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed ${figtree.className}`}>
+            <p className={`text-left md:text-justify text-pretty md:indent-5 mx-10 text-2xl leading-relaxed mt-5 ${figtree.className}`}>{dict.aboutGroup.aboutFsae.firstText}</p>
+            <p className={`text-left md:text-justify text-pretty md:indent-5 mx-10 text-2xl leading-relaxed ${figtree.className}`}>
               {dict.aboutGroup.aboutFsae.secondText}
             </p>
-            <p className={`text-left md:text-justify text-pretty md:indent-11 mx-10 text-2xl leading-relaxed ${figtree.className}`}>
+            <p className={`text-left md:text-justify text-pretty md:indent-5 mx-10 text-2xl leading-relaxed ${figtree.className}`}>
               {dict.aboutGroup.aboutFsae.thirdText}
             </p>
           </div>
@@ -40,7 +40,7 @@ export default async function Page({
           </div>
           <div className="md:w-[50%] mt-6 mx-3 md:mx-0">
             <h2 className="text-2xl border-red-800 border-b-[3px] w-fit">{dict.aboutGroup.aboutFsae.secondTitle}</h2>
-            <p className="mt-5 text-xl text-pretty leading-relaxed">{dict.aboutGroup.aboutFsae.fourthText}</p>
+            <p className="mt-5 text-xl text-pretty leading-relaxed md:indent-5">{dict.aboutGroup.aboutFsae.fourthText}</p>
             <div className="mt-14 relative">
               <div className="relative">                
                 <Image src="/assets/images/about-fsae/image2.jpg" alt="" width={2000} height={2000} className="relative z-20"/>
