@@ -1,20 +1,14 @@
 "use server"
-import { SelectorProps } from "./selectorProps";
+import { Team } from "./utilTypes";
 
-export async function fetchData(props: SelectorProps) {
+export async function fetchData() : Promise<Team[] | null>{
   const api_url = getAPIURL();
-  if (props?.optionalId && props?.optionalURL) {
-    props.url += `${props.optionalURL}/${props.optionalId}`;
-  }
-  else if(props?.optionalId){
-    props.url += `/${props.optionalId}`;
-  }
-  console.log(`${api_url}${props?.url}`)
-  const fetch_data = await fetch(`${api_url}${props?.url}`, {
+  const fetch_data = await fetch(`${api_url}/assembly`, {
     cache: 'no-store',
     method: "GET"
   });
   const data = await fetch_data.json();
+  console.log(typeof data)
   if(data?.message){
     return null;
   }

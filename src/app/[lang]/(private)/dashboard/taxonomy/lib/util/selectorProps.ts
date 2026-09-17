@@ -28,7 +28,7 @@ export const subsystem : SelectorProps = {
 export const assembly : SelectorProps = {
   name: "assembly",
   url: "/assembly",
-  label: "Assembly",
+  label: "Assembly:",
   entityId: "assembly_id",
   entityName: "assembly_name",
 }
@@ -36,7 +36,15 @@ export const assembly : SelectorProps = {
 export const fileType : SelectorProps = {
   name: "file_type",
   url : "/file_type",
-  label : "Tipo de arquivo",
+  label : "Tipo de arquivo:",
   entityId: "file_type_id",
   entityName: "file_type_name",
+}
+
+export const seasonProps : SelectorProps = {
+  name: "season",
+  url : "/season",
+  label : "Escolha uma temporada",
+  entityId: "season_id",
+  entityName: "season_name"
 }
