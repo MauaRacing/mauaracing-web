@@ -11,7 +11,7 @@ export async function formAction(formData: FormData) {
     teamId: formData.get(team.name),
     subsystemId: formData.get(subsystem.name),
     assemblyId: formData.get(assembly.name),
-    fileName: formData.get("fileNameInput")
+    fileName: formData.get("fileNameInput"),
   };
 
   console.log(JSON.stringify(rawFormData));

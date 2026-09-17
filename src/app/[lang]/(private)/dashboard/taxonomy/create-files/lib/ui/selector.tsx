@@ -6,9 +6,6 @@ import { SelectedIdsType } from "./form";
 
 
 export function Selector({ selector, data, setSelectedIds, selectedIds }: { selector: SelectorProps, data: Array<{ entityId: number, entityName: string }>, setSelectedIds: Dispatch<SetStateAction<SelectedIdsType>>, selectedIds: SelectedIdsType }) {
-  useEffect(()=>{
-    console.log(data);
-  },[])
   return (
         <div className="grid grid-cols-5">
           <select

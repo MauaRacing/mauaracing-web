@@ -14,6 +14,7 @@ import { DivSelector } from "./divSelectors";
 import { fileTypesArray } from "../../../lib/util/consts";
 import { fetchData } from "../../../lib/util/fetchData";
 import { Assembly, Subsystem, Team } from "../../../lib/util/utilTypes";
+import { getFileNumber } from "../actions/getFileNumber";
 
 const firstSeason = 2027;
 const seasonInit: Entity[] = [{
@@ -54,7 +55,7 @@ export type Entity = {
     entityName: string;
 }
 
-function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStateAction<string>>, teamAndProps: Team[], selectedIds: SelectedIdsType) {
+function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStateAction<string>>, teamAndProps: Team[], selectedIds: SelectedIdsType, fileNumber: number | null) {
     const team = teamAndProps.find((team) => team.team_id == +selectedIds.team)
     const subsystem = team?.subsystem.find((subs) => subs.subsystem_id == +selectedIds.subsystem);
     const assembly = subsystem?.assembly.find((assembly) => assembly.assembly_id == +selectedIds.assembly);
@@ -82,8 +83,8 @@ function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStat
             break;
         }
       }
-        let partNumber = 1;
-        generatedName += partNumber.toString().padStart(2, "0");
+      if(fileNumber)
+        generatedName += fileNumber.toString().padStart(2, "0");
         generatedName += "_";
         generatedName += fileName;
         generatedName += "_V1.0"
@@ -92,7 +93,7 @@ function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStat
 }
 
 
-function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data: Team[], setSelectedIds: Dispatch<SetStateAction<SelectedIdsType>>, selectedIds: SelectedIdsType) {
+function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data: Team[], setSelectedIds: Dispatch<SetStateAction<SelectedIdsType>>, selectedIds: SelectedIdsType, setFileNumber:Dispatch<SetStateAction<number| null>>) {
     if (event.target instanceof HTMLSelectElement) {
         const selectEvent = event.target as HTMLSelectElement;
         let tempMap = selectedIds;
@@ -103,7 +104,7 @@ function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data:
                 tempMap[assembly.name] = "";
                 if (selectEvent.value == "") {
                     setters.setSubsystem([]);
-                    return;
+                    break;
                 }
                 let filteredTeam = data.find((team) => team.team_id == +selectEvent.value);
                 let subsystems: Entity[] = filteredTeam!.subsystem.map((subsystem) => {
@@ -118,7 +119,7 @@ function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data:
                 tempMap[assembly.name] = "";
                 if (selectEvent.value == "") {
                     setters.setAssembly([]);
-                    return;
+                    break;
                 }
                 let filteredTeamWithSubsystem = data.find((team) => team.subsystem.find((selectedSubsystem) => selectedSubsystem.subsystem_id == +selectEvent.value));
                 let filteredSubsystem = filteredTeamWithSubsystem?.subsystem.find((selectedSubsystem) => selectedSubsystem.subsystem_id == +selectEvent.value);
@@ -129,7 +130,35 @@ function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data:
                     }
                 })
                 setters.setAssembly(assemblies);
-                break;
+              break;
+          case assembly.name:
+            if (selectEvent.value == "") {
+              break;
+            }
+            getFileNumber(+selectEvent.value).then(
+              (value) => {
+                console.log(value);
+                if(!value) return;
+                if(selectedIds.file_type == fileTypesArray[0].entityName){
+                  console.log("part")
+                  if(typeof value.lastIndexPart == 'number'){
+                    setFileNumber(value.lastIndexPart + 1);
+                  }
+                  else{
+                    setFileNumber(1);
+                  }
+                }
+                else{
+                  console.log("assembly")
+                  if(typeof value.lastIndexAssembly == 'number'){
+                    setFileNumber(value.lastIndexAssembly + 1);
+                  }
+                  else{
+                    setFileNumber(1);
+                  }
+                }
+              }
+            );
         }
         setSelectedIds({ ...tempMap });
     }
@@ -145,7 +174,7 @@ export function Form({ lang }: { lang: string }) {
     const [assemblies, setAssembly] = useState<Entity[]>([]);
     const [fileName, setFileName] = useState<string>("");
     const [generatedFileName, setGeneratedFileName] = useState<string>("");
-    const [fileNumber, setFileNumber] = useState<number | null>();
+    const [fileNumber, setFileNumber] = useState<number | null>(null);
 
     useEffect(() => {
         let teams = fetchData();
@@ -164,15 +193,15 @@ export function Form({ lang }: { lang: string }) {
     }, []);
 
     useEffect(() => {
-        updateFileName(fileName, setGeneratedFileName, teamsAndProps, selectedIds);
-    }, [selectedIds, fileName]);
+      updateFileName(fileName, setGeneratedFileName, teamsAndProps, selectedIds, fileNumber);
+    }, [selectedIds, fileName, fileNumber]);
 
     return (
         <form
             className="flex flex-col gap-5 min-h-[600px] w-[600px] bg-gray-100 rounded-lg mt-10"
             action={(formData) => formAction(formData)}
             onChange={(e) => {
-                onFormChange(e, { setSubsystem: setSubsystem, setTeam: setTeams, setAssembly: setAssembly }, teamsAndProps, setSelectedIds, selectedIds);
+              onFormChange(e, { setSubsystem: setSubsystem, setTeam: setTeams, setAssembly: setAssembly }, teamsAndProps, setSelectedIds, selectedIds, setFileNumber);
             }}>
             <section>
                 <div className="flex justify-between gap-4">
