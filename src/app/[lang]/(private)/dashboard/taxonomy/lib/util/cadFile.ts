@@ -3,7 +3,7 @@ export type CADFile = {
   part_name: string
   team: string
   subsystem: string
-  file_type: "assembly" | "part"
+  file_type: "ASSEMBLY" | "PART"
   assembly : string
 }
 

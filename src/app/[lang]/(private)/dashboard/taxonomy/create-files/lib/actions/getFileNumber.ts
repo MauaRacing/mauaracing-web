@@ -1,9 +1,13 @@
 "use server"
 
 export async function getFileNumber(assemblyId : number) : Promise<{
-  lastIndexAssembly: number | null,
-  lastIndexPart: number | null
-} | null>{
+  lastIndexAssembly: [{
+    cad_file_number: number
+  }],
+  lastIndexPart: [{
+    cad_file_number : number
+  }]
+}>{
   const api_url = getAPIURL();
   const fetch_data = await fetch(`${api_url}/cad-files?assembly-id=${assemblyId}`, {
     cache: 'no-store',
@@ -12,7 +16,7 @@ export async function getFileNumber(assemblyId : number) : Promise<{
   const data = await fetch_data.json();
   console.log(data)
   if(data?.message){
-    return null;
+    throw Error();
   }
   return data;
 }

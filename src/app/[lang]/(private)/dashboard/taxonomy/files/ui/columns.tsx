@@ -2,8 +2,6 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
-import { Tool, ToolWithPlacement } from "../../lib/util/tool"
-import { Checkbox } from "@/components/ui/checkbox"
 import { MoreHorizontal, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
@@ -19,8 +17,9 @@ import {
 
 import { useToast } from "@/hooks/use-toast"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { CADFile } from "../../lib/util/cadFile"
 
-export const columns: ColumnDef<ToolWithPlacement>[] = [
+export const columns: ColumnDef<CADFile>[] = [
     // {
     //   id: "select",
     //   header: ({ table }) => (
@@ -88,7 +87,7 @@ export const columns: ColumnDef<ToolWithPlacement>[] = [
         id: "actions",
         cell: ({ row }) => {
             const { toast } = useToast();
-            const tool = row.original;
+            const file = row.original;
             return (
                 <div className="flex justify-center">
                     <Dialog>
@@ -103,7 +102,7 @@ export const columns: ColumnDef<ToolWithPlacement>[] = [
                                 <DropdownMenuLabel>Ações</DropdownMenuLabel>
                                 <DropdownMenuItem
                                     onClick={() => {
-                                        navigator.clipboard.writeText(tool.index)
+                                        navigator.clipboard.writeText(file.part_name)
                                         toast({
                                             description: "Index da ferramenta copiado",
                                             duration: 1500
@@ -111,24 +110,12 @@ export const columns: ColumnDef<ToolWithPlacement>[] = [
                                     }
                                     }
                                 >
-                                    Copiar Index da Ferramenta
+                                    Copiar File Name
                                 </DropdownMenuItem>
                                 <Separator />
-                                <DropdownMenuItem>Editar Ferramenta</DropdownMenuItem>
+                                <DropdownMenuItem>Editar Arquivo</DropdownMenuItem>
                                 <Separator />
-                                <DialogTrigger className="pl-2 pt-1 text-sm">Ver mais detalhes</DialogTrigger>
-                                <DialogContent>
-                                    <DialogHeader>
-                                        <DialogTitle>Local</DialogTitle>
-                                        <DialogDescription>
-                                            {tool.tool_bench ? (<p>Ferramenteiro: {`${tool.tool_bench}`}</p>) : null}
-                                            {tool.locker ? (<p>Armário: {`${tool.locker}`}</p>) : null}
-                                            {tool.drawer_num ? (<p>Gaveta: {`${tool.drawer_num}`}</p>) : null}
-                                            {tool.locker_num ? (<p>Armário do Ferramenteiro: {`${tool.locker_num}`}</p>) : null}
-                                            {tool.shelf_num ? (<p>Prateleira: {`${tool.shelf_num}`}</p>) : null}
-                                        </DialogDescription>
-                                    </DialogHeader>
-                                </DialogContent>
+                                <DropdownMenuItem>Criar Nova Versão</DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </Dialog>

@@ -2,8 +2,9 @@
 import { Dispatch, forwardRef, SetStateAction, useEffect, useState } from "react";
 import { SelectorProps } from "../../../lib/util/selectorProps";
 import { Selector } from "./selector";
+import { SelectedIdsType } from "./form";
 
-export function DivSelector({selector, data, setSelectedIds, selectedIds} : {selector : SelectorProps, data : Array<any>, setSelectedIds: Dispatch<SetStateAction<Map<string,string>>>, selectedIds : Map<string,string>}){
+export function DivSelector({selector, data, setSelectedIds, selectedIds} : {selector : SelectorProps, data : Array<any>, setSelectedIds: Dispatch<SetStateAction<SelectedIdsType>>, selectedIds : SelectedIdsType}){
   return (
     <div
       className="flex flex-col place-content-center items-center content-center mb-9"

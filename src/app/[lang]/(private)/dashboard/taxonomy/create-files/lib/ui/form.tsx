@@ -16,7 +16,9 @@ import { fetchData } from "../../../lib/util/fetchData";
 import { Assembly, Subsystem, Team } from "../../../lib/util/utilTypes";
 import { getFileNumber } from "../actions/getFileNumber";
 
+
 const firstSeason = 2027;
+
 const seasonInit: Entity[] = [{
     entityId: firstSeason,
     entityName: `${firstSeason}`
@@ -35,6 +37,7 @@ type Setters = {
 }
 
 export type SelectedIdsType = {
+    [key: string]: string;
     file_type: string;
     team: string;
     subsystem: string;
@@ -64,7 +67,7 @@ function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStat
         generatedName += team.team_name[0];
     }
     if (selectedIds.season) {
-        generatedName += selectedIds.season;
+        generatedName += selectedIds.season.slice(-2); // get last 2 numbers of a year
     }
     if (subsystem) {
         generatedName += "_";
@@ -75,16 +78,16 @@ function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStat
         generatedName += assembly.assembly_number.toString().padStart(3, "0");
     }
     if (subsystem && assembly) {
-      generatedName += "-";
-      if((selectedIds.file_type)){
-        switch(fileTypesArray.find((file_type) => file_type.entityId == +selectedIds.file_type)?.entityName){
-          case fileTypesArray[1].entityName:
-            generatedName += "A";
-            break;
+        generatedName += "-";
+        if ((selectedIds.file_type)) {
+            switch (fileTypesArray.find((file_type) => file_type.entityId == +selectedIds.file_type)?.entityName) {
+                case fileTypesArray[1].entityName:
+                    generatedName += "A";
+                    break;
+            }
         }
-      }
-      if(fileNumber)
-        generatedName += fileNumber.toString().padStart(2, "0");
+        if (fileNumber)
+            generatedName += fileNumber.toString().padStart(2, "0");
         generatedName += "_";
         generatedName += fileName;
         generatedName += "_V1.0"
@@ -93,7 +96,7 @@ function updateFileName(fileName: string, setGeneratedFileName: Dispatch<SetStat
 }
 
 
-function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data: Team[], setSelectedIds: Dispatch<SetStateAction<SelectedIdsType>>, selectedIds: SelectedIdsType, setFileNumber:Dispatch<SetStateAction<number| null>>) {
+function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data: Team[], setSelectedIds: Dispatch<SetStateAction<SelectedIdsType>>, selectedIds: SelectedIdsType, setFileNumber: Dispatch<SetStateAction<number | null>>) {
     if (event.target instanceof HTMLSelectElement) {
         const selectEvent = event.target as HTMLSelectElement;
         let tempMap = selectedIds;
@@ -131,34 +134,32 @@ function onFormChange(event: FormEvent<HTMLFormElement>, setters: Setters, data:
                 })
                 setters.setAssembly(assemblies);
               break;
-          case assembly.name:
-            if (selectEvent.value == "") {
-              break;
-            }
-            getFileNumber(+selectEvent.value).then(
-              (value) => {
-                console.log(value);
-                if(!value) return;
-                if(selectedIds.file_type == fileTypesArray[0].entityName){
-                  console.log("part")
-                  if(typeof value.lastIndexPart == 'number'){
-                    setFileNumber(value.lastIndexPart + 1);
-                  }
-                  else{
-                    setFileNumber(1);
-                  }
+            case assembly.name:
+                if (selectEvent.value == "") {
+                    break;
                 }
-                else{
-                  console.log("assembly")
-                  if(typeof value.lastIndexAssembly == 'number'){
-                    setFileNumber(value.lastIndexAssembly + 1);
-                  }
-                  else{
-                    setFileNumber(1);
-                  }
-                }
-              }
-            );
+                getFileNumber(+selectEvent.value).then(
+                    (value) => {
+                        console.log(value)
+                      if (!value) return;
+                        if (selectedIds.file_type == "0") {
+                          if (value.lastIndexPart.length > 0) {
+                                setFileNumber(value.lastIndexPart[0].cad_file_number + 1);
+                            }
+                            else {
+                                setFileNumber(1);
+                            }
+                        }
+                        else {
+                          if (value.lastIndexAssembly.length > 0) {
+                                setFileNumber(value.lastIndexAssembly[0].cad_file_number + 1);
+                            }
+                            else {
+                                setFileNumber(1);
+                            }
+                        }
+                    }
+                );
         }
         setSelectedIds({ ...tempMap });
     }
@@ -193,15 +194,22 @@ export function Form({ lang }: { lang: string }) {
     }, []);
 
     useEffect(() => {
-      updateFileName(fileName, setGeneratedFileName, teamsAndProps, selectedIds, fileNumber);
+        updateFileName(fileName, setGeneratedFileName, teamsAndProps, selectedIds, fileNumber);
+        if (selectedIds.team && selectedIds.assembly && selectedIds.file_type && selectedIds.season && selectedIds.subsystem && fileName)
+            setDisabled(false);
+        else setDisabled(true);
     }, [selectedIds, fileName, fileNumber]);
 
     return (
         <form
             className="flex flex-col gap-5 min-h-[600px] w-[600px] bg-gray-100 rounded-lg mt-10"
-            action={(formData) => formAction(formData)}
+            action={(formData) => {
+                setSelectedIds({ ...selectedIdsInit });
+                setFileName("");
+                formAction(formData, generatedFileName)
+            }}
             onChange={(e) => {
-              onFormChange(e, { setSubsystem: setSubsystem, setTeam: setTeams, setAssembly: setAssembly }, teamsAndProps, setSelectedIds, selectedIds, setFileNumber);
+                onFormChange(e, { setSubsystem: setSubsystem, setTeam: setTeams, setAssembly: setAssembly }, teamsAndProps, setSelectedIds, selectedIds, setFileNumber);
             }}>
             <section>
                 <div className="flex justify-between gap-4">
@@ -215,7 +223,7 @@ export function Form({ lang }: { lang: string }) {
             </section>
             <section className="mt-2">
                 <DivSelector selector={fileType} data={fileTypesArray} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
-                <DivSelector selector={seasonProps} data={season} setSelectedIds={setSeason} selectedIds={selectedIds} />
+                <DivSelector selector={seasonProps} data={season} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
                 <DivSelector selector={team} data={teams} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
                 <DivSelector selector={subsystem} data={subsystems} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
                 <DivSelector selector={assembly} data={assemblies} setSelectedIds={setSelectedIds} selectedIds={selectedIds} />
@@ -234,6 +242,7 @@ export function Form({ lang }: { lang: string }) {
                             className="bg-secondary text-onSecondary border rounded-xl text-center w-56 p-2"
                             onClick={(e) => {
                                 setSelectedIds({ ...selectedIdsInit });
+                                setFileName("");
                                 e.preventDefault();
                             }}
                         >
